@@ -1,6 +1,6 @@
-#Drawing Basic Shapes
+# Drawing Basic Shapes
 
-**Rectangles**
+##### Rectangles
 
 Rectangles are the only primitive shape supported by canvas.
 
@@ -12,9 +12,9 @@ All three rectangle-drawing operations take a starting point of the upper-left c
 
 `ctx.fillRect(x, y, w, h)` Fills a given rectangle with the current fillStyle.
 
-Refer to **Rectangles** section in *canvas_snippets.md* file for examples.
+Refer to [Rectangles](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#rectangles) section in *canvas_snippets.md* file for examples.
 
-**Lines**
+##### Lines
 
 Lines can be created using a variety of settings for how they join and end.
 
@@ -34,4 +34,4 @@ Lines can be created using a variety of settings for how they join and end.
 
 `ctx.stroke()` Collects all of the current path commands and draws them.
 
-Refer to **Lines** section in *canvas_snippets.md* file for examples.
+Refer to [Lines](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#lines) section in *canvas_snippets.md* file for examples.
