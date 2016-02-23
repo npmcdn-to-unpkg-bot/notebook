@@ -1,6 +1,6 @@
-#Shaping Up With Angular.js
+# Shaping Up With Angular.js
 
-###Core Angular Concepts
+### Core Angular Concepts
 
   * **Directives**: HTML annotations that trigger Javascript behaviors.
 
@@ -12,7 +12,7 @@
 
   * **Filters**: Formats the result of a piped expression (may additionally use _options_).
 
-####Directives
+#### Directives
 
   * _ng-app_ - Attach the application module to the page
 
@@ -42,7 +42,7 @@
 
   **Note**: It is much better in general to use custom directives as opposed to _ng-include_. See below for details.
 
-####Filters
+#### Filters
 
   * _date:'MM/dd/yyyy @ h:mma'_ - Formats value into a date string
 
@@ -52,12 +52,12 @@
 
   * _orderBy:'-price'_ - Will list by descending price (used w/ _ng-repeat_)
 
-####Two-Way Data Binding
+#### Two-Way Data Binding
 When expressions are re-evaluated every time a property changes.
 
 For example: When _ng-click_ changes the value of _tab_, the _{{tab}}_ expression automatically gets updated.
 
-####HTML5-based Type Validations
+#### HTML5-based Type Validations
 Web forms usually have rules around valid input:
   * Angular JS has built-in validations for common input types:
 
@@ -69,7 +69,7 @@ Web forms usually have rules around valid input:
   (Can also define min and max with numbers)
   `min=1 max=10`
 
-####Custom Directives
+#### Custom Directives
 Custom directives allow for more expressive html. Where html would normally only illustrate structure of a page, custom directives allow for specific tag names that make a webpage more semantically clear. (i.e <p>This book is about...</p> vs. <synopsis></synopsis>)
 
 Uses of Custom Directives:
@@ -96,7 +96,8 @@ Attribute Directive (_restrict: 'A'_):
 
 Custom Directive w/ built-in Controller and Alias:
 
-`app.directive('productPanels', function() {
+```javascript
+app.directive('productPanels', function() {
   return {
     restrict: 'E',
     templateUrl: 'product-panels.html',
@@ -118,22 +119,24 @@ Custom Directive w/ built-in Controller and Alias:
     // Specify Controller Alias
     controllerAs: 'panel'
   };
-});`
+});
+```
 
-##Chapter 5
+## Chapter 5
 
-###5.1 Dependencies and Services
+### 5.1 Dependencies and Services
 For best organizational practice it is a good idea to logically break-up the application into modules that then are imported accordingly.
 
 To do this we would simply create another application module with a closure and the _angular.module()_ providing it with the module name.
 
 We would then place the name of the new module within the Dependencies array found as the second argument of the main application file. We then need to include the new .js file into the html file.
 
-`// app.js                          *Dependencies*
+```javascript
+// app.js                          *Dependencies*
 var app = angular.module('store', ['store-products']);
 // product.js
 var app = angular.module('store-products', [ ]);
-`
+```
 
 Best to split Modules around functionality:
 
@@ -141,7 +144,7 @@ Best to split Modules around functionality:
  * products.js - all the functionality for products and **only** products.
 
 
-###5.3 Services
+### 5.3 Services
 Services allow for the application to pull data from an api rather than simply doing it all internally.
 
 Sample Services Available:
@@ -152,7 +155,7 @@ Sample Services Available:
 
   * Filter an array with `$filter`
 
-#####$http
+##### $http
 The _$http_ Service is how we make an async request to a server:
 
   `$http({ method: 'GET', url: '/products.json' });`
@@ -171,17 +174,21 @@ Dependency Injection:
 
 For one service:
 
-`//                             Service Name     Name as Arg
+```javascript
+//                             Service Name     Name as Arg
 app.controller('SomeController', ['$http', function($http){
 
-} ]);`
+} ]);
+```
 
 For multiple services:
 
-`//                               Service Names             Names as Arg
+```javascript
+//                               Service Names             Names as Arg
 app.controller('SomeController', ['$http', '$log', function($http, $log){
 
-} ]);`
+} ]);
+```
 
 This is known as _Dependency Injection_ because upon initialization Angular injects the services required into the controller as arguments.
 
@@ -189,13 +196,15 @@ This is known as _Dependency Injection_ because upon initialization Angular inje
 
 In addition to _get()_ requests, _$http_ can _post()_, _put()_, and _delete()_:
 
-`$http.post('/path/to/resource.json'. {param: 'value'});
+```javascript
+$http.post('/path/to/resource.json'. {param: 'value'});
 $http.delete('/path/to/resource.json');
-`
+```
 
 or any other HTTP method by using _config_ object:
 
-`$http({ method: 'OPTIONS', url: '/path/to/resource' });
+```javascript
+$http({ method: 'OPTIONS', url: '/path/to/resource' });
 $http({ method: 'PATCH', url: '/path/to/resource.json' });
 $http({ method: 'TRACE', url: '/path/to/resource.json' });
-`
+```
