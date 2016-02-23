@@ -1,6 +1,6 @@
-#Complex Shapes: Arcs and Paths
+# Complex Shapes: Arcs and Paths
 
-**Paths**
+##### Paths
 
 A path is simply a set of points, connected by lines or curves, and is either open or closed. The context always has one (and only one) current path.
 
@@ -16,9 +16,9 @@ To add paths, use one or more path drawing routines.
 
 `ctx.closePath()` Closes the current path. This will be done automatically by canvas if the start and end points are not the same.
 
-Refer to **Paths** section in *canvas_snippets.md* file for examples.
+Refer to [Paths](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#paths) section in *canvas_snippets.md* file for examples.
 
-**Arcs**
+##### Arcs
 
 Arcs are curves that are portions of a circle (360deg arc).
 
@@ -30,26 +30,26 @@ Arcs are curves that are portions of a circle (360deg arc).
 
 `ctx.closePath()` Closes the current drawing path.
 
-Refer to **Arcs** section in *canvas_snippets.md* file for examples.
+Refer to [Arcs](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#arcs) section in *canvas_snippets.md* file for examples.
 
-**Bézier**
+##### Bézier
 
 Bézier curves are drawn starting from a context point to an end point using two control points (like handles w/ pen tool in Illustrator) to determine the curve.
 
 `ctx.bezierCurveTo(cx1, cy1, cx2, cy2, end1, end2)` Draw a Bézier curve starting at the current pen position using the two controll points defined by cx1, cy1 and cx2, cy2 and ending at the point end1, end2.
 
-Refer to **Curves** section in *canvas_snippets.md* file for examples.
+Refer to [Curves](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#curves) section in *canvas_snippets.md* file for examples.
 
 
-**Quadratic**
+##### Quadratic
 
 Quadratic curves use a start point, one control point, and an end point.
 
 `ctx.quadraticCurveTo(cx, cy, x, y)` Draw a quadratic curve starting at the current pen position using the given control point cx, cy, and ending at the end point defined by x, y.
 
-Refer to **Curves** section in *canvas_snippets.md* file for examples.
+Refer to [Curves](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#curves) section in *canvas_snippets.md* file for examples.
 
-**Text**
+##### Text
 
 Drawing text is very similar to drawing any other path.
 
@@ -71,4 +71,4 @@ Don't use text on the canvas as a replacement for regular document text - it vio
 
 `ctx.meausureText(text)` Returns the dimension metrics of the string using the current font settings.
 
-Refer to **Text** section in *canvas_snippets.md* file for examples.
+Refer to [Text](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#text) section in *canvas_snippets.md* file for examples.
