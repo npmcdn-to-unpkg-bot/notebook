@@ -13,7 +13,7 @@
 
 ## Chapter 4 Snippets
 
-**ContextDraw**
+##### ContextDraw
 ```javascript
 var theCanvas = document.getElementById('Canvas1');
 if (theCanvas && theCanvas.getContext) {
@@ -25,7 +25,7 @@ if (theCanvas && theCanvas.getContext) {
 }
 ```
 
-**ContextProps**
+##### ContextProps
 ```javascript
 var theCanvas = document.getElementById('Canvas1');
 theCanvas.width = 150;
@@ -34,7 +34,7 @@ theCanvas.height = 150;
 
 ## Chapter 5 Snippets
 
-**Colors**
+##### Colors
 ```javascript
 ctx.fillStyle = "green";
 ctx.fillRect(20,20,100,100);
@@ -44,7 +44,7 @@ ctx.strokeStyle="rgba(0,0,255,1)";
 ctx.strokeRect(20,20,100,100);
 ```
 
-**Arcs**
+##### Arcs
 ```javascript
 ctx.strokeStyle = "blue";
 ctx.fillStyle = "red";
@@ -67,7 +67,7 @@ ctx.fill();
 ctx.stroke();
 ```
 
-**Curves**
+##### Curves
 ```javascript
 ctx.strokeStyle = "blue";
 ctx.lineWidth = 5;
@@ -104,7 +104,7 @@ ctx.lineTo(600,150);
 ctx.stroke();
 ```
 
-**Drawing State**
+##### Drawing State
 ```javascript
 // set up some drawing information
 ctx.strokeStyle = "red";
@@ -131,7 +131,7 @@ ctx.fillRect(325, 25, 100, 125);
 ctx.strokeRect(325,25,100,125);
 ```
 
-**Lines**
+##### Lines
 ```javascript
 // draw lines of varying widths
 var theCanvas = document.getElementById('Canvas1');
@@ -215,7 +215,7 @@ if (theCanvas && theCanvas.getContext) {
 }
 ```
 
-**Paths**
+##### Paths
 ```javascript
 ctx.strokeStyle = "blue";
 ctx.fillStyle = "red";
@@ -248,7 +248,7 @@ ctx.fill();
 ctx.stroke();
 ```
 
-**Rectangles**
+##### Rectangles
 ```javascript
 // draw just a stroked rectangle
 ctx.strokeStyle = "blue";
@@ -271,7 +271,7 @@ ctx.clearRect(15, 75, 450, 50);
 
 ```
 
-**Text**
+##### Text
 ```javascript
 var theString = "Drawing Text on a Canvas";
 
@@ -306,7 +306,7 @@ ctx.stroke();
 
 ## Chapter 6
 
-**Gradients**
+##### Gradients
 ```javascript
 // create a linear gradient
 var linGrd = ctx.createLinearGradient(20,20,20,280);
@@ -334,7 +334,7 @@ ctx.stroke();
 ctx.fill();
 ```
 
-**Images**
+##### Images
 ```javascript
 	// draw an image directly onto the canvas at the top left
 var srcImg = document.getElementById("img1");
@@ -359,7 +359,7 @@ setInterval(function () {
 
 ```
 
-**Patterns**
+##### Patterns
 ```javascript
 // create a pattern from an image
 var patImg = new Image();
@@ -398,7 +398,7 @@ ctx.strokeRect(50,50,200,200);
 
 ```
 
-**Shadows**
+##### Shadows
 ```javascript
 // set up our basic shadow settings
 ctx.shadowColor = "#000000";
@@ -434,7 +434,7 @@ ctx.stroke();
 
 ```
 
-**Clipping Paths**
+##### Clipping Paths
 ```javascript
 // draw an image
 var srcImg = document.getElementById("img1");
@@ -458,7 +458,7 @@ ctx.drawImage(srcImg, 0, 0);
 
 ## Chapter 7
 
-**Compositing**
+##### Compositing
 ```javascript
 var compMethods = ["source-over","source-in","source-out","source-atop","lighter","xor",
 					"destination-over", "destination-in", "destination-out", "destination-atop", "darker", "copy"];
@@ -486,7 +486,7 @@ for (var i= 0; i < compMethods.length; i++) {
 
 ```
 	
-**Global Alpha**
+##### Global Alpha
 ```javascript
 ctx.globalAlpha = 1.0 // the default value, but set it anyway
 
@@ -512,7 +512,7 @@ for (var i= 0; i < rects.length; i+=2) {
 }
 ```
 
-**Raw data**
+##### Raw data
 ```javascript
 // draw an image directly onto the canvas at the top left
 var srcImg = document.getElementById("img1");
@@ -538,7 +538,7 @@ while (curRow < maxRow) {
 ctx.putImageData(imgData, 0, 0);
 ```
 
-**Rotate Transform**
+##### Rotate Transform
 ```javascript
 ctx.fillStyle = "blue";
 ctx.fillRect(150,30,100,50);
@@ -558,7 +558,7 @@ for (var degrees = 0; degrees < 360; degrees += 20) {
 
 ```
 
-**Scale Transform**
+##### Scale Transform
 ```javascript
 ctx.fillStyle = "blue";
 ctx.fillRect(0,0,100,50);
@@ -571,7 +571,7 @@ ctx.fillRect(125,50,100,50);
 ctx.restore();
 ```
 
-**Custom Transform**
+##### Custom Transform
 ```javascript
 		       ctx.fillStyle = "blue";
 ctx.fillRect(0, 0, 100, 50);
@@ -602,7 +602,7 @@ ctx.fillRect(250, 20, 100, 50);
 
 ```
 
-**Translate Transform**
+##### Translate Transform
 ```javascript
 
 ctx.fillStyle = "blue";
@@ -616,7 +616,7 @@ ctx.fillRect(0,0,100,50);
 
 ## Chapter 8
 
-**Simple Animation**
+##### Simple Animation
 ```javascript
 var rectY=200, rectW=40;
 var rectX = -rectW;
@@ -652,7 +652,7 @@ function anim() {
 }
 ```
 	
-**Double Buffer Animation**
+##### Double Buffer Animation
 ```javascript
 	var canvas = null;
 	var context = null;
@@ -740,7 +740,7 @@ function anim() {
 	}
 ```
 	
-**Slideshow**
+##### Slideshow
 ```javascript
 var imagePaths = [
 	"images/j0149014.jpg", "images/j0149024.jpg", "images/j0149029.jpg", "images/j0178677.jpg"
@@ -773,7 +773,7 @@ function switchImage() {
 
 ```
 
-**SlideShow Smooth**
+##### SlideShow Smooth
 ```javascript
 var imagePaths = [
 	"images/j0149014.jpg", "images/j0149024.jpg", "images/j0149029.jpg", "images/j0178677.jpg"
@@ -815,7 +815,7 @@ function revealImage() {
 }
 ```
 	
-**Explore CA**
+##### Explore CA
 ```
 <script type="text/javascript">
 var tourdata = [
