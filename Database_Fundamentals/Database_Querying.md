@@ -16,17 +16,35 @@
 - Having
 - In
 
+
 Example of a query:
 
-| Employee   |
-| __________ |
-| EmployeeID |
-| FirstName  |
-| LastName   |
-| HireDate   |
-| Email      |
-| Department |
-| Salary     |
+<table>
+  <tr>
+      <th>Employee</th>  
+  </tr>
+  <tr>
+      <td>EmployeeID</td>
+  </tr>
+  <tr>
+      <td>FirstName</td>
+  </tr>
+  <tr>
+      <td>LastName</td>
+  </tr>
+  <tr>
+      <td>HireDate</td>
+  </tr>
+  <tr>
+      <td>Email</td>
+  </tr>
+  <tr>
+      <td>Department</td>
+  </tr>
+  <tr>
+      <td>Salary</td>
+  </tr>
+</table>
 
 
 To return all of the values stored at the FirstName column within each row:
@@ -36,12 +54,14 @@ SELECT FirstName
 FROM Employee;
 ```
 
+
 To select multiple columns you would separate them with commas:
 
 ```sql
 SELECT FirstName, LastName
 FROM Employee;
 ```
+
 
 To select all rows and columns simply use the _*_ character. By specifying `WHERE` we can restrict what is returned:
 
@@ -53,6 +73,7 @@ WHERE Salary > 50000;
 
 > **Note**: Keywords do not necessarily have to be all capitalized, but it is a convention that has become a good practice to use. Also whitespace is not strictly enforced, allowing queries to be broken into multiple lines.
 
+
 If there were more than one database with the same table name we would need to specify our _database_ and then the _table_:
 
 ```sql
@@ -61,21 +82,39 @@ FROM database.table
 WHERE Salary > 50000;
 ```
 
+
 ____________________
 
 ### Structuring the WHERE Clause
 
 Much like writing an _if statement_ in a programming language, `WHERE` clauses evaluate to either _true_ or _false_.
 
-| Employee   |
-| __________ |
-| EmployeeID |
-| FirstName  |
-| LastName   |
-| HireDate   |
-| Email      |
-| Department |
-| Salary     |
+<table>
+  <tr>
+      <th>Employee</th>  
+  </tr>
+  <tr>
+      <td>EmployeeID</td>
+  </tr>
+  <tr>
+      <td>FirstName</td>
+  </tr>
+  <tr>
+      <td>LastName</td>
+  </tr>
+  <tr>
+      <td>HireDate</td>
+  </tr>
+  <tr>
+      <td>Email</td>
+  </tr>
+  <tr>
+      <td>Department</td>
+  </tr>
+  <tr>
+      <td>Salary</td>
+  </tr>
+</table>
 
 
 An example of narrowing a selection with `WHERE` and a string value:
@@ -88,6 +127,7 @@ WHERE LastName = 'Joseph';
 
 > **Note:** String values in SQL are surrounded in _single quotes_. Also note that '==' or '===' is not used for equality, but rather '='.
 
+
 An example of narrowing a selection with `WHERE` and a number value:
 
 ```sql
@@ -95,6 +135,7 @@ SELECT *
 FROM Employee
 WHERE EmployeeID = 321;
 ```
+
 
 An example of narrowing a selection with `WHERE` and using a comparison operator with a number value:
 
@@ -107,6 +148,7 @@ WHERE Salary > 50000;
 > **Note:** Comparison operators operate the same way in which they would in most programming languages: '>',
 '<', '>=', '<=', '<>' (not equal).
 
+
 You can also `AND` or `OR` to combine multiple conditions in `WHERE`:
 
 ```sql
@@ -115,6 +157,7 @@ FROM Employee
 WHERE Salary > 50000
       AND Department = 'Sales';
 ```
+
 
 If you wanted to check for multiple values where you are interested in the same column having several different options use `IN` keyword with commas separated values:
 
@@ -125,6 +168,7 @@ WHERE Department IN
       (`Marketing`, `Sales`);
 ```
 
+
 If you want to be more flexible on matching text, instead of using '=' for an exact match use `LIKE` (wildcard in SQL is '%'):
 
 ```sql
@@ -132,6 +176,7 @@ SELECT *
 FROM Employee
 WHERE LastName LIKE 'Green%';
 ```
+
 
 And to match single letter.
 
@@ -143,6 +188,7 @@ WHERE LastName LIKE 'Gr_en';
 
 > **Note:** Using `LIKE` can be inefficient in large tables.
 
+
 Best way to check for a `NULL` value is to use the `IS` keyword:
 
 ```sql
@@ -150,6 +196,7 @@ SELECT *
 FROM Employee
 WHERE MiddleInitial IS NULL;
 ```
+
 
 Or on the other hand adding `NOT`:
 
@@ -159,20 +206,41 @@ FROM Employee
 WHERE MiddleInitial IS NOT NULL;
 ```
 
+
 ____________________
 
 ### Sorting Query Results
 
-| Product        |
-| ______________ |
-| ProductID (PK) |
-| Description    |
-| ListPrice      |
-| Color          |
-| Weight         |
-| Category       |
-| SKU            |
-| Manufacturer   |
+<table>
+  <tr>
+      <th>Product</th>  
+  </tr>
+  <tr>
+      <td>ProductID (PK)</td>
+  </tr>
+  <tr>
+      <td>Description</td>
+  </tr>
+  <tr>
+      <td>ListPrice</td>
+  </tr>
+  <tr>
+      <td>Color</td>
+  </tr>
+  <tr>
+      <td>Weight</td>
+  </tr>
+  <tr>
+      <td>Category</td>
+  </tr>
+  <tr>
+      <td>SKU</td>
+  </tr>
+  <tr>
+      <td>Manufacturer</td>
+  </tr>
+</table>
+
 
 Using the `ORDER BY` Keywords we can sort the results of a query:
 
@@ -185,6 +253,7 @@ ORDER BY ListPrice DESC ;
 
 > **Note:** By default `ORDER BY` is in ascending order.
 
+
 By using multiple query filters after `ORDER BY` we can specify an ordering hierarchy:
 
 ```sql
@@ -194,7 +263,9 @@ FROM Product
 ORDER BY Manufacturer, ListPrice ;
 ```
 
+
 This lists in ascending order, all products by Manufacturer and then list price (if by same Manufacturer).
+
 
 ____________________
 
@@ -202,15 +273,32 @@ ____________________
 
 By using Aggregate functions we can perform an action on a query and return a result.
 
-| Employee   |
-| __________ |
-| EmployeeID |
-| FirstName  |
-| LastName   |
-| HireDate   |
-| Email      |
-| Department |
-| Salary     |
+<table>
+  <tr>
+      <th>Employee</th>  
+  </tr>
+  <tr>
+      <td>EmployeeID</td>
+  </tr>
+  <tr>
+      <td>FirstName</td>
+  </tr>
+  <tr>
+      <td>LastName</td>
+  </tr>
+  <tr>
+      <td>HireDate</td>
+  </tr>
+  <tr>
+      <td>Email</td>
+  </tr>
+  <tr>
+      <td>Department</td>
+  </tr>
+  <tr>
+      <td>Salary</td>
+  </tr>
+</table>
 
 
 If we wanted to find out how many rows are within a specific table we would simply use `COUNT()`:
@@ -219,6 +307,7 @@ If we wanted to find out how many rows are within a specific table we would simp
 SELECT COUNT(*)
 FROM Employee;
 ```
+
 
 We can find the highest value from a row in a specific column by using `MAX()`:
 
@@ -229,6 +318,7 @@ FROM Employee;
 
 > **Note:** We can also use `MIN()`, `AVG()`, `SUM()`, and many others.
 
+
 If we wanted to know the amount employees in each department we can use `GROUP BY` (categorizing results):
 
 ```sql
@@ -236,6 +326,7 @@ SELECT COUNT(*), Department
 FROM Employee
 GROUP BY Department;
 ```
+
 
 ____________________
 
@@ -253,6 +344,7 @@ ON Employee.DepartmentID = Department.DepartmentID
 ```
 
 > **Note:** In the case of identical names in the `SELECT` clause, simply prepend the name with the table name to clarify. (e.g Employee.DepartmentID)
+
 
 There are two kinds of join methods `INNER JOIN` and `OUTER JOIN`. Where the inner (default displayed in example above) will only join rows from two tables where `ON` values match, `OUTER JOIN` specifies which table takes precedence and would show results where matches are made and where they are not (in the preferred table):
 
@@ -277,15 +369,33 @@ ____________________
 
 Where most systems implement a CRUD system (Create, Read, Update, and Delete), SQL using slightly different keywords (Insert, Select, Update, Delete). Although named differently the functionality is the same.
 
-| Employee   |
-| __________ |
-| EmployeeID |
-| FirstName  |
-| LastName   |
-| HireDate   |
-| Email      |
-| Department |
-| Salary     |
+<table>
+  <tr>
+      <th>Employee</th>  
+  </tr>
+  <tr>
+      <td>EmployeeID</td>
+  </tr>
+  <tr>
+      <td>FirstName</td>
+  </tr>
+  <tr>
+      <td>LastName</td>
+  </tr>
+  <tr>
+      <td>HireDate</td>
+  </tr>
+  <tr>
+      <td>Email</td>
+  </tr>
+  <tr>
+      <td>Department</td>
+  </tr>
+  <tr>
+      <td>Salary</td>
+  </tr>
+</table>
+
 
 To insert into a table we use `INSERT INTO` followed by the table name, columns to be inserted into, and `VALUES` followed by the values for the specified columns:
 
@@ -297,6 +407,7 @@ INSERT INTO Employee
 
 > **Note:** In most cases there will be default values generated by the database (dates, primary keys, etc.) so it wouldn't be necessary to specify them.
 
+
 To update a table and its values we use `UPDATE` followed by the table name, the `SET` keyword followed by column = value, and `WHERE` to specify a condition:
 
 ```sql
@@ -306,6 +417,7 @@ WHERE EmployeeID = 734
 ```
 
 > **Note:** Without the `WHERE` clause you would set the value to every single row in that table.
+
 
 To delete from a table simply use `DELETE FROM` followed by the table name and a `WHERE` clause narrowing where to delete:
 
@@ -337,12 +449,14 @@ Salary INTEGER
 );
 ```
 
+
 We can use `ALTER TABLE` to change the rules of a table and or add new columns:
 
 ```sql
 ALTER TABLE Employee
 ADD Email VARCHAR(100);
 ```
+
 
 Lastly, we can remove a table by using `DROP TABLE` followed by the table name:
 
