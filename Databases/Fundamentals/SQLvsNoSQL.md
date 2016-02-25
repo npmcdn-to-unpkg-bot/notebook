@@ -72,14 +72,14 @@ _Examples: Memcached, Riak, and Project Voldermort_
 
 Here are some quick points in regards to reasons why one might choose a NoSQL Database:
 
-1. **Do you need a flexible schema?**
+   **Do you need a flexible schema?**
 
 Or rather is the data you have already self-contained and structured or is it something that will continually alter in type and structure?
 
-2. **Do you have a vast amount of data?**
+   **Do you have a vast amount of data?**
 
 SQL Databases do a fantastic job for a few million points of data, but if your demands are for an abnormally large scale (like social media platform large), NoSQL is probably the way to go.
 
-3. **Do you value scaling over consistency?**
+   **Do you value scaling over consistency?**
 
 Where you might have a better time storing vast amounts of data into a NoSQL database, SQL offers a consistency or expectation that provides a tighter organizational structure to your data.
