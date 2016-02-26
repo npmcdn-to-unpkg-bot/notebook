@@ -10,19 +10,19 @@ There are four shadow attributes for the drawing context. All drawing operations
     <th>Description</th>
   </tr>
   <tr>
-    <td>`shadowColor`</td>
+    <td><pre>shadowColor</pre></td>
     <td>The color to use for the shadow. Use any CSS color string. Defaults to transparent black</td>
   </tr>
   <tr>
-    <td>`shadowOffsetX`</td>
+    <td><pre>shadowOffsetX</pre></td>
     <td>Horizontal offest of the shadow (defaults to 0)</td>
   </tr>
   <tr>
-    <td>`shadowOffsetY`</td>
+    <td><pre>shadowOffsetY</pre></td>
     <td>Vertical offest of the shadow (defaults to 0)</td>
   </tr>
   <tr>
-    <td>`shadowBlur`</td>
+    <td><pre>shadowBlur</pre></td>
     <td>Blur value of the shadow. Defaults to 0. Must be set to greater than 0 to have an effect.</td>
   </tr>
 </table>
@@ -46,7 +46,7 @@ Patterns can be set to repeat in both directions, repeat in only the X or Y dime
     <th>Description</th>
   </tr>
   <tr>
-    <td>`createPattern(srcImg, repeatOption)`</td>
+    <td><pre>createPattern(srcImg, repeatOption)</pre></td>
     <td>Create a pattern from the given element. The first argument must be an img, video, or canvas element. The repeat argument can be no-repeat, repeat, repeat-x, or repeat-y</td>
   </tr>
 </table>
@@ -71,15 +71,15 @@ After the gradient has been created, it can be used anywhere a stroke or fill st
     <th>Description</th>
   </tr>
   <tr>
-    <td>`createLinearGradient(x0,y0,x1,y1)`</td>
+    <td><pre>createLinearGradient(x0,y0,x1,y1)</pre></td>
     <td>Defines a linear gradient that starts at point (x0, y0) and travels to (x1, y1)</td>
   </tr>
   <tr>
-    <td>`createRadialGradient(x0,y0,x1,y1,r1)`</td>
+    <td><pre>createRadialGradient(x0,y0,x1,y1,r1)</pre></td>
     <td>Defines a radial gradient that begins with the circle whose center is at (x0, y0) and has radius r0, and travels to the circle whose center is at (x1, y1) and has radius r1</td>
   </tr>
   <tr>
-    <td>`addColorStop(position, color)`</td>
+    <td><pre>addColorStop(position, color)</pre></td>
     <td>Adds a color stop at the given position and has the given color. position is a floating point number from 0.0 to 1.0</td>
   </tr>
 </table>
@@ -99,7 +99,7 @@ Think of clipping paths as masks - they define a region inside of which drawing 
     <th>Description</th>
   </tr>
   <tr>
-    <td>`clip()`</td>
+    <td><pre>clip()</pre></td>
     <td>Creates a new clipping region by calculating the intersection of the current clipping region and the area described by the current path. The new clipping region replaces the current clipping region.</td>
   </tr>
 </table>
@@ -126,15 +126,15 @@ The source image can be drawn, resized, or cropped.
     <th>Description</th>
   </tr>
   <tr>
-    <td>`drawImage(srcImg, dx, dy)`</td>
+    <td><pre>drawImage(srcImg, dx, dy)</pre></td>
     <td>Draws the source image onto the destination canvas at the location point (dx, dy)</td>
   </tr>
   <tr>
-    <td>`drawImage(srcImg, dx, dy, dw, dh)`</td>
+    <td><pre>drawImage(srcImg, dx, dy, dw, dh)</pre></td>
     <td>Draws the source image onto the destination canvas at the location point (dx, dy), but scales the image to fit width dw and height dh</td>
   </tr>
   <tr>
-    <td>`drawImage(srcImg, sx, sy, sw, sh, dx, dy, dw, dh)`</td>
+    <td><pre>drawImage(srcImg, sx, sy, sw, sh, dx, dy, dw, dh)</pre></td>
     <td>Draws the portion of the source image starting from point (sx, sy) and within the area defined by width sw and height sh onto the destination canvas at the location point (dx, dy), but scales the image to fit width dw and height dh</td>
   </tr>
 </table>
