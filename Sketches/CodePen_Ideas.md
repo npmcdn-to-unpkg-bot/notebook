@@ -37,3 +37,11 @@
   This delightful pen would be a simple timer, which the user can set or reset
   (if it is already running). As the time decreases the press is pressed down
   further and further until the timer finishes.
+
+**VR Mouse Clipping**
+
+  Play a video in html canvas and using the clip() function allow the user to 'look-around' by dragging their mouse.
+
+**Image Deconstruction**
+
+  Use the image drawing capabilities of canvas to randomly splice up chunks of an image and re-arrage it.
