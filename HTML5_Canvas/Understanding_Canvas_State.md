@@ -1,4 +1,4 @@
-#Understanding Canvas State
+# Understanding Canvas State
 
 Each context maintains a drawing state, which your code can manage.
 
@@ -14,9 +14,21 @@ The canvas state keeps track of several properties of the canvas:
 
 Your code may have set up a whole bunch of complex drawing settings that you don't want to have to manually keep track of.
 
-`ctx.save()` Will save the canvas state.
+<table>
+  <tr>
+    <th>Function</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>`save()`</td>
+    <td>Will save the canvas state.</td>
+  </tr>
+  <tr>
+    <td>`restore()`</td>
+    <td>Will restore the state on top of the stack.</td>
+  </tr>
+</table>
 
-`ctx.restore()` Will restore the state on top of the stack.
 
 The process usually runs:
   1. Call `ctx.save()`
