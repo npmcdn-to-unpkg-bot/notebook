@@ -20,11 +20,11 @@ Your code may have set up a whole bunch of complex drawing settings that you don
     <th>Description</th>
   </tr>
   <tr>
-    <td>`save()`</td>
+    <td><pre>save()</pre></td>
     <td>Will save the canvas state.</td>
   </tr>
   <tr>
-    <td>`restore()`</td>
+    <td><pre>restore()</pre></td>
     <td>Will restore the state on top of the stack.</td>
   </tr>
 </table>
