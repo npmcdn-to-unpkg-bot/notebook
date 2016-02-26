@@ -12,19 +12,19 @@ A closed path has an end point this is the same as its start point.
     <th>Description</th>
   </tr>
   <tr>
-    <td>`beginPath()`</td>
+    <td><pre>beginPath()</pre></td>
     <td>Begins creating a path. To add paths, use one or more path drawing routines.</td>
   </tr>
   <tr>
-    <td>`stroke()`</td>
+    <td><pre>stroke()</pre></td>
     <td>Strokes the current path</td>
   </tr>
   <tr>
-    <td>`fill()`</td>
+    <td><pre>fill()</pre></td>
     <td>Fills current path.</td>
   </tr>
   <tr>
-    <td>`closePath()`</td>
+    <td><pre>closePath()</pre></td>
     <td>Closes the current path. This will be done automatically by canvas if the start and end points are not the same.</td>
   </tr>
 </table>
@@ -43,15 +43,15 @@ Arcs are curves that are portions of a circle (360deg arc).
     <th>Description</th>
   </tr>
   <tr>
-    <td>`arc(x, y, sA, eA, aC)`</td>
+    <td><pre>arc(x, y, sA, eA, aC)</pre></td>
     <td>Adds an arc to the current path that starts at x, y and has a radius of r, with a starting angle of sA, and an ending angle of eA. The aC argument is true if the arc is counter-clockwise (x and y are center of the circle).</td>
   </tr>
   <tr>
-    <td>`arcTo(x1, y1, x2, y2, r)`</td>
+    <td><pre>arcTo(x1, y1, x2, y2, r)</pre></td>
     <td>Adds an arc to the current path that starts at the current pen position, has the given control points, and a radius of r.</td>
   </tr>
   <tr>
-    <td>`closePath()`</td>
+    <td><pre>closePath()</pre></td>
     <td>Closes the current drawing path.</td>
   </tr>
 </table>
@@ -73,7 +73,7 @@ Bézier curves are drawn starting from a context point to an end point using two
     <th>Description</th>
   </tr>
   <tr>
-    <td>`bezierCurveTo(cx1, cy1, cx2, cy2, end1, end2)`</td>
+    <td><pre>bezierCurveTo(cx1, cy1, cx2, cy2, end1, end2)</pre></td>
     <td>Draws a Bézier curve starting at the current pen position using the two controll points defined by cx1, cy1 and cx2, cy2 and ending at the point end1, end2.</td>
   </tr>
 </table>
@@ -92,7 +92,7 @@ Quadratic curves use a start point, one control point, and an end point.
     <th>Description</th>
   </tr>
   <tr>
-    <td>`quadraticCurveTo(cx, cy, x, y)`</td>
+    <td><pre>quadraticCurveTo(cx, cy, x, y)</pre></td>
     <td>Draws a quadratic curve starting at the current pen position using the given control point cx, cy, and ending at the end point defined by x, y.</td>
   </tr>
 </table>
@@ -117,27 +117,27 @@ Don't use text on the canvas as a replacement for regular document text - it vio
     <th>Description</th>
   </tr>
   <tr>
-    <td>`font`</td>
+    <td><pre>font</pre></td>
     <td>Font setting to use. Anything you would normally put into a font CSS rule: family, size, weight, variant, etc. (defaults 10px sans-serif).</td>
   </tr>
   <tr>
-    <td>`textAlign`</td>
+    <td><pre>textAlign</pre></td>
     <td>"start" (default), "end", "left", "right", "center".</td>
   </tr>
   <tr>
-    <td>`textBaseline`</td>
+    <td><pre>textBaseline</pre></td>
     <td>"top", "hanging", "middle", "alphabetic" (default), "ideographic", "bottom".</td>
   </tr>
   <tr>
-    <td>`fillText(txt, x, y, [maxW])`</td>
+    <td><pre>fillText(txt, x, y, [maxW])</pre></td>
     <td>Render the text string at x, y no wider than maxW with fill.</td>
   </tr>
   <tr>
-    <td>`strokeText(txt, x, y, [maxW])`</td>
+    <td><pre>strokeText(txt, x, y, [maxW])</pre></td>
     <td>Render the text string at x, y no wider than maxW with stroke.</td>
   </tr>
   <tr>
-    <td>`meausureText(text)`</td>
+    <td><pre>meausureText(text)</pre></td>
     <td>Returns the dimension metrics of the string using the current font settings.</td>
   </tr>
 </table>
