@@ -12,15 +12,15 @@ All three rectangle-drawing operations take a starting point of the upper-left c
     <th>Description</th>
   </tr>
   <tr>
-    <td>`clearRect(x, y, w, h)`</td>
+    <td><pre>clearRect(x, y, w, h)</pre></td>
     <td>Erases the given rectangle, making area transparent.</td>
   </tr>
   <tr>
-    <td>`strokeRect(x, y, w, h)`</td>
+    <td><pre>strokeRect(x, y, w, h)</pre></td>
     <td>Outlines a rectangle with the current strokeStyle.</td>
   </tr>
   <tr>
-    <td>`fillRect(x, y, w, h)`</td>
+    <td><pre>fillRect(x, y, w, h)</pre></td>
     <td>Fills a given rectangle with the current fillStyle.</td>
   </tr>
 </table>
@@ -39,35 +39,35 @@ Lines can be created using a variety of settings for how they join and end.
     <th>Description</th>
   </tr>
   <tr>
-    <td>`moveTo(x, y)`</td>
+    <td><pre>moveTo(x, y)</pre></td>
     <td>Moves the pen to the given coordinates, does not draw.</td>
   </tr>
   <tr>
-    <td>`lineTo(x, y)`</td>
+    <td><pre>lineTo(x, y)</pre></td>
     <td>Draws a line from the current position to the new point.</td>
   </tr>
   <tr>
-    <td>`lineWidth`</td>
+    <td><pre>lineWidth</pre></td>
     <td>Determines the pixel width that lines will be drawn in.</td>
   </tr>
   <tr>
-    <td>`lineCap`</td>
+    <td><pre>lineCap</pre></td>
     <td>How the line endings are drawn: butt (default), round, square.</td>
   </tr>
   <tr>
-    <td>`lineJoin`</td>
+    <td><pre>lineJoin</pre></td>
     <td>How lines join together: round, bevel, miter (default).</td>
   </tr>
   <tr>
-    <td>`miterLimit`</td>
+    <td><pre>miterLimit</pre></td>
     <td>The limit at which line joins are cut off and drawn as bevels (10).</td>
   </tr>
   <tr>
-    <td>`beginPath()`</td>
+    <td><pre>beginPath()</pre></td>
     <td>Begins a new set of path-drawing operations.</td>
   </tr>
   <tr>
-    <td>`stroke()`</td>
+    <td><pre>stroke()</pre></td>
     <td>Collects all of the current path commands and draws them.</td>
   </tr>
 </table>
