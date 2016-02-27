@@ -1,6 +1,6 @@
 # Weather API Request
 
-This is a basic sample HTTP request made to the [openweathermap.org API](api.openweathermap.org). It returns a JSON object and logs the status of the request being made. It utilizes the _readline_ module to gather user input and request current weather information for the entered city name.
+This is a basic sample HTTP request made to the [openweathermap](http://openweathermap.org/api) API. It returns a JSON object and logs the status of the request being made. It utilizes the _readline_ module to gather user input and request current weather information for the entered city name.
 
 ```javascript
 // Require Necessary Modules
