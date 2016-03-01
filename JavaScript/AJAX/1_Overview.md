@@ -59,7 +59,7 @@ request.open("GET", "/path/data.txt");
 // Set onreadystatechange listener
 request.onreadystatechange = function() {
   // If readystate 4 and status OK
-  if (request.readystate === 4 && request.status === 200) {
+  if (request.readyState === 4 && request.status === 200) {
     console.log(request);
   }
 }
@@ -90,7 +90,7 @@ if (window.XMLHttpRequest) {
 request.open("GET", "/path/data.txt");
 
 request.onreadystatechange = function() {
-  if (request.readystate === 4 && request.status === 200) {
+  if (request.readyState === 4 && request.status === 200) {
     console.log(request);
   }
 }
