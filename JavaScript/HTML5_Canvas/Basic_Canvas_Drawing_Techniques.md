@@ -25,7 +25,7 @@ All three rectangle-drawing operations take a starting point of the upper-left c
   </tr>
 </table>
 
-Refer to [Rectangles](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#rectangles) section in *canvas_snippets.md* file for examples.
+Refer to [Rectangles](https://github.com/l4nk332/notebook/blob/master/JavaScript/HTML5_Canvas/canvas_snippets.md#rectangles) section in *canvas_snippets.md* file for examples.
 
 ----
 
@@ -72,4 +72,4 @@ Lines can be created using a variety of settings for how they join and end.
   </tr>
 </table>
 
-Refer to [Lines](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#lines) section in *canvas_snippets.md* file for examples.
+Refer to [Lines](https://github.com/l4nk332/notebook/blob/master/JavaScript/HTML5_Canvas/canvas_snippets.md#lines) section in *canvas_snippets.md* file for examples.

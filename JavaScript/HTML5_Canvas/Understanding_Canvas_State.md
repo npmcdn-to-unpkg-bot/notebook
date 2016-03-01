@@ -35,4 +35,4 @@ The process usually runs:
   2. Perform a set of drawing operations, which may change the state.
   3. Call `ctx.restore()`
 
-Refer to [Drawing State](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#drawing-state) section in *canvas_snippets.md* file for examples.
+Refer to [Drawing State](https://github.com/l4nk332/notebook/blob/master/JavaScript/HTML5_Canvas/canvas_snippets.md#drawing-state) section in *canvas_snippets.md* file for examples.

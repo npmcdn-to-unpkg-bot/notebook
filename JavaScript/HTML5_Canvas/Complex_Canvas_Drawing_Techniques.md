@@ -27,7 +27,7 @@ There are four shadow attributes for the drawing context. All drawing operations
   </tr>
 </table>
 
-Refer to [Shadows](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#shadows) section in *canvas_snippets.md* file for examples.
+Refer to [Shadows](https://github.com/l4nk332/notebook/blob/master/JavaScript/HTML5_Canvas/canvas_snippets.md#shadows) section in *canvas_snippets.md* file for examples.
 
 ----
 
@@ -51,7 +51,7 @@ Patterns can be set to repeat in both directions, repeat in only the X or Y dime
   </tr>
 </table>
 
-Refer to [Patterns](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#patterns) section in *canvas_snippets.md* file for examples.
+Refer to [Patterns](https://github.com/l4nk332/notebook/blob/master/JavaScript/HTML5_Canvas/canvas_snippets.md#patterns) section in *canvas_snippets.md* file for examples.
 
 
 ----
@@ -84,7 +84,7 @@ After the gradient has been created, it can be used anywhere a stroke or fill st
   </tr>
 </table>
 
-Refer to [Gradients](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#gradients) section in *canvas_snippets.md* file for examples.
+Refer to [Gradients](https://github.com/l4nk332/notebook/blob/master/JavaScript/HTML5_Canvas/canvas_snippets.md#gradients) section in *canvas_snippets.md* file for examples.
 
 
 ----
@@ -104,7 +104,7 @@ Think of clipping paths as masks - they define a region inside of which drawing 
   </tr>
 </table>
 
-Refer to [Clipping Paths](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#clipping-paths) section in *canvas_snippets.md* file for examples.
+Refer to [Clipping Paths](https://github.com/l4nk332/notebook/blob/master/JavaScript/HTML5_Canvas/canvas_snippets.md#clipping-paths) section in *canvas_snippets.md* file for examples.
 
 
 ----
@@ -141,4 +141,4 @@ The source image can be drawn, resized, or cropped.
 
 > **Note:** With video, canvas will draw the current frame from the video playback. Setting an _interval_ (or even better using  _requestAnimationFrame()_) you can have the canvas draw at the correct frame rate to play the video.
 
-Refer to [Images](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#images) section in *canvas_snippets.md* file for examples.
+Refer to [Images](https://github.com/l4nk332/notebook/blob/master/JavaScript/HTML5_Canvas/canvas_snippets.md#images) section in *canvas_snippets.md* file for examples.

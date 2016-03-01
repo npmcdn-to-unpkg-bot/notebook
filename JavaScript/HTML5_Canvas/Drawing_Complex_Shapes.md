@@ -29,7 +29,7 @@ A closed path has an end point this is the same as its start point.
   </tr>
 </table>
 
-Refer to [Paths](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#paths) section in *canvas_snippets.md* file for examples.
+Refer to [Paths](https://github.com/l4nk332/notebook/blob/master/JavaScript/HTML5_Canvas/canvas_snippets.md#paths) section in *canvas_snippets.md* file for examples.
 
 ----
 
@@ -59,7 +59,7 @@ Arcs are curves that are portions of a circle (360deg arc).
 **Note:** Angles are in radians, not degrees. To convert degrees to radians: `var radians = (Math.PI/180) * degrees;`
 
 
-Refer to [Arcs](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#arcs) section in *canvas_snippets.md* file for examples.
+Refer to [Arcs](https://github.com/l4nk332/notebook/blob/master/JavaScript/HTML5_Canvas/canvas_snippets.md#arcs) section in *canvas_snippets.md* file for examples.
 
 ----
 
@@ -78,7 +78,7 @@ Bézier curves are drawn starting from a context point to an end point using two
   </tr>
 </table>
 
-Refer to [Curves](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#curves) section in *canvas_snippets.md* file for examples.
+Refer to [Curves](https://github.com/l4nk332/notebook/blob/master/JavaScript/HTML5_Canvas/canvas_snippets.md#curves) section in *canvas_snippets.md* file for examples.
 
 ----
 
@@ -97,7 +97,7 @@ Quadratic curves use a start point, one control point, and an end point.
   </tr>
 </table>
 
-Refer to [Curves](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#curves) section in *canvas_snippets.md* file for examples.
+Refer to [Curves](https://github.com/l4nk332/notebook/blob/master/JavaScript/HTML5_Canvas/canvas_snippets.md#curves) section in *canvas_snippets.md* file for examples.
 
 ----
 
@@ -142,4 +142,4 @@ Don't use text on the canvas as a replacement for regular document text - it vio
   </tr>
 </table>
 
-Refer to [Text](https://github.com/l4nk332/notebook/blob/master/HTML5_Canvas/canvas_snippets.md#text) section in *canvas_snippets.md* file for examples.
+Refer to [Text](https://github.com/l4nk332/notebook/blob/master/JavaScript/HTML5_Canvas/canvas_snippets.md#text) section in *canvas_snippets.md* file for examples.
