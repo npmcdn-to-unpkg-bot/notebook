@@ -301,3 +301,285 @@ Navigate to http://localhost:3000:
 -----
 
 ### Serving JSON Data
+
+We can also create the _http_ module to create an _HTTP API_, a server whose primary purpose is to serve data (JSON) to client applications. Any client who can make an HTTP request can communicate with an api.
+
+So given the following _inventory.json_:
+
+```
+[{
+  "name": "K-Eco",
+  "sku": "K4309f",
+  "cost": "$129.90",
+  "avail": "In stock"
+},
+{
+  "name": "B-Eco",
+  "sku": "B4adsff",
+  "cost": "$229.00",
+  "avail": "On back order"
+},
+{
+  "name": "V-Eco",
+  "sku": "V4669f",
+  "cost": "$449.00",
+  "avail": "In stock"
+}]
+```
+
+We can import this json data and serve it with the http module:
+
+```javascript
+var http = require("http");
+
+// Require the JSON file
+var data = require("./data/inventory")
+
+http.createServer(function(req, res) {
+  // write response head with status code and content type
+  res.writeHead(200, {"Content-Type": "text/json"});
+
+  // Close response, sending JSON converted data
+  // using the javascript JSON.stringify() method
+  res.end(JSON.stringify(data));
+
+}).listen(3000);
+
+console.log("Listening on Port 3000")
+```
+
+Run the server:
+
+```
+$ node server
+
+Listening on Port 3000
+```
+
+And Navigate to localhost:3000:
+
+```
+// JSON Array
+[{
+  "name": "K-Eco",
+  "sku": "K4309f",
+  "cost": "$129.90",
+  "avail": "In stock"
+},
+{
+  "name": "B-Eco",
+  "sku": "B4adsff",
+  "cost": "$229.00",
+  "avail": "On back order"
+},
+{
+  "name": "V-Eco",
+  "sku": "V4669f",
+  "cost": "$449.00",
+  "avail": "In stock"
+}]
+```
+
+
+**Adding Routes**
+
+We can add routes for our client by filtering through the json data and only serving that data at specific url paths:
+
+
+```javascript
+var http = require("http");
+
+var data = require("./data/inventory")
+
+http.createServer(function(req, res) {
+
+  // If index.html route
+  if (req.url === "/") {
+    // Respond with all data
+    res.writeHead(200, {"Content-Type": "text/json"});
+    res.end(JSON.stringify(data));
+  }
+  // Else if /instock
+  else if (req.url === "/instock") {
+    // Respond w/ instock filtered items
+    listInStock(res);
+  // Else if /onorder
+  } else if (req.url === "/onorder") {
+    // Respond w/ onorder filtered items
+    listOnBackOrder(res);
+  // Otherwise 404 Not found
+  } else {
+    res.writeHead(404, {"Content-Type": "text/plain"});
+    res.end("Whoops... Data not found!");
+  }
+
+}).listen(3000);
+
+console.log("Listening on Port 3000");
+
+// Define functions to set routes
+function listInStock(res) {
+  // Use array.filter() method to filter
+  // through data for 'in stock'
+  var inStock = data.filter(function(item) {
+    return item.avail === "In stock";
+  });
+  // Send filtered data once JSON stringified
+  res.end(JSON.stringify(inStock));
+}
+
+function listOnBackOrder(res) {
+  // Use array.filter() method to filter
+  // through data for 'back order'
+  var onOrder = data.filter(function(item) {
+    return item.avail === "On back order";
+  });
+  // Send filtered data once JSON stringified
+  res.end(JSON.stringify(onOrder));
+}
+
+```
+
+Run the server:
+
+```
+$ node server
+
+Listening on Port 3000
+```
+
+And Navigate to localhost:3000:
+
+```
+// Route: /
+[{
+  "name": "K-Eco",
+  "sku": "K4309f",
+  "cost": "$129.90",
+  "avail": "In stock"
+},
+{
+  "name": "B-Eco",
+  "sku": "B4adsff",
+  "cost": "$229.00",
+  "avail": "On back order"
+},
+{
+  "name": "V-Eco",
+  "sku": "V4669f",
+  "cost": "$449.00",
+  "avail": "In stock"
+}]
+
+
+// Route: /instock
+[{
+  "name": "K-Eco",
+  "sku": "K4309f",
+  "cost": "$129.90",
+  "avail": "In stock"
+},
+{
+  "name": "V-Eco",
+  "sku": "V4669f",
+  "cost": "$449.00",
+  "avail": "In stock"
+}]
+
+
+// Route: /onorder
+[{
+  "name": "B-Eco",
+  "sku": "B4adsff",
+  "cost": "$229.00",
+  "avail": "On back order"
+}]
+```
+
+
+---
+
+
+### Collecting POST Data
+
+The http module can be handle POST request and the data that comes with them. In the following example we will serve a basic html form (_./public/form.html_) when the client makes a GET request and when that form is submitted (POST Method), we will parse the response body:
+
+```javascript
+var http = require("http");
+var fs = require("fs");
+
+http.createServer(function(req, res) {
+
+  // If a GET request serve form
+  if (req.method === "GET") {
+    res.writeHead(200, {"Content-Type": "text/html"});
+    // Stream form.html to the response object via pipe()
+    fs.createReadStream("./public/form.html", "UTF-8").pipe(res);
+  }
+  // If a POST request collect form info
+  else if (req.method === "POST") {
+    // create variable to concat data chunks to
+    var body = "";
+
+    // Listen for data events
+    req.on("data", function(chunk) {
+      // concat chunks to body var
+      body += chunk;
+    });
+
+    // When the request is done
+    req.on("end", function() {
+      // Write response 200 and specify content type
+      res.writeHead(200, {"Content-Type": "text/html"});
+      // End the response, sending in the html template
+      // with the collected data back to client
+      res.end(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>Form Results</title>
+          </head>
+        <body>
+          <h1>Your Form Results:</h1>
+          <p>${body}</p>
+        </body>
+        </html>
+        `);
+    });
+
+  }
+
+}).listen(3000);
+
+console.log("Form Server Running on port 3000");
+```
+
+Run the server:
+
+```
+$ node server
+
+Listening on Port 3000
+```
+
+And Navigate to localhost:3000:
+
+```
+Form
+====
+
+first: Bill
+last: Smith
+email: billsmith@smith.com
+
+
+// Submit
+
+
+Your Form Results
+=================
+
+first=Bill&last=Smith&email=billsmith%40smith.com
+```
+
+> **Note:** The response to the client is the raw url encoded data that was sent to the sever via POST request when the form was submitted. Notice that it must be parsed in order for us to use the data from the form fields.
