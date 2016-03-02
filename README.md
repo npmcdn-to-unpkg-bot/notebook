@@ -19,7 +19,7 @@ The idea behind this repository is to create a collection of ideas and thoughts 
 - [Design](https://github.com/l4nk332/notebook/tree/master/Design)
   * [Sketches](https://github.com/l4nk332/notebook/tree/master/Design/Sketches)
     - [CodePen Ideas](https://github.com/l4nk332/notebook/blob/master/Design/Sketches/CodePen_Ideas.md)
-    - [Collection]()
+    - [Collection](https://github.com/l4nk332/notebook/tree/master/Design/Sketches/Collections)
   * [Color](https://github.com/l4nk332/notebook/tree/master/Design/Color)
     - [Principles](https://github.com/l4nk332/notebook/tree/master/Design/Color/Principles)
     - [Palettes](https://github.com/l4nk332/notebook/tree/master/Design/Color/Palettes)
