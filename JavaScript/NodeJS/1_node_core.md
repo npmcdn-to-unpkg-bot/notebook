@@ -1,4 +1,4 @@
-# 1. Node Core
+# Node Core
 
 ### The Global Object
 
