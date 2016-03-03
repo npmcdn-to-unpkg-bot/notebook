@@ -29,6 +29,7 @@ The idea behind this repository is to create a collection of ideas and thoughts 
   * [AJAX](https://github.com/l4nk332/notebook/tree/master/JavaScript/AJAX)
     - [Overview](https://github.com/l4nk332/notebook/blob/master/JavaScript/AJAX/1_Overview.md)
     - [Modifying the DOM](https://github.com/l4nk332/notebook/blob/master/JavaScript/AJAX/2_Modifying_the_DOM.md)
+    - [jQuery AJAX](https://github.com/l4nk332/notebook/blob/master/JavaScript/AJAX/3_jQuery_AJAX.md)
   * [Angular JS](https://github.com/l4nk332/notebook/tree/master/JavaScript/Angular_JS)
     - [Fundamentals Angular Notes](https://github.com/l4nk332/notebook/blob/master/JavaScript/Angular_JS/fundamentals_angular_notes.md)
   * [HTML5 Canvas](https://github.com/l4nk332/notebook/tree/master/JavaScript/HTML5_Canvas)
@@ -44,3 +45,4 @@ The idea behind this repository is to create a collection of ideas and thoughts 
     - [Node Modules](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/2_node_modules.md)
     - [File System](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/3_file_system.md)
     - [Http Module](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/4_http_module.md)
+    - [Web Servers](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/5_Web_Servers.md)
