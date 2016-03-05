@@ -57,3 +57,4 @@ The idea behind this repository is to create a collection of ideas and thoughts 
       - [scope-chains-closures](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/NodeSchool_Exercises/scope-chains-closures)
       - [planetproto](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/NodeSchool_Exercises/planetproto)
       - [stream-adventure](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/NodeSchool_Exercises/stream-adventure)
+      - [expressworks](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/NodeSchool_Exercises/expressworks)
