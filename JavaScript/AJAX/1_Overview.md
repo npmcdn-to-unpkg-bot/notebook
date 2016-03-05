@@ -42,9 +42,9 @@ Although this will provide the data requested from the server, it is bad practic
 
 ---
 
-## Making Request Asynchronous
+## Making Requests Asynchronously
 
-What make AJAX so wonderful is that it is Asynchronous. By using Asynchronous execution we are able to update the content of a webpage for each request the is made to the server as they are fulfilled (unlike Synchronous where updates happen when all requests are done).
+What makes AJAX so wonderful is that it is Asynchronous. By using Asynchronous execution we are able to update the content of a webpage for each request that is made to the server as they are fulfilled (unlike Synchronous where updates happen when all requests are done).
 
 If you look at the AJAX request object you will notice there are numerous eventListeners that can hold value. One in particular is **onreadystatechange**. The browser's AJAX api maintains a property called _readystate_ that has a number indicating how far along the request has progressed. If the value is 0, then the request hasn't been sent yet. Once the value of that property reaches 4 then the operation of sending and receiving requests has been completed.
 
