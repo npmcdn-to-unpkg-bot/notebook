@@ -464,4 +464,4 @@ Lastly, we can remove a table by using `DROP TABLE` followed by the table name:
 DROP TABLE Employee;
 ```
 
-> **Note:** Use the `DROP TABLE` will remove the entire table, **SO BEWARE WHEN USING DELETE!!!**
+> **Note:** Using the `DROP TABLE` will remove the entire table, **SO BEWARE WHEN USING IT!!!**
