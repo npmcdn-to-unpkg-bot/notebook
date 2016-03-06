@@ -17,6 +17,17 @@ JSON stands for _JavaScript Object Notation_, and is a universal format for shar
 
 ## Understanding Objects and JSON
 
+JSON declarations are strings with key/value pairs. In JSON the **keys are wrapped in double quotes, not single quotes**. JSON keys can be any valid string.
+
+JSON values have to be one of six types:
+
+- strings
+- numbers
+- objects
+- arrays
+- booleans
+- null
+
 ```json
 {
   "name": "Bill",
@@ -25,9 +36,16 @@ JSON stands for _JavaScript Object Notation_, and is a universal format for shar
     "Math 101",
     "Science 201",
     "English 305"
-  ]
+  ],
+
 }
 ```
+
+So, where in JavaScript objects can have methods, key with a value of a function, JSON cannot. Also note that **JSON has to be parsed into JavaScript**. There are two ways to do this, either by using the _eval()_ function or the _JSON.parse()_ method. The _eval()_ function has security issues due to clients being able to run scripts by including it in parameters, so best stay with _JSON.parse()_.
+
+_JSON.stringify_ does the opposite of parse, converting JavaScript objects to JSON strings.
+
+> **Note:** Compatibility with older browsers make using _JSON.parse_ and _JSON.stringify_ a bit unsupported. jQuery can make up for this.
 
 
 ---
