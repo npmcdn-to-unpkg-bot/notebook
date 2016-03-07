@@ -52,7 +52,20 @@ _JSON.stringify_ does the opposite of parse, converting JavaScript objects to JS
 
 ## Creating Simple Data
 
+JSON strings can have multiple values separated with commas, extra whitespace for clarity, and no quotes are needed on _numbers, true, false, and null_.
+
+Once the data has been parsed into a variable, it can be accessed through dot notation or bracket notation (helpful for non-valid JavaScript names) like a regular JavaScript object. And for array-like values simply use bracket notation.
+
+> **Note:** If you car about things being stored in a particular order, _arrays_ might be a better option than _objects_ because the order is always the same.
 
 ---
 
 ## Using JavaScript and JSON Tools
+
+There are plenty of tools out there to check out than can help in validating JavaScript and JSON:
+
+- [JS Hint](http://jshint.com/)
+- [JSON Lint](http://jsonlint.com/)
+- [JSON Editor Online](http://jsoneditoronline.org)
+- [Cocoa JSON Editor](http://cocoajsoneditor.com)
+- [JSONView](http://goo.gl/PZaa2)
