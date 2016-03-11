@@ -58,3 +58,6 @@ The idea behind this repository is to create a collection of ideas and thoughts 
       - [planetproto](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/NodeSchool_Exercises/planetproto)
       - [stream-adventure](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/NodeSchool_Exercises/stream-adventure)
       - [expressworks](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/NodeSchool_Exercises/expressworks)
+- [Ruby](https://github.com/l4nk332/notebook/blob/master/Ruby)
+  * [Ruby Essentials](https://github.com/l4nk332/notebook/blob/master/Ruby/Ruby_Essentials)
+    - [Overview](https://github.com/l4nk332/notebook/blob/master/Ruby/Ruby_Essentials/Overview.md)
