@@ -52,6 +52,7 @@ The idea behind this repository is to create a collection of ideas and thoughts 
     - [Http Module](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/4_http_module.md)
     - [Web Servers](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/5_Web_Servers.md)
     - [Web Sockets](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/6_WebSockets.md)
+    - [Testing and Debugging](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/7_Testing_Debugging.md)
     * [NodeSchool Exercises](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/NodeSchool_Exercises)
       - [javascripting](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/NodeSchool_Exercises/javascripting)
       - [learnyounode](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/NodeSchool_Exercises/learnyounode)
