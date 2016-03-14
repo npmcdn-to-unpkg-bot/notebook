@@ -30,15 +30,20 @@
 ####color.ui
   * Sets Color Coated Syntax
 
+---
 
 
 ##$ git help
   * Brings up a man page for git. Can specify
 		specific command after _help_.
 
+---
+
 
 ##$ git init
   * Initializes current directory as a git project
+
+---
 
 
 ##$ git log		
@@ -111,9 +116,13 @@
   * A great combination that can be nice to compactly
 	  but still visually represent git log.
 
+---
+
 
 ##$ git add /file/path
   * Stages files (entire dir w/ .) to be committed
+
+---
 
 
 ##$ git commit
@@ -136,11 +145,14 @@
 	  is at in repo. If no file is specified
 		just the commit message will be changed.
 
+---
+
 
 ##$ git status
   * Tells user if repo matches local dir.
 
 	* If not it will specify what files and where.
+---
 
 
 ##$ git diff
@@ -181,6 +193,8 @@
 ####branchA..branchB
   * Shows the differences between two branches.
 
+---
+
 
 ##$ git rm /file/path
   * Removes file from pwd and adds change to stage
@@ -195,6 +209,8 @@
 		to the file. Must commit 'rm' once to
 		finalize it being ignored.
 
+---
+
 
 ##$ git mv /file/ /file/
   * Moves/Renames file in pwd and adds change to
@@ -204,6 +220,8 @@
 		Note: File has been manually deleted, moved,
 		or renamed a rm and/or mv git command
 		must be made followed by a commit.
+
+---
 
 
 ##$ git checkout
@@ -244,6 +262,8 @@
     after the end of the _new_branch_ name, we can create a
     local copy of that branch.
 
+---
+
 
 ##$ git reset
   * Allows us to specify where we want HEAD to point to.
@@ -271,6 +291,8 @@
   * Takes changed file out of staging index,
 		placing it back in the working dir.
 
+---
+
 
 ##$ git revert <commitSHA>
   * Reverts all changes and/or added/deleted
@@ -283,6 +305,8 @@
 	  the reversion right away rather just placing it
 		in the staging index.
 
+---
+
 
 ##$ git clean
   * Cleans up and removes all untracked files in working
@@ -294,6 +318,7 @@
 ####-f
   * Forces it to run, removing all untracked files in working dir
 
+---
 
 
 ##.gitignore
@@ -333,6 +358,8 @@ https://help.github.com/articles/ignoring-files
 
 https://github.com/github/gitignore
 
+---
+
 
 ##.gitignore_global
   * A file created in user dir.
@@ -347,12 +374,17 @@ https://github.com/github/gitignore
 		in User dir to properly set
 		in _.gitconfig_.
 
+---
+
 
 ##.gitkeep
   * Because git does not track empty directories
 	  this small empty file is placed in an
 	  empty dir and used to force git to
 		track it.
+
+---
+
 
 ##$ git ls-tree
   * Lists the contents of a given tree object
@@ -383,6 +415,7 @@ https://github.com/github/gitignore
 ###acd45^^^ or acd45~3
   * Both refer to the great-grandparent of acd45
 
+---
 
 
 ##$ git show
@@ -394,6 +427,9 @@ https://github.com/github/gitignore
 
 ####SHA
   * Shows diff of commit at that SHA
+
+---
+
 
 ##$ git branch
   * Shows all branches in current repository.
@@ -429,6 +465,9 @@ https://github.com/github/gitignore
 
 ####-a
   * Lists both remote and local branches for the git project.
+
+---
+
 
 ##$ git merge "_target branch_"
   * This will merge the _target branch_ with the
@@ -507,6 +546,8 @@ https://github.com/github/gitignore
     branches don't stray too far before being merged back to
     main branch.
 
+---
+
 
 ##$ git stash
 
@@ -570,6 +611,9 @@ https://github.com/github/gitignore
   * You can have multiple _remotes_ all pointing to the same
     git project.
 
+---
+
+
 ##$ git remote
   * Much like _git branch_, this command will list all of the
     remote branches it can find within a git project.
@@ -587,6 +631,9 @@ https://github.com/github/gitignore
 
 ####rm _<alias>_
   * Will remove the specified remote.
+
+---
+
 
 ##$ git push _<alias>_ _<branchName>_
   * Will push a working branch (_<branchName_) to the remote
@@ -607,6 +654,9 @@ https://github.com/github/gitignore
 ####origin --delete _<remote branch>_
   * Same as above, it will delete the specified remote branch.
 
+---
+
+
 ##$ git clone _<url>_ _<folderName>_
   * Will create a local copy of the remote repository at _<url>_
     in the specified _<folderName>_.
@@ -619,6 +669,8 @@ https://github.com/github/gitignore
   * By default _<git clone>_ will clone just the master branch of
     the project, but this option will let you specify a different
     branch to clone.
+
+---
 
 ##$ git fetch _<github/remote branchname>_
   * Will sync the specified remote branch with the one HEAD points
@@ -642,6 +694,9 @@ https://github.com/github/gitignore
   * **Fetch before you merge with remote branch**, so that local
     local copy of branch reflects remote before any merge conflicts
     are resolved.
+
+---
+
 
 ##$ git pull _<github/remote branchname>_
   * This is the equivalent of doing _$ git fetch_ and _$ git merge_.
@@ -675,6 +730,9 @@ https://github.com/github/gitignore
     - alias.df -> diff
     - alias.dfs -> "diff --staged"
     - alias.logg -> "log --graph --decorate --oneline --abbrev-commit --all"
+
+---
+
 
 ##$ git config --global alias._<alias>_ "_<actual command>_"
   * This will set up a global alias for the specified command.
