@@ -1,0 +1,172 @@
+"use strict";
+
+function randomColor() {
+  var alpha = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
+
+  var red = Math.floor(Math.random() * 255);
+  var blue = Math.floor(Math.random() * 255);
+  var green = Math.floor(Math.random() * 255);
+  var alpha = alpha ? Math.max(Math.random().toFixed(2), 0.2) : 1;
+  return "rgba(" + red + ", " + green + ", " + blue + ", " + alpha + ")";
+}
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ================= Rectangle Animation ===================
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+function Rectangle(x, y, w, h) {
+  var color = arguments.length <= 4 || arguments[4] === undefined ? "black" : arguments[4];
+  var stroke = arguments.length <= 5 || arguments[5] === undefined ? "black" : arguments[5];
+
+  this.x = x;
+  this.y = y;
+  this.w = w;
+  this.h = h;
+  this.color = color;
+  this.stroke = stroke;
+  this.drawFill = function (context) {
+    context.fillStyle = this.color;
+    context.fillRect(this.x, this.y, this.w, this.h);
+  }, this.drawStroke = function (context) {
+    var lineWidth = arguments.length <= 1 || arguments[1] === undefined ? 1 : arguments[1];
+
+    context.strokeStyle = this.stroke;
+    context.lineWidth = lineWidth;
+    context.strokeRect(this.x, this.y, this.w, this.h);
+  };
+}
+
+function generateRandom(context) {
+  var amount = arguments.length <= 1 || arguments[1] === undefined ? 1 : arguments[1];
+  var maxW = arguments.length <= 2 || arguments[2] === undefined ? 200 : arguments[2];
+  var maxH = arguments.length <= 3 || arguments[3] === undefined ? 200 : arguments[3];
+
+  var rdmRect, x, y, w, h, color, stroke, lineWidth, i;
+  for (i = 0; i < amount; i++) {
+    x = Math.floor(Math.random() * screen.width);
+    y = Math.floor(Math.random() * screen.height);
+    w = Math.floor(Math.random() * maxW);
+    h = Math.floor(Math.random() * maxH);
+    color = randomColor(true);
+    stroke = randomColor();
+    lineWidth = 1;
+    rdmRect = new Rectangle(x, y, w, h, color, stroke);
+    rdmRect.drawFill(context);
+    rdmRect.drawStroke(context, lineWidth);
+  }
+}
+
+function initA() {
+  var fps = arguments.length <= 0 || arguments[0] === undefined ? 60 : arguments[0];
+
+  // Animate Random Pipe Rectangle Generation
+  function animationA() {
+    setTimeout(function () {
+      requestAnimationFrame(animationA);
+      // Clear the canvas
+      ctxA.clearRect(0, 0, screen.width, screen.height);
+      // Generate Random Rectangles
+      generateRandom(ctxA, 100, Math.random() * 10);
+    }, 1000 / fps);
+  }
+
+  // Animate canvas bg-color transition
+  function animationB() {
+    setTimeout(function () {
+      requestAnimationFrame(animationB);
+      canvasA.style.backgroundColor = randomColor(true);
+    }, 100000 / fps);
+  }
+
+  animationA();
+  animationB();
+}
+
+var canvasA = document.getElementById("canvasA");
+//var canvasA = document.createElement("canvas");
+var ctxA = canvasA.getContext("2d");
+document.body.appendChild(canvasA);
+canvasA.width = screen.width;
+canvasA.height = screen.height;
+canvasA.style.transition = "background-color, 2s, ease-out";
+canvasA.style.backgroundColor = randomColor();
+canvasA.style.zIndex = "-5";
+canvasA.style.position = "absolute";
+canvasA.style.top = "0px";
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ==================== Cat Animation ======================
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+var canvasB = document.getElementById("canvasB");
+//var canvasB = document.createElement("canvas");
+var ctxB = canvasB.getContext("2d");
+document.body.appendChild(canvasB);
+canvasB.width = canvasA.width;
+canvasB.height = canvasA.height;
+canvasB.style.position = "absolute";
+canvasB.style.zIndex = "2";
+canvasB.style.top = "0px";
+
+var catArray = [];
+var maxCats = 50;
+var catTimer = null;
+
+function Cat() {
+  var maxW = arguments.length <= 0 || arguments[0] === undefined ? 300 : arguments[0];
+
+  this.x = Math.round(Math.random() * canvasB.width);
+  this.y = -1 * maxW;
+  this.w = Math.round(Math.random() * maxW) + 2;
+  this.h = this.w;
+  this.speed = Math.max(Math.round(Math.random() * 5) + 1, 2);
+  this.src = document.getElementById("normalCat");
+  this.drawCat = function (context) {
+    context.drawImage(this.src, this.x, this.y, this.w, this.h);
+  };
+}
+
+function initB() {
+  catTimer = setInterval(addCat, 200);
+  Draw();
+  animateCats();
+}
+
+function addCat(maxW) {
+  catArray.push(new Cat(maxW));
+  if (catArray.length === maxCats) {
+    clearInterval(catTimer);
+  }
+}
+
+function animateCats() {
+  Update();
+  Draw();
+  requestAnimationFrame(animateCats);
+}
+
+function Update() {
+  var i;
+  for (i = 0; i < catArray.length; i++) {
+    if (catArray[i].y < canvasB.height) {
+      catArray[i].y += catArray[i].speed;
+    } else if (catArray[i].y > canvasB.height) {
+      catArray[i].y = -300;
+      catArray[i].x = Math.random() * canvasB.width + 1;
+    }
+  }
+}
+
+function Draw() {
+  ctxB.save();
+  ctxB.clearRect(0, 0, canvasB.width, canvasB.height);
+  var i;
+  for (i = 0; i < catArray.length; i++) {
+    catArray[i].drawCat(ctxB);
+  }
+  ctxB.restore();
+}
+
+// --------------------- Run Animations ------------------------------
+
+initA(60);
+initB();

@@ -1,0 +1,26 @@
+body {
+ margin: 0;
+ overflow: hidden;
+}
+
+#normalCat {
+ position: absolute;
+ display: none;
+}
+
+@keyframes catFaceBgd {
+ from {opacity: 0}
+ to {opacity: 0.2}
+}
+
+#catFace {
+ width: 100%;
+ height: 100%;
+ position: absolute;
+ top: 0px;
+ background-image: url("https://raw.githubusercontent.com/l4nk332/notebook/master/Design/Sketches/Collections/mndCtrl/cat_face.jpg");
+ background-position: -150px -200px;
+ background-repeat: no-repeat;
+ animation: catFaceBgd 5s ease-in infinite alternate;
+}
+
