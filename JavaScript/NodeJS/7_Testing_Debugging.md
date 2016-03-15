@@ -302,3 +302,274 @@ $ mocha
 
   2 passing (38ms)
 ```
+
+---
+
+
+## Injecting Dependencies with Rewire
+
+Servers are not the only dependencies that can be mocked, but rather any dependency can be mocked. Whenever we are testing a module of a function, we would refer to it as the **SUT**, or the _System Under Test_. Other modules the SUT is dependent on are known as **Collaborators**. In some cases, the collaborators for a specific SUT could still be in development and would therefore require us to mock out the dependency accordingly.
+
+Whenever the SUT uses data, we want to use mock data instead of the real data, so that our tests don't change or mutate production data.
+
+**Rewire** is a node module that will also us to inject our mocks, `npm install rewire --save-dev`. 
+
+Let's write our test:
+
+```javascript
+// ./test/order-spec.js
+
+var expect = require("chai").expect;
+// Load rewire
+var rewire = require("rewire");
+
+// Our SUT loaded with rewire (rather than require)
+// This allows us to get/set private variables in order mod
+var order = rewire("../lib/order");
+
+describe("Orderding Items", function() {
+
+  // Add beforeEach hook
+  beforeEach(function() {
+    // Create fake item data for tests
+    // Using 'this' (this === mocha obj) allows
+    // us to use testData in our test
+    this.testData = [
+      {sku: "AAA", qty: 10},
+      {sku: "BBB", qty: 30},
+      {sku: "CCC", qty: 20}
+    ];
+
+    // Set inventoryData (from order module) to our testData
+    // Non-destructively overwritting the variable for testing
+    order.__set__("inventoryData", this.testData);
+  });
+
+  it("order an item when there are enough in stock", function(done) {
+
+    // Asynchronous Test
+    order.orderItem("CCC", 3, function() {
+      // Tell mocha to end test
+      done();
+    });
+
+  });
+
+});
+```
+
+And if we run this test it should pass because we injected the data necessary for the code to run properly:
+
+
+```
+$ mocha
+
+  Ordering Items
+ordering 3 of item # CCC
+order shipped, tracking - 123456789
+    √ order an item when there are enough in stock (1507ms)
+```
+
+This shows how rewire can allow us to inject variables into our SUT, making it easier to test when certain dependencies are not yet made availible to us.
+
+
+---
+
+
+## Advanced Testing Sinon Spies
+
+**Sinon JS** is a module that we can use to help us create mock objects for our tests. Sinon has a number of tools to improve testing. One in particular is **Sinon Spies**, special kinds of functions that record details about how they are called, what arguments they are called with, and the state of the _this_ object. 
+
+We can use spies in place of real functions, allowing us to check if a specific function has been invoked without having to invoke a real function, `npm install sinon --save-dev`.
+
+As an example let's say we didn't want the console.log made to the console every time we ran a test, but we did want to make sure the tests passed and the console.log function was called. This is perfect for sinon spies:
+
+```javascript
+// ./test/order-spec.js
+
+var expect = require("chai").expect;
+var rewire = require("rewire");
+
+var order = rewire("../lib/order");
+
+var sinon = require("sinon");
+
+describe("Orderding Items", function() {
+
+  beforeEach(function() {
+    this.testData = [
+      {sku: "AAA", qty: 10},
+      {sku: "BBB", qty: 30},
+      {sku: "CCC", qty: 20}
+    ];
+
+    // Create a mock console object
+    this.console = {
+      // spy will give details about how console.log
+      // is called and with what data
+      log: sinon.spy();
+    };
+
+    order.__set__("inventoryData", this.testData);
+    // For testing, replace the console object with 
+    // fake console in the SUT (using rewire)
+    order.__set__("console", this.console);
+  });
+
+  it("order an item when there are enough in stock", function(done) {
+
+    // Preserve scope of 'this' so that it refers to mocha
+    var _this = this;
+
+    order.orderItem("CCC", 3, function() {
+
+      // Check sinon spy callCount of mock console.log
+      // Should call console.log twice
+      expect(_this.console.log.callCount).to.equal(2);
+
+      done();
+    });
+
+  });
+
+});
+```
+
+And when we run this test it will only pass if console.log is in fact called two times (which it is):
+
+```
+$ mocha
+
+  Ordering Items
+ordering 3 of item # CCC
+order shipped, tracking - 123456789
+    √ order an item when there are enough in stock (1507ms)
+```
+
+With the use of rewire and sinon spies, we can inject a mock console (or any other object for that matter), and not have to see every log message on the tests.
+
+
+---
+
+
+## Advanced Testing with Sinon Stubs
+
+**Sinon Stubs** are essentially more powerful spies, able to do anything that a spy can do while additionally allowing you to control the behavior of a particular function. Stubs should be used when the program requires us to invoke functions that behave a certain way. Either they return data, invoke a callback with data, or even throw an error.
+
+
+```javascript
+// ./test/order-spec.js
+
+var expect = require("chai").expect;
+var rewire = require("rewire");
+
+var order = rewire("../lib/order");
+
+var sinon = require("sinon");
+
+describe("Orderding Items", function() {
+
+  beforeEach(function() {
+    this.testData = [
+      {sku: "AAA", qty: 10},
+      {sku: "BBB", qty: 30},
+      {sku: "CCC", qty: 20}
+    ];
+
+    this.console = {
+      log: sinon.spy();
+    };
+
+    // Create a mock warehouse
+    this.warehouse = {
+      // yields() will invoke the callback that is returned
+      // by the packageAndShip function naturally, 
+      // allowing us to also add arguments for that callback.
+      // In this case a tracking number.
+      packageAndShip: sinon.stub().yields(10987654321)
+    };
+
+    order.__set__("inventoryData", this.testData);
+    order.__set__("console", this.console);
+    // Inject mock warehouse
+    order.__set__("warehouse", this.warehouse);
+  });
+
+  it("order an item when there are enough in stock", function(done) {
+
+    var _this = this;
+
+    order.orderItem("CCC", 3, function() {
+
+      expect(_this.console.log.callCount).to.equal(2);
+
+      done();
+    });
+
+  });
+
+
+  describe("Warehouse Interaction", function() {
+
+    beforeEach(function() {
+
+      // Create spy to check if orderItem callback it
+      // invoked properly
+      this.callback = sinon.spy();
+
+      // Invoke orderItem function before each test
+      order.orderItem("CCC", 2, this.callback);
+    });
+
+    it("recieves a tracking number", function() {
+      // Expect orderItem callback to be called
+      // with mock tracking number returned by packageAndShip
+      // (sinon stub)
+      expect(this.callback.calledWith(10987654321)).to.equal(true);
+    });
+
+    it("calls packageAndShip with the correct sku and quantity", function() {
+      // Checks if beforeEach hook call packageAndShip
+      // for correct number of items
+      expect(this.warehouse.packageAndShip.calledWith("CCC", 2)).to.equal(true);
+    });
+
+  });
+
+
+});
+```
+
+And this time the tests should pass but much quicker because we mocked out the data and dependecies accordingly with Sinon Stubs:
+
+```
+$ mocha
+
+  Ordering Items
+ordering 3 of item # CCC
+order shipped, tracking - 123456789
+    √ order an item when there are enough in stock
+    Warehouse Interaction
+      √ recieves a tracking number
+      √ calls packageAndShip with the correct sku and quantity
+
+3 passing (57ms)
+```
+
+Using rewire and sinon we have greatly increased the speed of our tests, while also relying less on dependecies to properly test our code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
