@@ -559,13 +559,265 @@ order shipped, tracking - 123456789
 Using rewire and sinon we have greatly increased the speed of our tests, while also relying less on dependecies to properly test our code.
 
 
+---
+
+## Code Coverage with Istanbul
+
+**Istanbul** is a node module that we can use to create _Code Coverage Reports_, letting us know which lines of code our tests actually cover. `sudo npm install -g istanbul`. 
+
+Istanbul can work anywhere, but it can work hand in hand with Mocha as well, allowing for us to create code coverage reports from our code coverage tests.
+
+To run a Code Coverage Report navigate to the terminal and enter:
+
+```
+$ istanbul cover _mocha
+
+  Ordering Items
+ordering 3 of item # CCC
+order shipped, tracking - 123456789
+    √ order an item when there are enough in stock
+    Warehouse Interaction
+      √ recieves a tracking number
+      √ calls packageAndShip with the correct sku and quantity
+
+3 passing (57ms)
+
+==================================================
+Writing coverage object [/path/user.../coverage.json]
+Writing coverage reports at [/path/user.../coverage]
+
+============== Coverage Summary ==================
+Statements  : 83.78% ( 31/37 )
+Branches    : 62.5%  ( 5/8 )
+Functions   : 81.82% ( 9/11 )
+Lines       : 83.33% ( 30/36 )
+==================================================
+```
+
+> **Note:** We use the `_mocha` because istanbul won't work with regular `mocha`, we need the `_mocha` process rather.
+
+
+We have created a code coverage report, with a summary that breaks down the coverage into percentages and categories.
+
+We can find the report at the specified path to the coverage report. Navigating there, simply open the Icov-report folder and open the index.html in a browser.
+
+Opening this file you will find a breakdown of all the files in the folder that is being tested. Istanbul goes line by line, noting specific spots where tests are lacked.
+
+Here is an image to get an idea of what it looks like:
+
+![example of istanbul](http://blog.geraldpereira.com/img/blog/2015-09-17-nodejs-express-typescript/istanbul-js-coverage.png) 
 
 
 
+---
+
+## Testing HTTP Endpoints with Supertest
+
+We also need to test our HTTP applications, something that the Supertest module allows for us to do. `npm install supertest --save-dev`.
+
+In order to utilize the Supertest module, we need to first have an Express app. Within the file, the app should be exported via _module.exports()_, this allows for the app to be tested accordingly.
+
+Here is a sample of implementing Supertest in an Mocha tests:
+(Check previous sections for details on pre-written content):
+
+```javascript
+// request variable is the supertest module
+// a function that allows us to make requests 
+var request = require("supertest");
+var expect = require("chai").expect;
+var rewire = require("rewire");
+var app = rewire("../app");
+
+descibe("Dictionary App", function() {
+    
+  it("Loads the home page", function(done) {
+    // Make GET request of app at "/" route
+    // expecting 200 Status Code.
+    // The end() function is necessary to end
+    // the request, invoking the function when done.
+    request(app).get("/").expect(200).end(done);
+  });
+
+  describe("Dictionary API", function() {
+
+    beforeEach(function() {
+
+      this.defs = [
+        {
+          term: "One",
+          defined: "Term One Defined"
+        },
+        {
+          term: "Two",
+          defined: "Term Two Defined"
+        }
+      ];
+
+      app.__set__("skierTerms", this.defs);
+    });
+
+    it("GETS dictionary-api", function(done) {
+      // Make a GET request to the dictionary-api route
+      request(app).get("/dictionary-api").expect(200).end(done);
+    });
+
+    it("POSTS dictionary-api", function(done) {
+      // Make a POST request to the dictionary-api route
+      // Include data to be sent in the send() in obj format
+      request(app)
+        .post("/dictionary-api")
+        .send({"term": "Three", "defined": "Term Three"})
+        .expect(200)
+        .end(done);
+    });
+    
+    it("DELETES dictionary-api", function(done) {
+      // Make DELETE request to the dictionary-api route
+      // appending the term to delete as a URI on the path
+      request(app)
+        .delete("/dictionary-api/One")
+        .expect(200)
+        .end(done);
+    });
+
+  });
+
+});
+```
+
+And now let's run our test:
+
+```
+$ mocha
+Express app running on port 3000
+
+  Dictionary App
+GET request for '/' - {}
+    √ Loads the home page (47ms)
+    Dictionary API
+GET request for '/dictionary-api' - {}
+      √ GETS dictionary-api
+POST request for '/dictionary-api' - {"term": "Three", "defined": "Term Three"}
+      √ POSTS dictionary-api
+DELETE request for '/dictionary-api/One' - {}
+      √ DELETES dictionary-api
+
+  4 passing (108ms)
+```
+
+So now we are testing the HTTP end-points of our application successfully, whether it be HTML or JSON data. 
 
 
 
+---
 
+
+## Checking Server Responses with Cheerio
+
+Although in the previous section we did test for HTTP end-points in our application, being able to properly make requests, it is also important for us to be able to test the data that gets returned to make sure that is correct as well.
+
+**Cheerio** allows for easy navigating through a DOM in jQuery-like manners. It will come in handy when parsing HTML content to test. `npm install cheerio --save-dev`
+
+
+```javascript
+var request = require("supertest");
+var expect = require("chai").expect;
+// Require Cheerio
+var cheerio = require("cheerio");
+var rewire = require("rewire");
+var app = rewire("../app");
+
+descibe("Dictionary App", function() {
+    
+  it("Loads the home page", function(done) {
+    // check the response data on the homepage request
+    request(app).get("/").expect(200).end(function(err, res) {
+      // Load cheerio, passing in html body content
+      var $ = cheerio.load(res.text)
+      // Search just like jQuery (css-selectors)
+      // Selecting the text value of the element
+      var pageHeading = $("body>h1:first-child").text();
+      expect(pageHeading).to.equal("Skier Dictionary");
+    });
+  });
+
+  describe("Dictionary API", function() {
+
+    beforeEach(function() {
+
+      this.defs = [
+        {
+          term: "One",
+          defined: "Term One Defined"
+        },
+        {
+          term: "Two",
+          defined: "Term Two Defined"
+        }
+      ];
+
+      app.__set__("skierTerms", this.defs);
+    });
+
+    it("GETS dictionary-api", function(done) {
+      // Protect 'this.defs' from falling out of scope
+    var defs = this.defs;
+
+    // Rather than invoking done() within end() directly,
+    // we provide a callback to check response data
+    request(app).get("/dictionary-api").expect(200).end(function (err, res) {
+      // Parse JSON response into JS array
+      var terms = JSON.parse(res.text);
+      // Check if response deep equals defs
+      // (comparing two js objects)
+      expect(terms).to.deep.equal(defs);
+      // End mocha test
+      done();
+    });
+    });
+
+    it("POSTS dictionary-api", function(done) {
+      request(app)
+        .post("/dictionary-api")
+        .send({"term": "Three", "defined": "Term Three"})
+        .expect(200)
+        .end(done);
+    });
+    
+    it("DELETES dictionary-api", function(done) {
+      request(app)
+        .delete("/dictionary-api/One")
+        .expect(200)
+        .end(done);
+    });
+
+  });
+
+});
+```
+
+If we run our tests they should pass:
+
+```
+$ mocha
+Express app running on port 3000
+
+  Dictionary App
+GET request for '/' - {}
+    √ Loads the home page (47ms)
+    Dictionary API
+GET request for '/dictionary-api' - {}
+      √ GETS dictionary-api
+POST request for '/dictionary-api' - {"term": "Three", "defined": "Term Three"}
+      √ POSTS dictionary-api
+DELETE request for '/dictionary-api/One' - {}
+      √ DELETES dictionary-api
+
+  4 passing (108ms)
+```
+
+
+We have now tested both the HTTP end-points and the data that is transmitted from the using the supertest module with the assistance of cheerio (For parsing the HTML).
 
 
 
