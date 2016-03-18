@@ -64,4 +64,6 @@ The idea behind this repository is to create a collection of ideas and thoughts 
       - [test-anything](https://github.com/l4nk332/notebook/tree/master/JavaScript/NodeJS/NodeSchool_Exercises/test-anything)
 - [Ruby](https://github.com/l4nk332/notebook/blob/master/Ruby)
   * [Ruby Essentials](https://github.com/l4nk332/notebook/blob/master/Ruby/Ruby_Essentials)
-    - [Overview](https://github.com/l4nk332/notebook/blob/master/Ruby/Ruby_Essentials/Overview.md)
+    - [Overview](https://github.com/l4nk332/notebook/blob/master/Ruby/Ruby_Essentials/1_Overview.md)
+    - [Ruby Object Types](https://github.com/l4nk332/notebook/blob/master/Ruby/Ruby_Essentials/2_Ruby_Object_Types.md)
+    - [Conditional Structures](https://github.com/l4nk332/notebook/blob/master/Ruby/Ruby_Essentials/3_Conditional_Structures.md)
