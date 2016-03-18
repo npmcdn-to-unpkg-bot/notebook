@@ -374,7 +374,7 @@ Done, without errors.
 Completed in 1.922s at Sat Oct 12 2016 15:02:08 GMT-0700 (PDT) - Waiting...
 ```
 
-> **Note:** Use <kbd>Ctrl<kbd>-<kbd>C<kbd> to end Grunt Watch process.
+> **Note:** Use <kbd>Ctrl</kbd>-<kbd>C</kbd> to end Grunt Watch process.
 
 So now Grunt will 'watch' for when we change our stylesheets and script files, automatically saving and updating them for us.
 
