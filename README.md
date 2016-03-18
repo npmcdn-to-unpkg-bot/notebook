@@ -61,6 +61,7 @@ The idea behind this repository is to create a collection of ideas and thoughts 
       - [stream-adventure](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/NodeSchool_Exercises/stream-adventure)
       - [expressworks](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/NodeSchool_Exercises/expressworks)
       - [functional-javascript-workshop](https://github.com/l4nk332/notebook/tree/master/JavaScript/NodeJS/NodeSchool_Exercises/functional-javascript-workshop)
+      - [test-anything](https://github.com/l4nk332/notebook/tree/master/JavaScript/NodeJS/NodeSchool_Exercises/test-anything)
 - [Ruby](https://github.com/l4nk332/notebook/blob/master/Ruby)
   * [Ruby Essentials](https://github.com/l4nk332/notebook/blob/master/Ruby/Ruby_Essentials)
     - [Overview](https://github.com/l4nk332/notebook/blob/master/Ruby/Ruby_Essentials/Overview.md)
