@@ -382,8 +382,186 @@ So now Grunt will 'watch' for when we change our stylesheets and script files, a
 
 ## Automation with NPM
 
+**Npm** (_Node Package Manager_) also provides methods of running, testing, debugging, or running any unix or DOS commands. Some of these tools are extremely important for developers in infrastructure to automatically install dependencies, run tests, or start an application.
+
+In a _package.json_ file there is a _scripts_ node that by default `"test": "echo \"Error: no test specified\" && exit 1`. You can actually create custom scripts that get called within this node.
+
+Every script in npm has a _pre-script_ and a _post-script_, so you can run specific actions before or after an application runs. Custom npm keywords can also be utilized:
+
+```javascript
+// package.json
+{
+  "name": "another_app",
+  "version": "1.0.0",
+  "description": "A simple web application",
+  "main": "app.js",
+  // Here is where we can run custom scripts
+  "scripts": {
+    // "prestart": an npm keyword specifying prestart actions
+    // Run grunt (transpile, watch, lint)
+    "prestart": "grunt",
+    // "start": an npm keyword specifying starting an app
+    // Run node application
+    "start": "node app",
+    // Custom npm keyword "dev"
+    "predev": "grunt"
+    // 1. Open web-browser
+    // 2. Run node-dev (to see immediate changes)
+    // 3. Runt grunt watch (run grunt when files change)
+    // (Note: '&' means 'simultaneously' or at same time)
+    "dev": "open http://localhost:3000 & node-dev app & grunt watch"
+
+  },
+  "repository": {
+    "type": "git",
+  },
+  "keywords": [
+    "application"
+  ],
+  "author": "Bill Nye",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/billnye/another_app#readme"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "ipware": "0.0.7",
+    "nodemailer": "^2.1.0"
+  }
+}
+```
+
+And if we navigate to the terminal and run the `start` scripts:
+
+```
+$ npm start
+
+--- Prestart ---
+
+# Grunt Runs
+
+Running "jshint:files" (jshint) task
+------------------------------------
+>> 5 files lint free.
+
+Runn...
+
+Done, without errors.
+
+--- Start ---
+
+# Application Starts
+
+Node App Running on Port 3000...
+```
+
+
+We can also run the custom `dev` script we created instead of `start`:
+
+
+```
+$ npm run dev
+
+--- Predev ---
+
+# Grunt Runs
+
+Running "jshint:files" (jshint) task
+------------------------------------
+>> 5 files lint free.
+
+Runn...
+
+Done, without errors.
+
+
+--- Dev ---
+
+** Browser opens @ http://localhost:3000...
+
+** Node-dev runs app...
+
+** Grunt watch begins...
+```
+
+
+> **Note:** With the standard npm keywords such as: _prestart_, _start_, _poststart_ you can simply enter 'npm' followed by the keyword, i.e `npm start`. With custom keywords you need to include 'run' before the keyword, i.e `npm run dev`.
 
 
 ---
 
 ## Debugging with NPM
+
+**Node-Inspector** is a node module that will help you debug your javascript code. There is a _debug script_ that we can set up in our _package.json_ that we can simply run `npm debug` and everything we need to debug our scripts will come up.
+
+First lets get Node-Inspector: `sudo npm install -g node-inspector`. Node-Inspector lets us debug on _localhost port 8080_ and open the debug in another browser window at a specified _localhost port_ (i.e 5858).
+
+If we navigate to our package.json we can add a debug script to our _scripts_ node:
+
+```javascript
+// package.json
+{
+  "name": "another_app",
+  "version": "1.0.0",
+  "description": "A simple web application",
+  "main": "app.js",
+  // Add debug script node
+  "scripts": {
+    // Before debug run grunt
+    "predebug": "grunt",
+    // Open windows for app (3000), node-inspector (8080), debugger (5858)
+    "debug": "open http://localhost:3000 & open http://localhost:8080/debug?port=5858 ",
+    // Run node-inspector and app (w/ --debug flag)
+    "postdebug": "node-inspector & node --debug app"
+    "prestart": "grunt",
+    "start": "node app",
+    "predev": "grunt"
+    "dev": "open http://localhost:3000 & node-dev app & grunt watch"
+
+  },
+  "repository": {
+    "type": "git",
+  },
+  "keywords": [
+    "application"
+  ],
+  "author": "Bill Nye",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/billnye/another_app#readme"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "ipware": "0.0.7",
+    "nodemailer": "^2.1.0"
+  }
+}
+```
+
+And if we now try to start the debugger it should work:
+
+```
+$ npm run debug
+
+--- Predebug ---
+
+* Grunt Runs .....
+
+--- Debug ---
+
+* Browser opens at localhost:3000
+* Browser opens at localhost:8080
+* Browser opens at localhost:5858
+
+--- PostDebug ---
+
+* Node inspector opens up...
+```
+
+> **Note:** Again because debug is a custom npm script, we need to run `npm run debug`.
+
+In the Node-Inspector you can step through your code just as you would in the Chrome browser, but rather than only seeing client-side javascript files you can debug the server-side scripts.
