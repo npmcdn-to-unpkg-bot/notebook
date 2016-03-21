@@ -46,6 +46,7 @@ The idea behind this repository is to create a collection of ideas and thoughts 
     - [Canvas Snippets](https://github.com/l4nk332/notebook/blob/master/JavaScript/HTML5_Canvas/canvas_snippets.md)
   * [NodeJS](https://github.com/l4nk332/notebook/tree/master/JavaScript/NodeJS)
     * [Code Samples](https://github.com/l4nk332/notebook/tree/master/JavaScript/NodeJS/Code_Samples)
+    * [Custom Challenges](https://github.com/l4nk332/notebook/tree/master/JavaScript/NodeJS/Custom_Challenges)
     - [Node Core](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/1_node_core.md)
     - [Node Modules](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/2_node_modules.md)
     - [File System](https://github.com/l4nk332/notebook/blob/master/JavaScript/NodeJS/3_file_system.md)
