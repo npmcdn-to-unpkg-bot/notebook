@@ -6,6 +6,7 @@ describe("binaryToDecimal()", function() {
   it("should convert simple binary to decimal value", function() {
     expect(app.binaryToDecimal("0")).to.equal(0);
     expect(app.binaryToDecimal("1")).to.equal(1);
+    expect(app.binaryToDecimal("0100")).to.equal(4);
     expect(app.binaryToDecimal("101")).to.equal(5);
     expect(app.binaryToDecimal("1000")).to.equal(8);
     expect(app.binaryToDecimal("1111")).to.equal(15);
@@ -24,5 +25,17 @@ describe("binaryToDecimal()", function() {
   it("should throw an error for invalid entries", function() {
     expect(app.binaryToDecimal.bind(null, "pickle...")).to.throw("Invalid Parameters");
     expect(app.binaryToDecimal.bind(null, "90132")).to.throw("Invalid Parameters");
+    expect(app.binaryToDecimal.bind(null, "001001a")).to.throw("Invalid Parameters");
+    expect(app.binaryToDecimal.bind(null, "10.01")).to.throw("Invalid Parameters");
+    expect(app.binaryToDecimal.bind(null, "3 is a the maginc number...1")).to.throw("Invalid Parameters");
+  });
+});
+
+describe("decimalToBinary()", function() {
+
+  it("should convert simple decimal values into binary", function() {
+    expect(app.decimalToBinary("10")).to.equal(1010);
+    expect(app.decimalToBinary("550")).to.equal(1000100110);
+    expect(app.decimalToBinary("13")).to.equal(1101);
   });
 });
