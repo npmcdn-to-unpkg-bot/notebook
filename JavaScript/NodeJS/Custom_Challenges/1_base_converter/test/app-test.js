@@ -22,6 +22,7 @@ describe("binaryToDecimal()", function() {
   });
 
   it("should throw an error for invalid entries", function() {
-  
+    expect(app.binaryToDecimal.bind(null, "pickle...")).to.throw("Invalid Parameters");
+    expect(app.binaryToDecimal.bind(null, "90132")).to.throw("Invalid Parameters");
   });
 });
