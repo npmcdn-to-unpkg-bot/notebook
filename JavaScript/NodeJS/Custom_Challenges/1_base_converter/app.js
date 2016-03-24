@@ -46,8 +46,14 @@ function decimalToHex(decValue) {
     decValue = Number(decValue);
     var hexadecimal = decValue.toString(16);
     return hexadecimal;
+  } else {
+    throw invalidErr;
   }
 }
+
+// binary to hexadecimal
+
+// hexadecimal to binary
 
 module.exports = {
   binaryToDecimal: binaryToDecimal,

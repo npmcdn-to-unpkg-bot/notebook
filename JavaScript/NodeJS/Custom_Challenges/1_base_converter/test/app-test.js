@@ -113,5 +113,28 @@ describe("decimalToHex()", function() {
 
   it("should handle large numbers", function() {
     expect(app.decimalToHex("809803241")).to.equal("30449de9");
+    expect(app.decimalToHex("789345793")).to.equal("2f0c7601");
+    expect(app.decimalToHex("57385722964434")).to.equal("343127a1e9d2");
+    expect(app.decimalToHex("90458630495682")).to.equal("52458a899dc2");
+    expect(app.decimalToHex("6845763994400")).to.equal("639e754c320");
+    expect(app.decimalToHex("6930222790332")).to.equal("64d9177b6bc");
+  });
+
+  it("should convert negative decimal to hexadecimal", function() {
+    expect(app.decimalToHex("-560")).to.equal("-230");
+    expect(app.decimalToHex("-7250")).to.equal("-1c52");
+    expect(app.decimalToHex("-89532")).to.equal("-15dbc");
+    expect(app.decimalToHex("-100345")).to.equal("-187f9");
+    expect(app.decimalToHex("-9324665")).to.equal("-8e4879");
+    expect(app.decimalToHex("-45211307798")).to.equal("-a86cdcf16");
+  });
+
+  it("should throw an error for invalid input", function() {
+    expect(app.decimalToHex.bind(null, "monkey-wrench")).to.throw("Invalid Parameter");
+    expect(app.decimalToHex.bind(null, "ff4aa")).to.throw("Invalid Parameter");
+    expect(app.decimalToHex.bind(null, "--2930.778")).to.throw("Invalid Parameter");
+    expect(app.decimalToHex.bind(null, "+0993")).to.throw("Invalid Parameter");
+    expect(app.decimalToHex.bind(null, "70people_?")).to.throw("Invalid Parameter");
+    expect(app.decimalToHex.bind(null, "70.00.1")).to.throw("Invalid Parameter");
   });
 });
