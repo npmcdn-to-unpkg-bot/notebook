@@ -138,3 +138,16 @@ describe("decimalToHex()", function() {
     expect(app.decimalToHex.bind(null, "70.00.1")).to.throw("Invalid Parameter");
   });
 });
+
+describe("binaryToHex()", function() {
+
+  it("should convert binary to hexadecimal values", function() {
+    expect(app.binaryToHex("10")).to.equal("2");
+    expect(app.binaryToHex("10011")).to.equal("13");
+    expect(app.binaryToHex("11100011")).to.equal("e3");
+    expect(app.binaryToHex("100011100011")).to.equal("8e3");
+    expect(app.binaryToHex("10000011010110100011")).to.equal("835a3");
+    expect(app.binaryToHex("1011000011010110100110100011")).to.equal("b0d69a3");
+  });
+
+});

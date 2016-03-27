@@ -52,7 +52,10 @@ function decimalToHex(decValue) {
 }
 
 function binaryToHex(binValue) {
-  // Place-holder 
+  // Convert binary to decimal
+  var decValue = binaryToDecimal(binValue);
+  // Convert decimal to hex
+  return decimalToHex(decValue);
 }
 
 
