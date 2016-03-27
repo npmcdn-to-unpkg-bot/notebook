@@ -51,13 +51,20 @@ function decimalToHex(decValue) {
   }
 }
 
-// binary to hexadecimal
+function binaryToHex(binValue) {
+  // Place-holder 
+}
 
-// hexadecimal to binary
+
+function hexToBinary(hexValue) {
+  // Place-holder
+}
 
 module.exports = {
   binaryToDecimal: binaryToDecimal,
   decimalToBinary: decimalToBinary,
   hexToDecimal: hexToDecimal,
-  decimalToHex: decimalToHex
+  decimalToHex: decimalToHex,
+  binaryToHex: binaryToHex,
+  hexToBinary: hexToBinary
 };
