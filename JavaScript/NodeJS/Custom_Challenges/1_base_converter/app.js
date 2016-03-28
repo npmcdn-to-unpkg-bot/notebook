@@ -60,8 +60,12 @@ function binaryToHex(binValue) {
 
 
 function hexToBinary(hexValue) {
-  // Place-holder
+  // Convert hex to decimal
+  var decValue = hexToDecimal(hexValue);
+  // Convert decimal to binary
+  return decimalToBinary(decValue);
 }
+
 
 module.exports = {
   binaryToDecimal: binaryToDecimal,

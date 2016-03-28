@@ -150,4 +150,29 @@ describe("binaryToHex()", function() {
     expect(app.binaryToHex("1011000011010110100110100011")).to.equal("b0d69a3");
   });
 
+  it("should handle large binary values", function() {
+    expect(app.binaryToHex("100101010101011110101010101111111101")).to.equal("9557aabfd");
+    expect(app.binaryToHex("11111001010101010111101010101000001010101")).to.equal("1f2aaf55055");
+    expect(app.binaryToHex("11111010101010111010111010000001101010101101001")).to.equal("7d55d740d569");
+    expect(app.binaryToHex("1001010111101001010101111011110101010101011111000001")).to.equal("95e957bd557c1");
+    expect(app.binaryToHex("1010101111101010000010101010101111010000001010101010")).to.equal("abea0aabd02aa");
+    expect(app.binaryToHex("11111110101010111111110101010000000101010111011101101")).to.equal("1fd57faa02aeed");
+  });
+
+  it("should throw an error for invalid entries", function() {
+    expect(app.binaryToHex.bind(null, "45f")).to.throw("Invalid Parameters");
+    expect(app.binaryToHex.bind(null, "throw a wrench")).to.throw("Invalid Parameters");
+    expect(app.binaryToHex.bind(null, "-1010")).to.throw("Invalid Parameters");
+    expect(app.binaryToHex.bind(null, "135")).to.throw("Invalid Parameters");
+    expect(app.binaryToHex.bind(null, "100.1")).to.throw("Invalid Parameters");
+    expect(app.binaryToHex.bind(null, "alksdjf9834-9;.,")).to.throw("Invalid Parameters");
+  });
+
+});
+
+describe("hexToBinary()", function() {
+
+  it("should convert hexadecimal values to binary", function() {
+    expect(app.hexToDecimal("")).to.equal();
+  });
 });
