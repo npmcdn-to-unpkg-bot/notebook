@@ -1,6 +1,7 @@
 "use strict";
 
 const invalidErr = new Error("Invalid Parameters");
+const rangeErr = new Error("Range Error - Unsafe Integer");
 
 function binaryToDecimal(binValue) {
   if (/[^01]/g.test(binValue) !== true) {
@@ -25,7 +26,7 @@ function decimalToBinary(decValue) {
       let binary = (decValue >>> 0).toString(2);
       return Number(binary);
     } else {
-      throw new Error("Range Error - Unsafe Integer");
+      throw rangeErr;
     }
   } else {
     throw invalidErr;
@@ -63,6 +64,7 @@ function hexToBinary(hexValue) {
   // Convert hex to decimal
   var decValue = hexToDecimal(hexValue);
   // Convert decimal to binary
+  if (!Number.isSafeInteger(decValue)) { throw rangeErr; }
   return decimalToBinary(decValue);
 }
 

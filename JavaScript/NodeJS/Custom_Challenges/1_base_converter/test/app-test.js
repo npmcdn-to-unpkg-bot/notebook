@@ -173,6 +173,28 @@ describe("binaryToHex()", function() {
 describe("hexToBinary()", function() {
 
   it("should convert hexadecimal values to binary", function() {
-    expect(app.hexToDecimal("")).to.equal();
+    expect(app.hexToBinary("ffa")).to.equal(111111111010);
+    expect(app.hexToBinary("Fadbe")).to.equal(11111010110110111110);
+    expect(app.hexToBinary("01adc")).to.equal(1101011011100);
+    expect(app.hexToBinary("29dace")).to.equal(1010011101101011001110);
+    expect(app.hexToBinary("9087bC")).to.equal(100100001000011110111100);
+    expect(app.hexToBinary("add404")).to.equal(101011011101010000000100);
+  });
+
+  it("should be able to handle large hexadecimal values", function() {
+    expect(app.hexToBinary("baD023")).to.equal(101110101101000000100011);
+    expect(app.hexToBinary("FED80a")).to.equal(111111101101100000001010);
+    expect(app.hexToBinary("caba34")).to.equal(110010101011101000110100);
+    expect(app.hexToBinary("aabbbcc")).to.equal(1010101010111011101111001100);
+    expect(app.hexToBinary("fabeCd01")).to.equal(11111010101111101100110100000001);
+    expect(app.hexToBinary("BabCeF01")).to.equal(10111010101111001110111100000001);
+  });
+
+  it("should throw an error for invalid entries", function() {
+    expect(app.hexToBinary.bind(null, "a[]0-==./")).to.throw("Invalid Parameters");
+    expect(app.hexToBinary.bind(null, "gahbalkd")).to.throw("Invalid Parameters");
+    expect(app.hexToBinary.bind(null, "-afd")).to.throw("Invalid Parameters");
+    expect(app.hexToBinary.bind(null, "820537523234037927940")).to.throw("Range Error - Unsafe Integer");
+    expect(app.hexToBinary.bind(null, "FFFFfffafafafaffFFF990909911")).to.throw("Range Error - Unsafe Integer");
   });
 });
