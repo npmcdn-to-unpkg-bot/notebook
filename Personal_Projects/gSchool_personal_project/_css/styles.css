@@ -1,0 +1,234 @@
+html {
+  background-color: #2a4652;
+  margin: 0px auto;
+}
+
+body {
+  background: url(tree_texture_1.jpg) center no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  width: 100%;
+  margin: 0px auto;
+  margin-bottom: 30px;
+  padding: 10px 0px;
+  font-size: 5em;
+  letter-spacing: 0.1em;
+  color: #969696;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 8px #969696;
+  text-align: center;
+  font-family: 'Wire One', sans-serif;
+}
+
+.arrow:link, .arrow:visited, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.arrow:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* -- Flex-Grid -- */
+#flex-grid {
+  min-width: 300px;
+  max-width: 900px;
+  height: auto;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+/* -- Card Flip Styles -- */
+.container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  perspective: 1000px;
+  /* flex-item styles */
+  margin: auto;
+  flex-grow: 1;
+  opacity: 0.9;
+}
+
+.panel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  transform-origin: right center;
+}
+
+.panel figure  {
+  /*margin: 0;*/
+  /*display: block;*/
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  /* Centers inner div */
+  display: flex;
+  margin: auto;
+}
+
+.front {
+  /*place-holder*/
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.back .text-content {
+  width: 75%;
+  height: auto;
+  margin: auto;
+  padding: 10px;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9em;
+  line-height: 1.4em;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.panel.flipped {
+  /*transform: rotateY(180deg);*/
+  transform: translateX(-100%) rotateY(-180deg);;
+}
+
+
+/* --- SVG Styles ---  */
+
+#camera, #coffee, #controller, #puppy, #music, #skateboard {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* Panel One */
+
+#one .front {
+  background-color: #6e8c62;
+}
+
+#one .front:hover {
+  background-color: #92a989;
+}
+
+#one .back {
+  background-color: #92a989;
+}
+
+#one .back:hover {
+  background-color: #b7c6b1;
+}
+
+
+/* Panel Two */
+
+#two .front {
+  background-color: #888958;
+}
+
+#two .front:hover {
+  background-color: #b1b389;
+}
+
+#two .back {
+  background-color: #b1b389;
+}
+
+#two .back:hover {
+  background-color: #cbccb1;
+}
+
+
+/* Panel Three */
+
+#three .front {
+  background-color: #4b7e94;
+}
+
+#three .front:hover {
+  background-color: #7fa9bc;
+}
+
+#three .back {
+  background-color: #7fa9bc;
+}
+
+#three .back:hover {
+  background-color: #aac6d2;
+}
+
+
+/* Panel Four */
+
+#four .front {
+  background-color: #6f897c;
+}
+
+#four .front:hover {
+  background-color: #9db3a7;
+}
+
+#four .back {
+  background-color: #9db3a7;
+}
+
+#four .back:hover {
+  background-color: #beccc5;
+}
+
+
+/* Panel Five */
+
+#five .front {
+  background-color: #7b6558;
+}
+
+#five .front:hover {
+  background-color: #a79589;
+}
+
+#five .back {
+  background-color: #a79589;
+}
+
+#five .back:hover {
+  background-color: #c4b8b1;
+}
+
+
+/* Panel Six */
+
+#six .front {
+  background-color: #7c7ea5;
+}
+
+#six .front:hover {
+  background-color: #9d9ebc;
+}
+
+#six .back {
+  background-color: #9d9ebc;
+}
+
+#six .back:hover {
+  background-color: #bebfd2;
+}
