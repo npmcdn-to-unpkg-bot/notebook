@@ -1,29 +1,21 @@
 Pending
 =======
 
+
 Page 1:
 -------
-
-- Properly place in svg graphics
-- Style panels with color palette
-- Add :hover color shift
-- Add text content for the back-side of the panel
-- Style header section
-- Add '->' button to header section
-- Add Google font style.
 
 
 Page 2:
 -------
 
-- Create basic layout (including timeline)
-- Add styles.
-- Add Gif
+- Write content for page
+- Add Gif easter-egg
 
 
 Project-wide
 ------------
 
 - Auto-prefix entire application.
-- Fully grasp every piece of code in project.
 - Validate css and html
+- Fully grasp every piece of code in project.

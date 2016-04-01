@@ -17,13 +17,7 @@ body {
 }
 
 #page-one {
-  background: url(tree_texture_1.jpg) center no-repeat;
-  background-size: cover;
-}
-
-#page-two {
-  background: url(tree_texture_5.jpg) center no-repeat;
-  background-size: cover;
+  background: url(background_optim/tree_texture_full_bg.jpg) center no-repeat fixed;
 }
 
 h1 {
@@ -38,6 +32,13 @@ h1 {
   text-shadow: 0px 0px 8px #969696;
   text-align: center;
   font-family: 'Wire One', sans-serif;
+}
+
+h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.5em;
+  margin: 10px auto 0px;
+  text-align: center;
 }
 
 .arrow:link, .arrow:visited, a:active {
@@ -70,6 +71,8 @@ h1 {
   margin: auto;
   flex-grow: 1;
   opacity: 0.9;
+  /* For svg scale effect on .front */
+  overflow: hidden;
 }
 
 .panel {
@@ -93,8 +96,19 @@ h1 {
   margin: auto;
 }
 
+.front {
+  transition: transform 0.4s ease-out;
+}
+
+.front:hover {
+  transform: scale(1.1);
+}
+
+
+
 .back {
   transform: rotateY(180deg);
+  flex-flow: column nowrap;
 }
 
 .text-content {
@@ -113,6 +127,12 @@ h1 {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.back .text-content {
+  margin: 0px auto;
+  font-size: 1em;
+  line-height: 1.3em;
+}
+
 .panel.flipped {
   /*transform: rotateY(180deg);*/
   transform: translateX(-100%) rotateY(-180deg);;
@@ -121,7 +141,7 @@ h1 {
 
 /* --- SVG Styles ---  */
 
-#camera, #coffee, #controller, #puppy, #music, #skateboard {
+.svg-container {
   width: 80%;
   height: 80%;
   margin: auto;
@@ -129,7 +149,6 @@ h1 {
   flex-direction: column;
   justify-content: center;
 }
-
 
 /* Panel One */
 
@@ -247,12 +266,59 @@ h1 {
 
 /* 2nd Page Styles */
 
+
 #main-title {
   margin-bottom: 0px;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ), url(background_optim/tree_texture_1.JPG) center no-repeat;
 }
 
-.goal-header {
+#graduate {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.3)
+  ), url(background_optim/leaf.JPG) center no-repeat fixed;
+  background-size: cover;
+}
+
+#career {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.3)
+  ), url(background_optim/cherry_blossom_2.JPG) center no-repeat fixed;
+  background-size: cover;
+}
+
+#finance {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.4)
+  ), url(background_optim/flower_1.JPG) center no-repeat fixed;
+  background-size: cover;
+}
+
+#travel {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.3)
+  ), url(background_optim/clouds_1.JPG) center no-repeat fixed;
+  background-size: cover;
+}
+
+
+/*.goal-header {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.5em;
+  margin: 10px auto 0px;
+  text-align: center;
+}*/
+
+.design-dash {
   font-size: 3em;
+  text-align: center;
+  margin: 0px auto;
 }
 
 .row {
@@ -267,18 +333,22 @@ h1 {
 .col-1 {
   min-width: 200px;
   max-width: 500px;
-  height: auto;
+  height: 100%;
   margin: auto;
   padding: 5%;
   flex-grow: 1;
+  /* jQuery fades on scroll */
+  opacity: 0;
 }
 
 .col-2 {
   min-width: 100px;
   max-width: 550px;
-  height: auto;
+  height: 100%;
   margin: auto;
   flex-grow: 2;
+  /* jQuery fades on scroll */
+  opacity: 0;
 }
 
 .col-2 .text-content {
@@ -286,22 +356,57 @@ h1 {
   font-size: 1.1em;
 }
 
-.goal-header {
-  text-align: center;
+
+
+/* media queries for mobile layouts */
+
+/* Page One */
+@media (max-width: 400px) {
+  /* repeated below...
+  h1 {
+    font-size: 4em;
+  }*/
+  .panel-head {
+    font-size: 2em;
+  }
+  .back .design-dash {
+    font-size: 2em;
+  }
+  #flex-grid {
+    min-width: 300px;
+  }
+  .container {
+    width: 300px;
+    height: 300px;
+  }
+  .back .text-content {
+    margin-top: 0px;
+    font-size: 0.9em;
+    line-height: 1.3em;
+  }
 }
 
-#graduate {
-  background-color: rgba(146, 169, 137, 0.8);
+@media (max-width: 365px) {
+  .back .text-content {
+    font-size: 0.8em;
+  }
 }
 
-#career {
-  background-color: rgba(127, 169, 188, 0.8);
-}
-
-#finance {
-  background-color: rgba(167, 149, 137, 0.8);
-}
-
-#travel {
-  background-color: rgba(157, 158, 188, 0.8);
+/* Page Two */
+@media (max-width: 660px) {
+  h1 {
+    font-size: 4em;
+  }
+  .goal-header {
+    font-size: 2.8em;
+  }
+  .row {
+    flex-flow: column nowrap;
+  }
+  .col-2 .text-content {
+    margin-bottom: 15px;
+  }
+  .col-1:nth-child(even) {
+    order: -1;
+  }
 }
