@@ -276,6 +276,11 @@ h2 {
   background-size: cover;
 }
 
+#graduate .col-1, #graduate .col-2 {
+  /* Start Opacity full for first row */
+  opacity: 1;
+}
+
 #career {
   background: linear-gradient(
     rgba(255, 255, 255, 0.3),
@@ -391,4 +396,43 @@ h2 {
   .col-1:nth-child(even) {
     order: -1;
   }
+}
+
+/* Modal Styles */
+
+.modal-wrapper {
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 10;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0, 0, 0, 0.5);
+}
+
+.giphy-embed {
+ width: 75%;
+ height: auto;
+ max-width: 800px;
+ max-height: 900px;
+ min-width: 300px;
+ position: inherit;
+ top: 40%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}
+
+#exit {
+ position: inherit;
+ left: 50%;
+ top: 85%;
+ transform: translate(-50%, -50%);
+ width: 100px;
+ height: 50px;
+ font-size: 1.5em;
+ font-family: 'Open Sans', sans-serif;
+ background-color: rgba(0, 0, 0, 0.8);
+ color: rgba(255, 255, 255, 0.8);
+ border: none;
+ border-radius: 10px;
 }
