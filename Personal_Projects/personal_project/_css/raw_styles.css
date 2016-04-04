@@ -51,17 +51,9 @@ h2 {
   max-width: 1200px;
   height: auto;
   margin: 20px auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  justify-content: center;
+  flex-flow: row wrap;
 }
 
 /* -- Card Flip Styles -- */
@@ -69,14 +61,10 @@ h2 {
   width: 400px;
   height: 400px;
   position: relative;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
+  perspective: 1000px;
   /* flex-item styles */
   margin: auto;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   opacity: 0.9;
   /* For svg scale effect on .front */
   overflow: hidden;
@@ -86,44 +74,32 @@ h2 {
   width: 100%;
   height: 100%;
   position: absolute;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transition: -webkit-transform 1s;
-          transition: transform 1s;
-  -webkit-transform-origin: right center;
-          transform-origin: right center;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  transform-origin: right center;
 }
 
 .panel figure  {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   /* Centers inner div */
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   margin: auto;
 }
 
 .front {
-  -webkit-transition: -webkit-transform 0.4s ease-out;
-          transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
 }
 
 .front:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .back {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  -webkit-flex-flow: column nowrap;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  transform: rotateY(180deg);
+  flex-flow: column nowrap;
 }
 
 .text-content {
@@ -149,8 +125,7 @@ h2 {
 }
 
 .panel.flipped {
-  -webkit-transform: translateX(-100%) rotateY(-180deg);
-          transform: translateX(-100%) rotateY(-180deg);;
+  transform: translateX(-100%) rotateY(-180deg);;
 }
 
 /* --- SVG Styles ---  */
@@ -159,19 +134,9 @@ h2 {
   width: 80%;
   height: 80%;
   margin: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Panel One */
@@ -286,7 +251,6 @@ h2 {
 
 #main-title {
   margin-bottom: 0px;
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/tree_texture.jpg) center no-repeat fixed;
   background: linear-gradient(
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)
@@ -295,7 +259,6 @@ h2 {
 }
 
 #graduate {
-  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../assets/images/leaf.JPG) center no-repeat fixed;
   background: linear-gradient(
     rgba(255, 255, 255, 0.3),
     rgba(255, 255, 255, 0.3)
@@ -309,7 +272,6 @@ h2 {
 }
 
 #career {
-  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../assets/images/cherry_blossom.JPG) center no-repeat fixed;
   background: linear-gradient(
     rgba(255, 255, 255, 0.3),
     rgba(255, 255, 255, 0.3)
@@ -318,7 +280,6 @@ h2 {
 }
 
 #finance {
-  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(../assets/images/flower.JPG) center no-repeat fixed;
   background: linear-gradient(
     rgba(255, 255, 255, 0.4),
     rgba(255, 255, 255, 0.4)
@@ -327,7 +288,6 @@ h2 {
 }
 
 #travel {
-  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../assets/images/clouds.JPG) center no-repeat fixed;
   background: linear-gradient(
     rgba(255, 255, 255, 0.3),
     rgba(255, 255, 255, 0.3)
@@ -345,17 +305,9 @@ h2 {
   width: 100%;
   height: auto;
   margin: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-flex-flow: row nowrap;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  justify-content: center;
+  flex-flow: row nowrap;
 }
 
 .col-1 {
@@ -364,10 +316,7 @@ h2 {
   height: 100%;
   margin: auto;
   padding: 5%;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   /* jQuery fades on scroll */
   opacity: 0;
 }
@@ -377,10 +326,7 @@ h2 {
   max-width: 550px;
   height: 100%;
   margin: auto;
-  -webkit-box-flex: 2;
-  -webkit-flex-grow: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
+  flex-grow: 2;
   /* jQuery fades on scroll */
   opacity: 0;
 }
@@ -429,18 +375,13 @@ h2 {
     font-size: 2.8em;
   }
   .row {
-    -webkit-flex-flow: column nowrap;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
+    flex-flow: column nowrap;
   }
   .col-2 .text-content {
     margin-bottom: 15px;
   }
   .col-1:nth-child(even) {
-    -webkit-box-ordinal-group: 0;
-    -webkit-order: -1;
-        -ms-flex-order: -1;
-            order: -1;
+    order: -1;
   }
 }
 
@@ -465,16 +406,14 @@ h2 {
  position: inherit;
  top: 40%;
  left: 50%;
- -webkit-transform: translate(-50%, -50%);
-         transform: translate(-50%, -50%);
+ transform: translate(-50%, -50%);
 }
 
 #exit {
  position: inherit;
  left: 50%;
  top: 85%;
- -webkit-transform: translate(-50%, -50%);
-         transform: translate(-50%, -50%);
+ transform: translate(-50%, -50%);
  width: 100px;
  height: 50px;
  font-size: 1.5em;
