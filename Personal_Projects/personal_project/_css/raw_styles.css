@@ -262,7 +262,7 @@ h2 {
   background: linear-gradient(
     rgba(255, 255, 255, 0.3),
     rgba(255, 255, 255, 0.3)
-  ), url(../assets/images/leaf.JPG) center no-repeat fixed;
+  ), url(../assets/images/leaf.jpg) center no-repeat fixed;
   background-size: cover;
 }
 
@@ -275,7 +275,7 @@ h2 {
   background: linear-gradient(
     rgba(255, 255, 255, 0.3),
     rgba(255, 255, 255, 0.3)
-  ), url(../assets/images/cherry_blossom.JPG) center no-repeat fixed;
+  ), url(../assets/images/cherry_blossom.jpg) center no-repeat fixed;
   background-size: cover;
 }
 
@@ -283,7 +283,7 @@ h2 {
   background: linear-gradient(
     rgba(255, 255, 255, 0.4),
     rgba(255, 255, 255, 0.4)
-  ), url(../assets/images/flower.JPG) center no-repeat fixed;
+  ), url(../assets/images/flower.jpg) center no-repeat fixed;
   background-size: cover;
 }
 
@@ -291,7 +291,7 @@ h2 {
   background: linear-gradient(
     rgba(255, 255, 255, 0.3),
     rgba(255, 255, 255, 0.3)
-  ), url(../assets/images/clouds.JPG) center no-repeat fixed;
+  ), url(../assets/images/clouds.jpg) center no-repeat fixed;
   background-size: cover;
 }
 
@@ -304,6 +304,8 @@ h2 {
 .row {
   width: 100%;
   height: auto;
+  /* for safari set min-height */
+  min-height: 700px;
   margin: auto;
   display: flex;
   justify-content: center;
