@@ -1,4 +1,5 @@
-var readline = require("readline");
+var prompt = require("prompt");
+var colors = require("colors/safe");
 
 "use strict";
 
@@ -72,78 +73,149 @@ function hexToBinary(hexValue) {
   return decimalToBinary(decValue);
 }
 
-// Grab flag values
+
+// Set conversion options
 var options = {
-  bd: {
-    name: "Binary To Decimal",
-    conversion: function(binValue) {
-      return binaryToDecimal(binValue);
+  bindec: {
+    label: "Binary to Decimal",
+    convert: function(value) {
+      return binaryToDecimal(value);
     }
   },
-  db: {
-    name: "Decimal To Binary",
-    conversion: function(decValue) {
-      return decimalToBinary(decValue);
+  decbin: {
+    label: "Decimal to Binary",
+    convert: function(value) {
+      return decimalToBinary(value);
     }
   },
-  hd: {
-    name: "Hexadecimal to Decimal",
-    conversion: function(hexValue) {
-      return hexToDecimal(hexValue);
+  hexdec: {
+    label: "Hexadecimal to Decimal",
+    convert: function(value) {
+      return hexToDecimal(value);
     }
   },
-  dh: {
-    name: "Decimal to Hexadecimal",
-    conversion: function(decValue) {
-      return decimalToHex(decValue);
+  dechex: {
+    label: "Decimal to Hexadecimal",
+    convert: function(value) {
+      return decimalToHex(value);
     }
   },
-  bh: {
-    name: "Binary to Hexadecimal",
-    conversion: function(binValue) {
-      return binaryToHex(binValue);
+  binhex: {
+    label: "Binary to Hexadecimal",
+    convert: function(value) {
+      return binaryToHex(value);
     }
   },
-  hb: {
-    name: "Hexadecimal to Binary",
-    conversion: function(hexValue) {
-      return hexToBinary(hexValue);
+  hexbin: {
+    label: "Hexadecimal to Binary",
+    convert: function(value) {
+      return hexToBinary(value);
     }
   }
 };
 
-var paramRE = new RegExp('(?:-){1}([bdh]{2})(?:\s)*$', 'g');
-
-// parse format flags
-var format = process.argv[2];
-var initValue;
-
-// set up rl interface
-var rl = readline.createInterface(process.stdin, process.stdout);
-
-rl.setPrompt("Input:\t");
-rl.prompt();
-
-rl.on('line', function(value) {
-  if (format === undefined) {
-    throw ("Error: invalid format flag");
-  } else {
-    initValue = value;
-    console.log(`Value: ${initValue} - Format: ${options[format].name}`);
+// Set up prompt schema
+var schema = {
+  properties: {
+    formatA: {
+      description: "From",
+      pattern: /^hex|bin|dec|exit$/i,
+      message: `Must be '${colors.yellow("hex")}', '${colors.yellow("bin")}', or '${colors.yellow("dec")}' ${colors.grey("('exit' to quit)")}`,
+      required: true,
+      before: function(value) {
+        var v = value.toLowerCase();
+        if (v === 'exit') { process.exit(); }
+        else { return v; }
+      }
+    },
+    formatB: {
+      description: "To",
+      pattern: /^hex|bin|dec|exit$/i,
+      message: `Must be '${colors.yellow("hex")}', '${colors.yellow("bin")}', or '${colors.yellow("dec")}' ${colors.grey("('exit' to quit)")}`,
+      required: true,
+      before: function(value) {
+        var v = value.toLowerCase();
+        if (v === 'exit') { process.exit(); }
+        else { return v; }
+      }
+    },
+    initValue: {
+      description: "Value",
+      pattern: /[0-9a-f]+|exit/i,
+      required: true,
+      message: `Must be a valid number ${colors.grey("('exit' to quit)")}`,
+      before: function(value) {
+        var v = value.toLowerCase();
+        if (v === 'exit') { process.exit(); }
+        else { return v; }
+      }
+    }
   }
-  rl.close();
-});
+};
 
-rl.on("close", function() {
-  try {
-    var output = options[format].conversion(initValue);
-    console.log(`Output:\t${output}`);
-  } catch(e) {
-    throw ("Invalid input value...");
-  }
-  process.exit();
-});
 
+// Customize prompt
+prompt.message = "";
+prompt.delimiter = " >";
+
+
+
+// Welcome message
+console.log((colors.blue(`
+                          ===============
+                           Base-Converter
+                          ===============
+
+              Convert to and from Binary, Hex, and Decimal.
+              Valid formats: 'bin', 'hex', 'dec'
+                                           ('exit' to quit)
+  `)).trim());
+
+
+// Start prompt
+prompt.start();
+
+// Function to handle errors
+function onErr(err) {
+  console.log(colors.red(err));
+  ask();
+}
+
+// Get schema property values
+function ask() {
+  prompt.get(schema, function (err, result) {
+    // Handle errors upon getting info
+    if (err) { return onErr(err); }
+    // Handle identical formats
+    else if (result.formatA === result.formatB) {
+      console.log(colors.yellow("unchanged value..."));
+    }
+    // Convert and output accordingly
+    else {
+      // Try Conversion, passing handling errors with onErr()
+      try {
+        var selection = result.formatA + result.formatB;
+        var selectionLabel = options[selection].label;
+        var inputValue = result.initValue;
+        var outputValue = options[selection].convert(inputValue);
+        var dashLine = '-'.repeat(12+selectionLabel.length);
+      } catch (conversionError) {
+        return onErr(conversionError);
+      }
+      // log result
+      console.log(colors.cyan(`\n\t${dashLine}\n\tConversion: ${selectionLabel}\n\t${dashLine}\n`));
+      console.log(colors.green(`\tOutput: ${outputValue}\n`));
+      console.log(colors.grey(("\t\t\t('exit' to quit)")));
+    }
+    // Repeat prompt
+    ask();
+  });
+}
+// initialize prompt
+ask();
+
+
+// For testing
 module.exports = {
   binaryToDecimal: binaryToDecimal,
   decimalToBinary: decimalToBinary,
