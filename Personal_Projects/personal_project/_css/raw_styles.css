@@ -307,6 +307,8 @@ h2 {
   /* for safari set min-height */
   min-height: 700px;
   margin: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
   display: flex;
   justify-content: center;
   flex-flow: row nowrap;
@@ -384,6 +386,79 @@ h2 {
   }
   .col-1:nth-child(even) {
     order: -1;
+  }
+}
+
+/* Mobile Browsers */
+@media only screen and (max-device-width: 750px) {
+  html {
+    background: url(../assets/images/tree_texture.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
+  body {
+    height:100%;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* reset background styles */
+  #page-one, #main-title, #graduate, #career, #finance, #travel {
+    background: none;
+  }
+
+  #main-title {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  /* remove fade-in effect for mobile */
+  .col-1, .col-2 {
+    opacity: 1;
+  }
+  /* set scroll background images (fixed not supported on mobile) */
+
+  #graduate {
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
+    ), url(../assets/images/leaf.jpg) center no-repeat scroll;
+    background-size: auto 100%;
+  }
+
+  #career {
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
+    ), url(../assets/images/cherry_blossom.jpg) center no-repeat scroll;
+    background-size: auto 100%;
+  }
+
+  #finance {
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
+    ), url(../assets/images/flower.jpg) center no-repeat scroll;
+    background-size: auto 100%;
+  }
+
+  #travel {
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
+    ), url(../assets/images/clouds.jpg) center no-repeat scroll;
+    background-size: auto 100%;
+  }
+
+  .row {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  h1 {
+    margin-bottom: 0px;
+  }
+
+  #flex-grid {
+    margin-top: 0px;
   }
 }
 
