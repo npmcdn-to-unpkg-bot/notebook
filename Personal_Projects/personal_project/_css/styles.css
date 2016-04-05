@@ -347,8 +347,8 @@ h2 {
   /* for safari set min-height */
   min-height: 700px;
   margin: auto;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -397,6 +397,15 @@ h2 {
 /* media queries for mobile layouts */
 
 /* Page One */
+@media (max-width: 1200px) {
+  h1 {
+    margin-bottom: 0px;
+  }
+  #flex-grid {
+    margin-top: 0px;
+  }
+}
+
 @media (max-width: 400px) {
   .panel-head {
     font-size: 2em;
@@ -406,6 +415,7 @@ h2 {
   }
   #flex-grid {
     min-width: 300px;
+    margin-top: 0px;
   }
   .container {
     width: 300px;
@@ -436,6 +446,10 @@ h2 {
     -webkit-flex-flow: column nowrap;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
+  }
+  .col-1 {
+    margin: 15px auto;
+    max-width: 400px;
   }
   .col-2 .text-content {
     margin-bottom: 15px;
