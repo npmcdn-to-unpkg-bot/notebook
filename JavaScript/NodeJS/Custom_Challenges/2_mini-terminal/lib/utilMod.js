@@ -1,7 +1,18 @@
 var util = require("util");
 
+function tsLog(content) {
+  util.log(content);
+}
+
+function objLayout(object) {
+  util.inspect(object, {
+    showHidden: true,
+    depth: null,
+    colors: true
+  });
+}
+
 module.exports = {
-  tsLog(content) {
-    util.log(content);
-  }
+  tsLog: tsLog(content),
+  objLayout: objLayout(object)
 }
