@@ -13,6 +13,6 @@ function objLayout(object) {
 }
 
 module.exports = {
-  tsLog: tsLog(content),
-  objLayout: objLayout(object)
+  tsLog: tsLog,
+  objLayout: objLayout
 }

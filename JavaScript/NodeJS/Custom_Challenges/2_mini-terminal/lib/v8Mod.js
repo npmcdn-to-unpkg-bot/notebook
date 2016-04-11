@@ -30,11 +30,11 @@ function v8Actions() {
 }
 
 module.exports = {
-  totalHeap: totalHeap(),
-  execHeapSize: execHeapSize(),
-  totalPhysical: totalPhysical(),
-  totalAvailable: totalAvailable(),
-  usedHeap: usedHeap(),
-  heapLimit: heapLimit(),
-  v8Actions: v8Actions()
+  totalHeap: totalHeap,
+  execHeapSize: execHeapSize,
+  totalPhysical: totalPhysical,
+  totalAvailable: totalAvailable,
+  usedHeap: usedHeap,
+  heapLimit: heapLimit,
+  v8Actions: v8Actions
 }
