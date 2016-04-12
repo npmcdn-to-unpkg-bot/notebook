@@ -6,7 +6,6 @@ function cpe(process, options) {
     if (err) {
       throw err;
     }
-    console.log("Process Complete:");
     console.log(stdout);
   });
 }
@@ -22,7 +21,13 @@ function cps(process, options) {
   });
 }
 
-module.export = {
+module.exports = {
   cpe: cpe,
   cps: cps
 };
+
+220
+110
+200
+
+550
