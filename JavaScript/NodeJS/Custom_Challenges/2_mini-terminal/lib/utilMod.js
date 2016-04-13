@@ -5,7 +5,7 @@ function tsLog(content) {
 }
 
 function objLayout(object) {
-  util.inspect(object, {
+  return util.inspect(object, {
     showHidden: true,
     depth: null,
     colors: true

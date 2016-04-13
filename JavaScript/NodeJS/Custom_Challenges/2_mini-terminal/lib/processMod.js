@@ -25,9 +25,3 @@ module.exports = {
   cpe: cpe,
   cps: cps
 };
-
-220
-110
-200
-
-550
