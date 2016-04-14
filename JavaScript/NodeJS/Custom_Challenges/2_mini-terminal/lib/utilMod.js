@@ -1,7 +1,8 @@
+var colors = require("colors/safe");
 var util = require("util");
 
 function tsLog(content) {
-  util.log(content);
+  util.log(colors.magenta(content));
 }
 
 function objLayout(object) {
