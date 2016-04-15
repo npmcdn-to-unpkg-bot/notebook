@@ -2,7 +2,7 @@ var prompt = require("prompt");
 var colors = require("colors/safe");
 var homedir = require("homedir");
 // Custom modules
-var basic = require("./lib/basic");
+var setup = require("./lib/setup");
 
 // Customize prompt
 prompt.message = "";
@@ -15,9 +15,9 @@ var selection = {};
 
 var selectionRoute = function() {
   if (selection.type === '1') {
-    basic.setup(selection);
+    setup.basic(selection);
   } else if (selection.type === '2') {
-    console.log("Move to App Setup");
+    setup.application(selection);
   }
 };
 
