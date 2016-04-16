@@ -72,6 +72,21 @@ function applicationSetup(projectOptions) {
   }, {
     name: "logs/.gitkeep",
     content: ""
+  },{
+    name: "public/index.html",
+    content: ""
+  }, {
+    name: "public/css/style.css",
+    content: ""
+  }, {
+    name: "public/js/script.js",
+    content: ""
+  }, {
+    name: "public/assets/images/.gitkeep",
+    content: ""
+  }, {
+    name: "public/assets/icons/.gitkeep",
+    content: ""
   }];
 
   var projectPath = projectOptions.path + "/" + projectOptions.name + "/";
@@ -81,6 +96,11 @@ function applicationSetup(projectOptions) {
   fs.mkdirSync(`${projectPath}logs`);
   fs.mkdirSync(`${projectPath}node_modules`);
   fs.mkdirSync(`${projectPath}public`);
+  fs.mkdirSync(`${projectPath}public/css`);
+  fs.mkdirSync(`${projectPath}public/js`);
+  fs.mkdirSync(`${projectPath}public/assets`);
+  fs.mkdirSync(`${projectPath}public/assets/images`);
+  fs.mkdirSync(`${projectPath}public/assets/icons`);
   // Once Root folder made create rest of stuff that is definite
   applicationFiles.forEach((file) => {
     fs.writeFile(projectPath + file.name, file.content, (err) => {

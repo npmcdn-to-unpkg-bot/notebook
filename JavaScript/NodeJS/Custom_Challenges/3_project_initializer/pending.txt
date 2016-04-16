@@ -1,6 +1,4 @@
 Pending
 ======
 
-Properly setup 'public' folder structure for application setup.
-
 Create templates of boilerplate files.
