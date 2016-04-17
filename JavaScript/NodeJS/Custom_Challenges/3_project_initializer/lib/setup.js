@@ -1,16 +1,17 @@
 var fs = require("fs");
+var templates = require("./templates");
 
 function basicSetup(projectOptions) {
 
   var basicFiles = [{
     name: "index.html",
-    content: ""
+    content: templates.setHtml(projectOptions.name)
   }, {
     name: "css/style.css",
-    content: ""
+    content: templates.setCss()
   }, {
     name: "js/script.js",
-    content: ""
+    content: templates.setJs()
   }, {
     name: "assets/images/.gitkeep",
     content: ""
@@ -35,23 +36,23 @@ function basicSetup(projectOptions) {
   });
   // Add optional files accordingly
   if (projectOptions.gitignore === 'y') {
-    fs.writeFile(projectPath + ".gitignore", "", function(err) {
+    fs.writeFile(projectPath + ".gitignore", templates.setGitignore(), function(err) {
       if (err) { console.error(`There was an error: ${err}`); }
     });
   }
   if (projectOptions.readme === 'y') {
-    fs.writeFile(projectPath + "README.md", "", function(err) {
+    fs.writeFile(projectPath + "README.md", templates.setReadme(projectOptions.name), function(err) {
       if (err) { console.error(`There was an error: ${err}`); }
     });
   }
   if (projectOptions.test === 'y') {
     fs.mkdirSync(`${projectPath}test`);
-    fs.writeFile(projectPath + "test/test.js", "", function(err) {
+    fs.writeFile(projectPath + "test/test.js", templates.setTest("index"), function(err) {
       if (err) { console.error(`There was an error: ${err}`); }
     });
   }
   if (projectOptions.gruntfile === 'y') {
-    fs.writeFile(projectPath + "Gruntfile.js", "", function(err) {
+    fs.writeFile(projectPath + "Gruntfile.js", templates.setGruntfile(), function(err) {
       if (err) { console.error(`There was an error: ${err}`); }
     });
   }
@@ -74,13 +75,13 @@ function applicationSetup(projectOptions) {
     content: ""
   },{
     name: "public/index.html",
-    content: ""
+    content: templates.setHtml(projectOptions.name)
   }, {
     name: "public/css/style.css",
-    content: ""
+    content: templates.setCss()
   }, {
     name: "public/js/script.js",
-    content: ""
+    content: templates.setJs()
   }, {
     name: "public/assets/images/.gitkeep",
     content: ""
@@ -109,23 +110,23 @@ function applicationSetup(projectOptions) {
   });
   // Add optional files accordingly
   if (projectOptions.gitignore === 'y') {
-    fs.writeFile(projectPath + ".gitignore", "", function(err) {
+    fs.writeFile(projectPath + ".gitignore", templates.setGitignore(), function(err) {
       if (err) { console.error(`There was an error: ${err}`); }
     });
   }
   if (projectOptions.readme === 'y') {
-    fs.writeFile(projectPath + "README.md", "", function(err) {
+    fs.writeFile(projectPath + "README.md", templates.setReadme(projectOptions.name), function(err) {
       if (err) { console.error(`There was an error: ${err}`); }
     });
   }
   if (projectOptions.test === 'y') {
     fs.mkdirSync(`${projectPath}test`);
-    fs.writeFile(projectPath + "test/test.js", "", function(err) {
+    fs.writeFile(projectPath + "test/test.js", templates.setTest("app"), function(err) {
       if (err) { console.error(`There was an error: ${err}`); }
     });
   }
   if (projectOptions.gruntfile === 'y') {
-    fs.writeFile(projectPath + "Gruntfile.js", "", function(err) {
+    fs.writeFile(projectPath + "Gruntfile.js", templates.setGruntfile(), function(err) {
       if (err) { console.error(`There was an error: ${err}`); }
     });
   }
