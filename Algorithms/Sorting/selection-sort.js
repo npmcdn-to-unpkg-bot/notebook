@@ -2,6 +2,12 @@
   Selection Sort
 */
 
+function swap(arr, idx1, idx2) {
+  let swap = arr[idx1];
+  arr[idx1] = arr[idx2];
+  arr[idx2] = swap;
+}
+
 function findSmallest(array, start) {
     let smallest;
     for (let i = start; i < array.length; i++) {

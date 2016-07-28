@@ -2,6 +2,12 @@
   Insertion Sort
 */
 
+function swap(arr, idx1, idx2) {
+  let swap = arr[idx1];
+  arr[idx1] = arr[idx2];
+  arr[idx2] = swap;
+}
+
 function insertIntoPos(array, value, floor) {
     let inserted = false;
     for (let i = floor-1; i >= 0; i--) {

@@ -2,6 +2,12 @@
   Bubble Sort
 */
 
+function swap(arr, idx1, idx2) {
+  let swap = arr[idx1];
+  arr[idx1] = arr[idx2];
+  arr[idx2] = swap;
+}
+
 function bubbleSort(array) {
   for (var i = 0; i < array.length; i++) {
     let current = array[i];
