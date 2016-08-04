@@ -83,14 +83,6 @@ def depthFirstSearch(problem):
     understand the search problem that is being passed in:
     """
 
-    # start = problem.getStartState()
-    # neighbors = problem.getSuccessors(start)
-    # print "\n==========\n"
-    # print "The start is: {}".format(start)
-    # print "The neighbors are: {}".format(neighbors)
-    # print "The neighbors of 5, 4 are: {}".format(problem.getSuccessors(neighbors[0][0]))
-    # print "\n==========\n\n\n"
-
     def has_no_neighbors(node, visited):
         neighbor_set = set([neighbor[0] for neighbor in problem.getSuccessors(node)])
         return neighbor_set.issubset(visited)
@@ -117,16 +109,62 @@ def depthFirstSearch(problem):
                 if depth_search:
                     return depth_search
 
-    search = dfs(problem.getStartState())
-    print search
-    return search
+    dfs_search = dfs(problem.getStartState())
+    return dfs_search
 
 
 
 def breadthFirstSearch(problem):
-    """Search the shallowest nodes in the search tree first."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+
+    # start = problem.getStartState()
+    # neighbors = problem.getSuccessors(start)
+    # print "\n==========\n"
+    # print "The start is: {}".format(start)
+    # print "The neighbors are: {}".format(neighbors)
+    # print "The neighbors of 5, 4 are: {}".format(problem.getSuccessors(neighbors[0][0]))
+    # print "\n==========\n\n\n"
+
+    # while(we don't hit start node):
+    #     follow map back from destination
+    #     pushing directions along the way
+    # {
+    #     to: ((3, 4), 'South', 10)
+    #     from: ((3, 3), 'North', 10)
+    # }
+
+    def bfs(root):
+        queue = [root]
+        visited = []
+        backtrak = {}
+        while(len(queue) > 0):
+            next = queue.pop(0)
+            if (next == root):
+                coordinates = next
+            else:
+                coordinates = next[0]
+            visited.append(coordinates)
+
+            if (problem.isGoalState(coordinates)):
+                return traceback(coordinates, backtrak)
+            for neighbor in problem.getSuccessors(coordinates):
+                if neighbor[0] not in visited:
+                    queue.append(neighbor)
+                    backtrak[neighbor[0]] = (coordinates, neighbor[1], 1)
+
+    def traceback(endpoint, node_map):
+        current_coords = endpoint
+        current_direction = None;
+        backtrace = []
+        while (current_coords != problem.getStartState()):
+            current_direction = node_map[current_coords][1]
+            current_coords = node_map[current_coords][0]
+            backtrace.append(current_direction)
+        backtrace = backtrace[::-1]
+        return backtrace
+
+    bfs_search = bfs(problem.getStartState())
+    return bfs_search
+
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
