@@ -1,0 +1,367 @@
+/*
+font-family: 'Bungee Hairline', cursive;
+font-family: 'Abel', sans-serif;
+font-family: 'Pontano Sans', sans-serif;
+*/
+
+$black-olive: #3F403F;
+$smokey-black: #141301;
+$gunmetal: #2E3138;
+$outer-space: #454851;
+$onyx: #39393A;
+$davey-gray: #595959;
+$black-shadows: #B7B5B3;
+$platinum-white: #E6E8E6;
+$platinum-grey: #E5E7E6;
+$isabelline: #EBEBEB;
+$light-white: #FAFFFD;
+
+$vista-blue: #7B8CDE;
+$green-sheen: #75B09C;
+
+html, body {
+    overflow: auto;
+	background-color: $light-white;
+	color: $outer-space;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+
+}
+
+@media (max-width: 715px) {
+		p {
+			font-size: 0.9em;
+		}
+}
+
+@mixin flex ($dir:row, $wrap:wrap, $content: center, $items: center) {
+	display: flex;
+	flex-flow: $dir $wrap;
+	justify-content: $content;
+	align-items: $items;
+}
+
+:root {
+	font-size: 18px;	
+	font-family: 'Abel', sans-serif;
+}
+
+.section-title {
+	font-size: 4rem;
+	align-self: center;
+	text-align: center;
+	margin: auto;
+	padding: 0.5em 0;
+	font-family: 'Bungee Hairline', cursive;
+	@media (max-width: 500px) {
+  		& {
+    		font-size: 2.5rem;
+  		}
+	}
+}
+
+/* ==  Project Section  == */
+
+.project-section {
+	width: 100%;
+	height: auto;
+	padding: 1rem;
+	box-sizing: border-box;
+	@include flex($content: space-around, $items:flex-start);
+}
+
+.project {
+	max-width: 400px;
+	min-width: 300px;
+	margin: 1em;
+	height: auto;
+	@include flex($dir:row, $wrap:wrap);
+	/* ----------- Non-Retina Screens ----------- */
+	@media screen 
+	  and (min-device-width: 1200px) 
+	  and (max-device-width: 1600px) 
+	  and (-webkit-min-device-pixel-ratio: 1) {
+		&:hover {
+			.underbar {
+				width: 100%;
+			}
+		}
+	}
+
+	/* ----------- Retina Screens ----------- */
+	@media screen 
+	  and (min-device-width: 1200px) 
+	  and (max-device-width: 1600px) 
+	  and (-webkit-min-device-pixel-ratio: 2)
+	  and (min-resolution: 192dpi) {
+		&:hover {
+			.underbar {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.project-title {
+	font-size: 1.5rem;
+	width: 100%;
+	h3 {
+		font-family: 'Abel', sans-serif;
+		text-align: left;
+		padding: 0.3em;
+		margin: 0.1em auto;	
+	}
+	.underbar {
+		width: 0;
+		height: 0;
+		border: none;
+		margin: 0;
+		border-top: 0.1em solid $outer-space;
+		transition: width 300ms ease;
+	}
+	@media only screen 
+	and (min-device-width: 320px) 
+	and (max-device-width: 736px) { 
+		.underbar {
+			width: 100%;
+		}
+	}
+}
+
+.project-image {
+	width: 100%;
+	height: 250px;
+	background-color: #982649;
+}
+
+.project-details {
+	width: 100%;
+	height: auto;
+	margin: auto;
+	padding: 0 0.5em;
+	@include flex($dir:column, $wrap: nowrap);
+	box-sizing: border-box;
+	font-size: 1em;
+	text-align: left;
+	font-family: 'Pontano Sans', sans-serif;
+}
+
+/* ==  Gallery Section  == */
+
+.gallery-section {
+	width: 100%;
+	height: auto;
+	font-size: 2rem;
+	@include flex;
+}
+
+.gallery-showcase {
+	width: 700px;
+	min-width: 300px;
+	height: auto;
+	margin: 0.5em 2em;
+}
+
+.gallery-embed {
+	width: 100%;
+	height: 50vw;
+	max-height: 500px;
+	min-height: 300px;
+	@include flex($dir:column);
+	background-color: #EF3E36;
+}
+
+.gallery-description {
+	width: 100%;
+	min-width: 300px;
+		.underbar {
+			width: 15%;
+			height: 0;
+			margin: 0.7em auto;
+			border: none;
+			border-top: 0.1em solid $outer-space;
+		}
+		p {
+			padding: 0 0.4em;
+			font-size: 0.5em;
+			font-family: 'Pontano Sans', sans-serif;
+			text-align: center;
+		}
+}
+
+// Gists Section
+.gist-section {
+	width: 100%;
+	height: auto;
+	font-size: 2rem;
+	margin: 1em auto;
+	@include flex($dir:column, $wrap:nowrap);
+}
+
+.gist-viewer {
+	width: 80%;
+	max-width: 700px;
+	min-width: 300px;
+	height: 600px;
+	margin: auto;
+	position: relative;
+}
+
+.gist-controls {
+	width: 100%;
+	@include flex($wrap:nowrap);
+	background-color: $outer-space;
+	border-radius: 2px;
+}
+
+.left, .right {
+	width: 50%;
+	@include flex($wrap:nowrap);
+	/* ----------- Non-Retina Screens ----------- */
+	@media screen 
+	  and (min-device-width: 1200px) 
+	  and (max-device-width: 1600px) 
+	  and (-webkit-min-device-pixel-ratio: 1) {
+		&:hover {
+			cursor: pointer;
+			background-color: lighten($outer-space, 15%);
+		}
+	}
+
+	/* ----------- Retina Screens ----------- */
+	@media screen 
+	  and (min-device-width: 1200px) 
+	  and (max-device-width: 1600px) 
+	  and (-webkit-min-device-pixel-ratio: 2)
+	  and (min-resolution: 192dpi) {
+		&:hover {
+			cursor: pointer;
+			background-color: lighten($outer-space, 15%);
+		}
+	}
+	user-select: none;
+}
+
+.icon {
+	margin: auto;
+	font-size: 2rem;
+	color: $light-white;
+}
+
+.gist-embed {
+	width: 100%;
+	overflow: scroll;
+	position: absolute;
+	transition: opacity 300ms ease-in;
+	opacity: 0;
+	z-index: -1;
+}
+
+.gist-meta, .gist-meta a {
+	background-color: $outer-space !important;
+	color: $light-white !important;
+}
+
+.gist-meta a:hover {
+	color: $green-sheen !important;
+}
+
+.gist-data {
+	overflow: scroll !important;
+	@media screen and (orientation:portrait) {
+    	-webkit-overflow-scrolling: touch !important;
+	}
+	@media screen and (orientation:landscape) {
+    	-webkit-overflow-scrolling: touch !important;
+	}
+	max-height: 500px;
+}
+
+.current-gist {
+	z-index: 0;
+	opacity: 1;
+}
+
+// Bio section
+.bio-section {
+	width: 100%;
+	height: auto;
+	padding: 0 1em 5em 1em;
+	font-size: 1rem;
+	box-sizing: border-box;
+	@include flex($content: space-around, $items:flex-start);
+	@media (max-width: 350px) {
+		padding: 0 0 5em 0;
+	}
+}
+
+.bio-container {
+	width: 100%;
+	max-width: 700px;
+	margin: 0;
+	margin-bottom: 1em;
+	@include flex($content: space-around, $items: flex-start);
+	@media (max-width: 675px) {
+		flex-flow: column nowrap;
+	}
+}
+
+.avatar-image {
+	width: 40%;
+	min-width: 300px;
+	max-height: 30vw;
+	min-height: 300px;
+	margin: 0;
+	background-color: $gunmetal;
+	@media (max-width: 675px) {
+		margin: auto;
+	}
+}
+
+.bio-details {
+	width: 50%;
+	min-width: 300px;
+	margin: 0 0 0 1em;
+	p {
+		width: 100%;
+		margin: 0;
+		height: auto;
+		font-family: 'Pontano Sans', sans-serif;
+	}
+	.links {
+		width: 100%;
+		height: auto;
+		margin: 0;
+		margin-bottom: 1em;
+		@include flex($content: space-between);
+		.link {
+			margin: 0;
+			width: 50px;
+			height: 50px;
+			background-color: $black-shadows;
+		}
+	}
+	@media (max-width: 675px) {
+		& {
+			width: 300px;
+			margin: auto;
+		}
+		.links {
+			margin: 1em auto;
+		}
+	}
+}
+
+// Footer section
+.footer {
+	width: 100%;
+	height: 100px;
+	background-color: $outer-space;
+	@include flex($dir: column);
+	p {
+		width: 100%;
+		margin: 0 auto;
+		color: $green-sheen;
+		text-align: center;
+	}
+}

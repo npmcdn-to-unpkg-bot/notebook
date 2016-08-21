@@ -1,0 +1,54 @@
+"use strict";
+
+var GistViewer = function GistViewer() {
+	this.gists = ["c65b635e4d431cc457f1e6eb9ac5ceaa", "7dca59b74df10bf94f554a06a9467558", "0e5231ff9e4be67216096657d322103a", "349269e216e0f4ba1699290b026e5225", "1d98dcbcf5553a7cb0b54a5a94df2592", "4088fffbe96cb8ea7d669b2664936bf1", "db96318fa3c02f4e93f91da4e617221c", "23114027d8c4c2dd1c50dd06ac944d2c"];
+	this.currentGist = this.gists[0];
+	this.leftArrow = document.getElementById("left-arrow");
+	this.rightArrow = document.getElementById("right-arrow");
+};
+
+GistViewer.prototype.previous = function () {
+	var currentIdx = this.gists.indexOf(this.currentGist);
+	if (currentIdx === 0) {
+		this.currentGist = this.gists[this.gists.length - 1];
+	} else {
+		this.currentGist = this.gists[currentIdx - 1];
+	}
+	this.renderView();
+};
+
+GistViewer.prototype.next = function () {
+	var currentIdx = this.gists.indexOf(this.currentGist);
+	if (currentIdx === this.gists.length - 1) {
+		this.currentGist = this.gists[0];
+	} else {
+		this.currentGist = this.gists[currentIdx + 1];
+	}
+	this.renderView();
+};
+
+GistViewer.prototype.renderView = function () {
+	var gistElmts = $(".gist-embed");
+	var newGist = undefined;
+	for (var i = 0; i < gistElmts.length; i++) {
+		var gistId = gistElmts[i].getAttribute("data-gist-id");
+		if (gistId === this.currentGist) {
+			newGist = gistElmts[i];
+		}
+	}
+	var oldGist = $(".current-gist");
+	oldGist.removeClass("current-gist");
+	$(newGist).addClass("current-gist");
+};
+
+var gistViewer = new GistViewer();
+
+$(".left").on("click", function (event) {
+	event.preventDefault();
+	gistViewer.previous();
+});
+
+$(".right").on("click", function (event) {
+	event.preventDefault();
+	gistViewer.next();
+});
