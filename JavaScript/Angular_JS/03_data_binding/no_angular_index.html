@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Without Angular</title>
+</head>
+<body>
+    <h1>My name is <span id="name"></span></h1>
+    <input type="text" id="text-box" placeholder="What is your name?" value="">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var $scope = {
+                name: ""
+            };
+            var textBox = document.getElementById("text-box");
+            textBox.addEventListener("keyup", function(event) {
+                console.log(event)
+                $scope.name = event.target.value;
+                var name = document.getElementById("name");
+                name.innerText = $scope.name;
+            });
+        });
+    </script>
+</body>
+</html>

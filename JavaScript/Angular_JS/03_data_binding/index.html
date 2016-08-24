@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Data Binding</title>
+</head>
+<body>
+    <h1>My name is: {{name}}</h1>
+    <input type="text" placeholder="What is your name?" ng-model="name" ng-init="name='BoJack'">
+    <h3>I love {{animal}} &lt;3</h3>
+    <select name="animal-select" ng-model="animal">
+        <option value="Dogs">Dogs</option>
+        <option value="Cats">Cats</option>
+        <option value="Dogs and Cats">Dogs and Cats</option>
+        <option value="Neither">Neither</option>
+    </select>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+</body>
+</html>
