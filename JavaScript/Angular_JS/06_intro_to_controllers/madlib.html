@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="firstApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Expressions and Filters</title>
+</head>
+<body ng-controller="MadLibController">
+    <form>
+        <input type="text" ng-model="prerender.boyName" placeholder="Enter a boy's name...">
+        <input type="text" ng-model="prerender.adjective" placeholder="Enter an adjective...">
+        <input type="text" ng-model="prerender.pluralNounA" placeholder="Enter a plural noun...">
+        <input type="text" ng-model="prerender.pluralNounB" placeholder="Enter a plural noun...">
+	<input type="text" ng-model="prerender.insect" placeholder="Enter an insect, plural...">
+        <input type="text" ng-model="prerender.pluralNounC" placeholder="Enter a plural noun...">
+        <input type="text" ng-model="prerender.verb" placeholder="Enter a verb ending in 's'">
+        <button ng-click="generate()">Generate</button>
+        <button ng-click="clear()">Clear</button>
+    </form>
+    <h3>Mad with the Libs</h3>
+    <p>
+    I'm in love with {{madlib.boyName}}. He's so {{madlib.adjective}}!
+    He has big flat {{madlib.pluralNounA}}, when our {{madlib.pluralNounB}} meet,
+    I get {{madlib.insect}} in my stomach. I've fallen for him like a ton of
+    {{madlib.pluralNounC}}, and he {{madlib.verb}} me, too. But I think he's got
+    another girlfriend. What should I do?
+    </p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
