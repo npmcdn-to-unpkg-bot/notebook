@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Expressions and Filters</title>
+</head>
+<body>
+    <div>
+	<h3>Please say something...</h3>
+	<input type="text" ng-model="saying">
+	<p>Yelling: <span>{{saying | uppercase}}</span></p>
+	<p>Whispering: <span>{{saying | lowercase}}</span></p>
+	<p>Filtering pi into a currency: {{3.14159265359 | currency:"&euro;"}}</p>
+	<p>How many digits of pi do you want?</p>
+	<select ng-model="digitCount">
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	</select>
+	<p>Here you go! The first {{digitCount}} {{(digitCount) > 1 ? "digits" : "digit"}} of pi!</p>
+	<p>{{3.14159265359 | number: digitCount}}</p>
+    </div>
+    <br>
+    <br>
+    <div>
+	<h1>Super Useful Tip Calculator</h1>
+	<label>How much did your meal cost?</label>
+	<input type="text" ng-model="price">
+	<label>How much did you want to tip?</label>
+	<select ng-model="tip">
+	    <option value="0.10">10%</option>
+	    <option value="0.20">20%</option>
+	    <option value="0.30">30%</option>
+	</select>
+	<h3>Subtotal: {{price | currency}}</h3>
+	<h3>Tip: {{price * tip | currency}}</h3>
+	<br>
+    </div>
+    <div>{{this}}</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+</body>
+</html>

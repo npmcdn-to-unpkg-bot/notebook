@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Expressions and Filters</title>
+</head>
+<body>
+    <form>
+        <input type="text" ng-model="boyName" placeholder="Enter a boy's name...">
+        <input type="text" ng-model="adjective" placeholder="Enter an adjective...">
+        <input type="text" ng-model="pluralNounA" placeholder="Enter a plural noun...">
+        <input type="text" ng-model="pluralNounB" placeholder="Enter a plural noun...">
+	<input type="text" ng-model="insect" placeholder="Enter an insect, plural...">
+        <input type="text" ng-model="pluralNounC" placeholder="Enter a plural noun...">
+        <input type="text" ng-model="verb" placeholder="Enter a verb ending in 's'">
+    </form>
+    <h3>Mad with the Libs</h3>
+    <p>
+    I'm in love with {{boyName}}. He's so {{adjective}}!
+    He has big flat {{pluralNounA}}, when our {{pluralNounB}} meet,
+    I get {{insect}} in my stomach. I've fallen for him like a ton of
+    {{pluralNounC}}, and he {{verb}} me, too. But I think he's got
+    another girlfriend. What should I do?
+    </p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+</body>
+</html>
