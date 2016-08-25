@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Built-in Directives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-init="names=['Harry', 'Ron', 'Hermione', 'Sirius', 'Hedwig', 'Tonks']">
+    <ul>
+        <li ng-repeat="name in names">
+	    {{name}}
+	</li>
+    </ul>
+    <br>
+    <br>
+    <div ng-init="symbols=['♠️ ', '♣️ ', '♥️ ', '♦️ ']">
+	<ul>
+	    <li ng-repeat="symbol in symbols">{{symbol}}</li>
+	</ul>
+    </div>
+    <br>
+    <br>
+    <div ng-init="repeats=[1, 1, 2, 5, 6, 9, 9, 9]">
+        <ul>
+            <li ng-repeat="repeat in repeats track by $index">
+		{{repeat}}
+	    </li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <div ng-init="obj={name:'Joe', age: 12, dob: 101291}">
+        <ul>
+            <li ng-repeat="key in obj">
+		{{key}}
+	    </li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <div>
+        <h3>Sign up page</h3>
+	<input type="password" ng-model="password">
+	<label ng-class="{invalid: password.length <= 6, valid: password.length > 6}">Your password is {{password.length}} {{(password.length > 1) ? "characters" : "character"}}</label>
+	<input type="submit" ng-show="password.length > 6">
+	<p ng-show="password.length <= 6">Password is invalid!</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

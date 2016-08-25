@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cameraShop">
+<head>
+    <meta charset="UTF-8">
+    <title>Built-in Directives - Camera Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="CameraController">
+    <h1>Camera Shop</h1>
+    <select ng-model="sortingOrder">
+        <option value="rating">Rating</option>
+        <option value="price">Price</option>
+    </select>
+    <div class="container">
+	<div class="listing" ng-repeat="camera in store.cameras | orderBy:sortingOrder:reverse=true">
+	    <h5>{{camera.title}}</h5>
+	    <p ng-class="{sale: camera.onSale}">{{camera.price | currency}}</p>
+	    <p>{{camera.rating}}</p>
+	    <img width="300" ng-src="{{camera.image}}">
+	</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

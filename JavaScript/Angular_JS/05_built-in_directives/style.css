@@ -1,0 +1,15 @@
+.highlight {
+    background-color: yellow;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
+.sale {
+    color: rgb(200, 200, 10);
+}
