@@ -1,0 +1,39 @@
+.scoreboard {
+    background-color: rgba(0, 0, 210, 0.7);
+    transition: 0.3s ease background-color;
+}
+
+.win {
+    background-color: rgba(0, 210, 0, 0.7);
+}
+
+.lose {
+    background-color: rgba(210, 0, 0, 0.7);
+}
+
+.box {
+    width: 400px;
+    height: 400px;
+    margin: 15px auto;
+    transition: 0.3s ease background-color;
+}
+
+.ng-pristine {
+    border: 1px solid blue;
+}
+
+.ng-dirty {
+    border: 1px solid gray;
+}
+
+.ng-touched {
+    border: 1px solid magenta;
+}
+
+.ng-valid {
+    border: 1px solid green;
+}
+
+.ng-invalid {
+    border: 1px solid red;
+}

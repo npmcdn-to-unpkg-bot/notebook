@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form action="#" ng-model="form">
+
+    <label for="name">
+      <input id="name" type="text" ng-model="form.name" ng-class="{'valid': form.name.$valid, 'invalid': form.name.$invalid}, 'pristine': form.name.$pristine, 'dirty': form.name.$dirty, 'touched': form.name.touched" required>
+    </label>
+    <span ng-show="form.name.invalid">Enter valid username</span>
+
+    <label for="password">
+      <input id="password" type="password" ng-model="form.password" ng-class="{'valid': form.password.$valid, 'invalid': form.password.$invalid}, 'pristine': form.password.$pristine, 'dirty': form.password.$dirty, 'touched': form.password.touched">
+    </label>
+    <span ng-show="form.password.$invalid">Enter valid username</span>
+
+    <label for="email">
+      <input id="email" type="email" ng-model="form.email" ng-class="{'valid': form.email.$valid, 'invalid': form.email.$invalid}, 'pristine': form.email.$pristine, 'dirty': form.email.$dirty, 'touched': form.email.touched">
+    </label>
+    <span ng-show="form.email.$invalid">Enter valid username</span>
+
+    <label for="zip">
+      <input id="zip" type="text" ng-model="form.zip" ng-class="{'valid': form.zip.$valid, 'invalid': form.zip.$invalid}, 'pristine': form.zip.$pristine, 'dirty': form.zip.$dirty, 'touched': form.zip.touched">
+    </label>
+    <span ng-show="form.zip.$invalid">Enter valid username</span>
+
+    <input type="submit" value="Click me!">
+
+  </form>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
