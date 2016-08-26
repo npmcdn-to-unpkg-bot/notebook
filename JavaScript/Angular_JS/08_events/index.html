@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngClickApp">
+<head>
+  <meta charset="UTF-8">
+  <title>ng-Click App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="MyController">
+  <h1>Generate Random Number</h1>
+  <p>Number is: {{generator.number | number}}</p>
+  <button ng-click="generateNumber()">Generate</button>
+  <h1>Reverse a word</h1>
+  <p>Reversed is: {{generator.reversed}}</p>
+  <input type="text" ng-model="generator.word">
+  <button ng-click="reverseWord()">Reverse</button>
+
+
+  <div ng-controller="PingPongGame">
+    <h1>Ping Pong Score Keeper</h1>
+    <div ng-mouseenter="game.point(1)" class="scoreboard" ng-class="{win: game.gameOver() === 1,lose: game.gameOver() === 2}">
+      <h4>Player 1</h4>
+      <h1>{{game.score[0]}}</h1>
+      <p ng-show="game.serve[0]">Serving</p>
+    </div>
+    <div ng-mouseenter="game.point(2)" class="scoreboard" ng-class="{win: game.gameOver() === 2,lose: game.gameOver() === 1}">
+      <h4>Player 2</h4>
+      <h1>{{game.score[1]}}</h1>
+      <p ng-show="game.serve[1]">Serving</p>
+    </div>
+    <button ng-click="game.reset()">Reset</button>
+  </div>
+
+  <div ng-controller="RandomColor">
+    <div class="box" ng-mouseenter="randomColor()" ng-style="myStyle={'background-color':color}"></div>
+    <button ng-click="reverseColors()">Reverse Colors</button>
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+
+  <div ng-controller="ContactList">
+    <form ng-submit="addContact({'name': name, 'email': email, 'phone': phone})">
+      <input type="text" ng-model="name" placeholder="name">
+      <input type="text" ng-model="email" placeholder="email">
+      <input type="text" ng-model="phone" placeholder="phone">
+      <input type="submit">
+      <br>
+      <input type="text" ng-model="search">
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="contact in contacts | filter: search">
+          <td>{{contact.name}}</td>
+          <td>{{contact.email}}</td>
+          <td>{{contact.phone}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
