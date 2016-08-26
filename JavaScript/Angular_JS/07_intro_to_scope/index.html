@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="firstApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Intro to Scope</title>
+</head>
+<body>
+    <div ng-controller="MyFirstController">
+	<h1>My name is: {{view.name}}</h1>
+	<input ng-model="view.name" type="text" placeholder="What is your name?">
+	<div ng-controller="MySecondController">
+	    <h1>My name is: {{view.name}}</h1>
+	    <input ng-model="view.name" type="text" placeholder="What is your name?">
+	    <div ng-controller="MyThirdController">
+		<h1>My name is: {{view.name}}</h1>
+		<input ng-model="view.name" type="text" placeholder="What is your name?">
+	    </div>
+	</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
