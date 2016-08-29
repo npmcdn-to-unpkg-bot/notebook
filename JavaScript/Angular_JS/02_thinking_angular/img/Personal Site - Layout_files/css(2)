@@ -1,0 +1,40 @@
+/* vietnamese */
+@font-face {
+  font-family: 'Bungee Hairline';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Bungee Hairline'), local('BungeeHairline-Regular'), url(https://fonts.gstatic.com/s/bungeehairline/v2/8Li3dr3whdkxuk7pmLaZaVT_xyho_HQDwuvp8oi4gGs.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Bungee Hairline';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Bungee Hairline'), local('BungeeHairline-Regular'), url(https://fonts.gstatic.com/s/bungeehairline/v2/8Li3dr3whdkxuk7pmLaZae5Tv6dvitgoLnEdohVtlEc.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Bungee Hairline';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Bungee Hairline'), local('BungeeHairline-Regular'), url(https://fonts.gstatic.com/s/bungeehairline/v2/8Li3dr3whdkxuk7pmLaZaZ16wW5UEL6hOOm3lnIQ28I.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Megrim';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Megrim'), url(https://fonts.gstatic.com/s/megrim/v7/9P_3onJTQHRtuAYFLfpNCuvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nixie One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nixie One'), local('NixieOne-Regular'), url(https://fonts.gstatic.com/s/nixieone/v7/gQ0PT3rPU_Et2ExNz-ahmpBw1xU1rKptJj_0jans920.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}

@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<!-- saved from url=(0100)https://s.codepen.io/boomerang/ad390f4957b10b1a08ed522cf8d0a9921472361183145/index.html?editors=0010 -->
+<html class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link type="text/css" rel="stylesheet" href="./gist-embed-b03925b9c18fa42b22f168e7d17a7ca70ca50a4126cbfca9f91a1a8bc79b5905.css"><script src="./console_runner-d0a557e5cb67f9cd9bbb9673355c7e8e.js"></script><script src="./events_runner-21174b4c7273cfddc124acb0876792e0.js"></script><script src="./css_live_reload_init-7618a0de08795409d8f6c9ef6805f7b2.js"></script><meta name="robots" content="noindex"><link rel="canonical" href="https://codepen.io/l4nk33/pen/NAozOY?editors=0010">
+<link href="./css(1)" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./icon" rel="stylesheet">
+<link href="./css(2)" rel="stylesheet">
+<link rel="stylesheet prefetch" href="https://codepen.io/assets/reset/normalize.css">
+<style class="cp-pen-styles">/*
+font-family: 'Bungee Hairline', cursive;
+font-family: 'Abel', sans-serif;
+font-family: 'Pontano Sans', sans-serif;
+*/
+html, body {
+  overflow: auto;
+  background-color: #FAFFFD;
+  color: #454851;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+@media (max-width: 715px) {
+  p {
+    font-size: 0.9em;
+  }
+}
+:root {
+  font-size: 18px;
+  font-family: 'Abel', sans-serif;
+}
+
+.section-title {
+  font-size: 4rem;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  text-align: center;
+  margin: auto;
+  padding: 0.5em 0;
+  font-family: 'Bungee Hairline', cursive;
+}
+@media (max-width: 500px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* ==  Project Section  == */
+.project-section {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.project {
+  max-width: 400px;
+  min-width: 300px;
+  margin: 1em;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* ----------- Non-Retina Screens ----------- */
+  /* ----------- Retina Screens ----------- */
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .project:hover .underbar {
+    width: 100%;
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .project:hover .underbar {
+    width: 100%;
+  }
+}
+
+.project-title {
+  font-size: 1.5rem;
+  width: 100%;
+}
+.project-title h3 {
+  font-family: 'Abel', sans-serif;
+  text-align: left;
+  padding: 0.3em;
+  margin: 0.1em auto;
+}
+.project-title .underbar {
+  width: 0;
+  height: 0;
+  border: none;
+  margin: 0;
+  border-top: 0.1em solid #454851;
+  -webkit-transition: width 300ms ease;
+  transition: width 300ms ease;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 736px) {
+  .project-title .underbar {
+    width: 100%;
+  }
+}
+
+.project-image {
+  width: 100%;
+  height: 250px;
+  background-color: #982649;
+}
+
+.project-details {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 0 0.5em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  box-sizing: border-box;
+  font-size: 1em;
+  text-align: left;
+  font-family: 'Pontano Sans', sans-serif;
+}
+
+/* ==  Gallery Section  == */
+.gallery-section {
+  width: 100%;
+  height: auto;
+  font-size: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gallery-showcase {
+  width: 700px;
+  min-width: 300px;
+  height: auto;
+  margin: 0.5em 2em;
+}
+
+.gallery-embed {
+  width: 100%;
+  height: 50vw;
+  max-height: 500px;
+  min-height: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #EF3E36;
+}
+
+.gallery-description {
+  width: 100%;
+  min-width: 300px;
+}
+.gallery-description .underbar {
+  width: 15%;
+  height: 0;
+  margin: 0.7em auto;
+  border: none;
+  border-top: 0.1em solid #454851;
+}
+.gallery-description p {
+  padding: 0 0.4em;
+  font-size: 0.5em;
+  font-family: 'Pontano Sans', sans-serif;
+  text-align: center;
+}
+
+.gist-section {
+  width: 100%;
+  height: auto;
+  font-size: 2rem;
+  margin: 1em auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gist-viewer {
+  width: 80%;
+  max-width: 700px;
+  min-width: 300px;
+  height: 600px;
+  margin: auto;
+  position: relative;
+}
+
+.gist-controls {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #454851;
+  border-radius: 2px;
+}
+
+.left, .right {
+  width: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* ----------- Non-Retina Screens ----------- */
+  /* ----------- Retina Screens ----------- */
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .left:hover, .right:hover {
+    cursor: pointer;
+    background-color: #686d7a;
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .left:hover, .right:hover {
+    cursor: pointer;
+    background-color: #686d7a;
+  }
+}
+
+.icon {
+  margin: auto;
+  font-size: 2rem;
+  color: #FAFFFD;
+}
+
+.gist-embed {
+  width: 100%;
+  overflow: scroll;
+  position: absolute;
+  -webkit-transition: opacity 300ms ease-in;
+  transition: opacity 300ms ease-in;
+  opacity: 0;
+  z-index: -1;
+}
+
+.gist-meta, .gist-meta a {
+  background-color: #454851 !important;
+  color: #FAFFFD !important;
+}
+
+.gist-meta a:hover {
+  color: #75B09C !important;
+}
+
+.gist-data {
+  overflow: scroll !important;
+  max-height: 500px;
+}
+@media screen and (orientation: portrait) {
+  .gist-data {
+    -webkit-overflow-scrolling: touch !important;
+  }
+}
+@media screen and (orientation: landscape) {
+  .gist-data {
+    -webkit-overflow-scrolling: touch !important;
+  }
+}
+
+.current-gist {
+  z-index: 0;
+  opacity: 1;
+}
+
+.bio-section {
+  width: 100%;
+  height: auto;
+  padding: 0 1em 5em 1em;
+  font-size: 1rem;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+@media (max-width: 350px) {
+  .bio-section {
+    padding: 0 0 5em 0;
+  }
+}
+
+.bio-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0;
+  margin-bottom: 1em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+@media (max-width: 675px) {
+  .bio-container {
+    -webkit-flex-flow: column nowrap;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+}
+
+.avatar-image {
+  width: 40%;
+  min-width: 300px;
+  max-height: 30vw;
+  min-height: 300px;
+  margin: 0;
+  background-color: #2E3138;
+}
+@media (max-width: 675px) {
+  .avatar-image {
+    margin: auto;
+  }
+}
+
+.bio-details {
+  width: 50%;
+  min-width: 300px;
+  margin: 0 0 0 1em;
+}
+.bio-details p {
+  width: 100%;
+  margin: 0;
+  height: auto;
+  font-family: 'Pontano Sans', sans-serif;
+}
+.bio-details .links {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  margin-bottom: 1em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.bio-details .links .link {
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #B7B5B3;
+}
+@media (max-width: 675px) {
+  .bio-details {
+    width: 300px;
+    margin: auto;
+  }
+  .bio-details .links {
+    margin: 1em auto;
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  background-color: #454851;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer p {
+  width: 100%;
+  margin: 0 auto;
+  color: #75B09C;
+  text-align: center;
+}
+
+/*
+font-family: 'Poiret One', cursive;
+*/
+.first, .last, .title h2 {
+  font-family: 'Abel', sans-serif;
+  font-size: 5rem;
+}
+@media (max-width: 450px) {
+  .first, .last, .title h2 {
+    font-size: 25px;
+  }
+}
+
+.landing-section {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-box {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.first, .last {
+  display: inline-block;
+  margin: 5px;
+}
+
+.first {
+  -webkit-animation: fade-down 1.5s ease-out forwards running;
+          animation: fade-down 1.5s ease-out forwards running;
+  opacity: 0;
+}
+
+.last {
+  -webkit-animation: fade-up 1.5s ease-out forwards running;
+          animation: fade-up 1.5s ease-out forwards running;
+  opacity: 0;
+}
+
+.title h2 {
+  font-size: 2rem;
+  font-family: 'Bungee Hairline', cursive;
+  -webkit-animation: fade-in 1.5s ease-out 1s forwards running;
+          animation: fade-in 1.5s ease-out 1s forwards running;
+  opacity: 0;
+}
+
+@-webkit-keyframes fade-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+@-webkit-keyframes fade-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style></head><body>
+
+
+  <!-- Landing section-->
+  <div class="landing-section">
+    <div class="container-box">
+      <div class="name">
+        <h1 class="first">Ian</h1>
+        <h1 class="last">Jabour</h1>
+      </div>
+      <div class="title">
+        <h2 class="cipher">Full-Stack Developer</h2>
+      </div>
+    </div>
+  </div>
+  <!-- Projects Section-->
+  <h2 class="section-title">Projects</h2>
+  <div class="project-section">
+    <div class="project">
+      <div class="project-image"></div>
+      <div class="project-title">
+        <h3>Chess AI</h3>
+        <hr class="underbar">
+      </div>
+      <div class="project-details">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam hendrerit, est ac sollicitudin porta, lectus odio commodo sem, in interdum purus velit id nibh. Cras lacinia lectus non massa elementum hendrerit. Vivamus efficitur, mi et lacinia pellentesque, justo diam pulvinar magna, quis fermentum purus erat sed metus. Cras a metus a nibh elementum egestas et et nisl.</p>
+      </div>
+    </div>
+    <div class="project">
+      <div class="project-image"></div>
+      <div class="project-title">
+        <h3>Computer Tennis</h3>
+        <hr class="underbar">
+      </div>
+      <div class="project-details">
+        <p>Maecenas quis nisi ullamcorper, malesuada felis et, mattis justo. Etiam nec semper eros. Integer eget massa id lectus condimentum aliquam. In sodales felis eu sagittis porttitor. Vestibulum id viverra leo. Sed vestibulum eleifend justo, eget auctor lorem porttitor nec. Quisque ac urna eu lorem sagittis pretium a vitae lorem.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Gallery Section-->
+  <h2 class="section-title">Gallery</h2>
+  <div class="gallery-section">
+    <div class="gallery-showcase">
+      <div class="gallery-embed"></div>
+      <div class="gallery-description">
+        <hr class="underbar">
+        <p>Aliquam ut sagittis nulla, id tristique justo. Nulla volutpat ultrices tellus, ut ultricies justo placerat a.</p>
+      </div>
+    </div>
+    <div class="gallery-showcase">
+      <div class="gallery-embed"></div>
+      <div class="gallery-description">
+        <hr class="underbar">
+        <p>Proin pharetra ut diam in euismod. Ut facilisis ullamcorper odio vel interdum.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Gists Section-->
+  <h2 class="section-title">Gists</h2>
+  <div class="gist-section">
+    <div class="gist-viewer">
+      <div class="gist-controls">
+        <div class="left"><i class="icon material-icons">keyboard_arrow_left</i></div>
+        <div class="right"><i class="icon material-icons">keyboard_arrow_right</i></div>
+      </div><code data-gist-id="c65b635e4d431cc457f1e6eb9ac5ceaa" data-gist-show-loading="false" class="gist-embed current-gist" style="display: block;"><div class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-lru_cache-py" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-python">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-lru_cache-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-lru_cache-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">from</span> time <span class="pl-k">import</span> time</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-lru_cache-py-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-lru_cache-py-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">class</span> <span class="pl-en">Node</span>(<span class="pl-c1">object</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-lru_cache-py-LC4" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">def</span> <span class="pl-c1">__init__</span>(<span class="pl-smi"><span class="pl-smi">self</span></span>, <span class="pl-smi">value</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-lru_cache-py-LC5" class="blob-code blob-code-inner js-file-line">        <span class="pl-v">self</span>.value <span class="pl-k">=</span> value</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-lru_cache-py-LC6" class="blob-code blob-code-inner js-file-line">        <span class="pl-v">self</span>.time_stamp <span class="pl-k">=</span> time()</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-lru_cache-py-LC7" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-lru_cache-py-LC8" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">def</span> <span class="pl-en">update_time_stamp</span>(<span class="pl-smi"><span class="pl-smi">self</span></span>):</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-lru_cache-py-LC9" class="blob-code blob-code-inner js-file-line">        <span class="pl-v">self</span>.time_stamp <span class="pl-k">=</span> time()</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-lru_cache-py-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-lru_cache-py-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-k">class</span> <span class="pl-en">LRU</span>(<span class="pl-c1">object</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-lru_cache-py-LC12" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">def</span> <span class="pl-c1">__init__</span>(<span class="pl-smi"><span class="pl-smi">self</span></span>, <span class="pl-smi">max_size</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-lru_cache-py-LC13" class="blob-code blob-code-inner js-file-line">        <span class="pl-v">self</span>.max_size <span class="pl-k">=</span> max_size</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-lru_cache-py-LC14" class="blob-code blob-code-inner js-file-line">        <span class="pl-v">self</span>.cache <span class="pl-k">=</span> {}</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-lru_cache-py-LC15" class="blob-code blob-code-inner js-file-line">        <span class="pl-v">self</span>.length <span class="pl-k">=</span> <span class="pl-c1">0</span></td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-lru_cache-py-LC16" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-lru_cache-py-LC17" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">def</span> <span class="pl-en">get</span>(<span class="pl-smi"><span class="pl-smi">self</span></span>, <span class="pl-smi">key</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-lru_cache-py-LC18" class="blob-code blob-code-inner js-file-line">        node <span class="pl-k">=</span> <span class="pl-v">self</span>.cache[key]</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-lru_cache-py-LC19" class="blob-code blob-code-inner js-file-line">        node.update_time_stamp()</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-lru_cache-py-LC20" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> node.value</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-lru_cache-py-LC21" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-lru_cache-py-LC22" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">def</span> <span class="pl-en">peek</span>(<span class="pl-smi"><span class="pl-smi">self</span></span>, <span class="pl-smi">key</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-lru_cache-py-LC23" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> key <span class="pl-k">in</span> <span class="pl-v">self</span>.cache</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-lru_cache-py-LC24" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-lru_cache-py-LC25" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">def</span> <span class="pl-en">add</span>(<span class="pl-smi"><span class="pl-smi">self</span></span>, <span class="pl-smi">key</span>, <span class="pl-smi">value</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-lru_cache-py-LC26" class="blob-code blob-code-inner js-file-line">        new_node <span class="pl-k">=</span> Node(value)</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-lru_cache-py-LC27" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-lru_cache-py-LC28" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span> <span class="pl-v">self</span>.length <span class="pl-k">==</span> <span class="pl-v">self</span>.max_size:</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-lru_cache-py-LC29" class="blob-code blob-code-inner js-file-line">            <span class="pl-v">self</span>.remove_oldest()<span class="pl-id">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-lru_cache-py-LC30" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-lru_cache-py-LC31" class="blob-code blob-code-inner js-file-line">        <span class="pl-v">self</span>.cache[key] <span class="pl-k">=</span> new_node<span class="pl-id">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-lru_cache-py-LC32" class="blob-code blob-code-inner js-file-line">        <span class="pl-v">self</span>.length <span class="pl-k">+=</span> <span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-lru_cache-py-LC33" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-lru_cache-py-LC34" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">def</span> <span class="pl-en">remove_oldest</span>(<span class="pl-smi"><span class="pl-smi">self</span></span>):</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-lru_cache-py-LC35" class="blob-code blob-code-inner js-file-line">        oldest <span class="pl-k">=</span> <span class="pl-c1">None</span></td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-lru_cache-py-LC36" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">for</span> key <span class="pl-k">in</span> <span class="pl-v">self</span>.cache:</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-lru_cache-py-LC37" class="blob-code blob-code-inner js-file-line">            life_time <span class="pl-k">=</span> <span class="pl-v">self</span>.cache[key].time_stamp</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="file-lru_cache-py-LC38" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">if</span> oldest <span class="pl-k">==</span> <span class="pl-c1">None</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="file-lru_cache-py-LC39" class="blob-code blob-code-inner js-file-line">                oldest <span class="pl-k">=</span> key</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="file-lru_cache-py-LC40" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">elif</span> life_time <span class="pl-k">&lt;</span> <span class="pl-v">self</span>.cache[oldest].time_stamp:</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="file-lru_cache-py-LC41" class="blob-code blob-code-inner js-file-line">                oldest <span class="pl-k">=</span> key</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="file-lru_cache-py-LC42" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">del</span> <span class="pl-v">self</span>.cache[oldest]</td>
+      </tr>
+      <tr>
+        <td id="file-lru_cache-py-L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="file-lru_cache-py-LC43" class="blob-code blob-code-inner js-file-line">        <span class="pl-v">self</span>.length <span class="pl-k">-=</span> <span class="pl-c1">1</span></td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/l4nk332/c65b635e4d431cc457f1e6eb9ac5ceaa/raw/7e2d11f0c97080a482797d7315faaea020805d60/lru_cache.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/l4nk332/c65b635e4d431cc457f1e6eb9ac5ceaa#file-lru_cache-py">lru_cache.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div></code><code data-gist-id="0e5231ff9e4be67216096657d322103a" data-gist-show-loading="false" class="gist-embed" style="display: block;"><div class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-euclidean_gcd-py" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-python">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-euclidean_gcd-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-euclidean_gcd-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">gcd</span>(<span class="pl-smi">u</span>, <span class="pl-smi">v</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-euclidean_gcd-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-euclidean_gcd-py-LC2" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> (u <span class="pl-k">==</span> <span class="pl-c1">0</span> <span class="pl-k">or</span> v <span class="pl-k">==</span> <span class="pl-c1">0</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-euclidean_gcd-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-euclidean_gcd-py-LC3" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">raise</span> <span class="pl-c1">Exception</span>(<span class="pl-s"><span class="pl-pds">"</span>Cannot calculate gcd given zero<span class="pl-pds">"</span></span>)</td>
+      </tr>
+      <tr>
+        <td id="file-euclidean_gcd-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-euclidean_gcd-py-LC4" class="blob-code blob-code-inner js-file-line">    t <span class="pl-k">=</span> <span class="pl-c1">None</span></td>
+      </tr>
+      <tr>
+        <td id="file-euclidean_gcd-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-euclidean_gcd-py-LC5" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">while</span> u <span class="pl-k">!=</span> <span class="pl-c1">0</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-euclidean_gcd-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-euclidean_gcd-py-LC6" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span> u <span class="pl-k">&lt;</span> v:</td>
+      </tr>
+      <tr>
+        <td id="file-euclidean_gcd-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-euclidean_gcd-py-LC7" class="blob-code blob-code-inner js-file-line">            t <span class="pl-k">=</span> u</td>
+      </tr>
+      <tr>
+        <td id="file-euclidean_gcd-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-euclidean_gcd-py-LC8" class="blob-code blob-code-inner js-file-line">            u <span class="pl-k">=</span> v</td>
+      </tr>
+      <tr>
+        <td id="file-euclidean_gcd-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-euclidean_gcd-py-LC9" class="blob-code blob-code-inner js-file-line">            v <span class="pl-k">=</span> t</td>
+      </tr>
+      <tr>
+        <td id="file-euclidean_gcd-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-euclidean_gcd-py-LC10" class="blob-code blob-code-inner js-file-line">        u <span class="pl-k">-=</span> v</td>
+      </tr>
+      <tr>
+        <td id="file-euclidean_gcd-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-euclidean_gcd-py-LC11" class="blob-code blob-code-inner js-file-line">    gcd <span class="pl-k">=</span> v</td>
+      </tr>
+      <tr>
+        <td id="file-euclidean_gcd-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-euclidean_gcd-py-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-euclidean_gcd-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-euclidean_gcd-py-LC13" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">return</span> gcd</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/l4nk332/0e5231ff9e4be67216096657d322103a/raw/b0cb7f3e8d87f836d65d17a58be0b78181beb4e5/euclidean_gcd.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/l4nk332/0e5231ff9e4be67216096657d322103a#file-euclidean_gcd-py">euclidean_gcd.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div></code><code data-gist-id="349269e216e0f4ba1699290b026e5225" data-gist-show-loading="false" class="gist-embed" style="display: block;"><div class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-quick_sort-py" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-python">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-quick_sort-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-quick_sort-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">partition</span>(<span class="pl-smi">partition_list</span>, <span class="pl-smi">left</span>, <span class="pl-smi">right</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-quick_sort-py-LC2" class="blob-code blob-code-inner js-file-line">    swap(partition_list, left, right)</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-quick_sort-py-LC3" class="blob-code blob-code-inner js-file-line">    pivot <span class="pl-k">=</span> partition_list[right]</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-quick_sort-py-LC4" class="blob-code blob-code-inner js-file-line">    wall <span class="pl-k">=</span> left</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-quick_sort-py-LC5" class="blob-code blob-code-inner js-file-line">    current_idx <span class="pl-k">=</span> left</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-quick_sort-py-LC6" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">while</span> current_idx <span class="pl-k">&lt;</span> right:</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-quick_sort-py-LC7" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span> partition_list[current_idx] <span class="pl-k">&lt;</span> pivot:</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-quick_sort-py-LC8" class="blob-code blob-code-inner js-file-line">            swap(partition_list, current_idx, wall)</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-quick_sort-py-LC9" class="blob-code blob-code-inner js-file-line">            wall <span class="pl-k">+=</span> <span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-quick_sort-py-LC10" class="blob-code blob-code-inner js-file-line">        current_idx <span class="pl-k">+=</span> <span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-quick_sort-py-LC11" class="blob-code blob-code-inner js-file-line">    swap(partition_list, right, wall)</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-quick_sort-py-LC12" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">return</span> wall</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-quick_sort-py-LC13" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-quick_sort-py-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-quick_sort-py-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">quick_sort</span>(<span class="pl-smi">quick_list</span>, <span class="pl-smi">left</span><span class="pl-k">=</span><span class="pl-c1">0</span>, <span class="pl-smi">right</span><span class="pl-k">=</span><span class="pl-c1">None</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-quick_sort-py-LC16" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> <span class="pl-c1">len</span>(quick_list) <span class="pl-k">==</span> <span class="pl-c1">0</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-quick_sort-py-LC17" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> quick_list</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-quick_sort-py-LC18" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> right <span class="pl-k">==</span> <span class="pl-c1">None</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-quick_sort-py-LC19" class="blob-code blob-code-inner js-file-line">        right <span class="pl-k">=</span> <span class="pl-c1">len</span>(quick_list)<span class="pl-k">-</span><span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-quick_sort-py-LC20" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> left <span class="pl-k">&lt;</span> right:</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-quick_sort-py-LC21" class="blob-code blob-code-inner js-file-line">        quick_sort(quick_list, partition(quick_list, left, right)<span class="pl-k">+</span><span class="pl-c1">1</span>, right)</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-quick_sort-py-LC22" class="blob-code blob-code-inner js-file-line">        quick_sort(quick_list, left, partition(quick_list, left, right)<span class="pl-k">-</span><span class="pl-c1">1</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-quick_sort-py-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-quick_sort-py-LC23" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">return</span> quick_list</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/l4nk332/349269e216e0f4ba1699290b026e5225/raw/e8ca0e0f73fb5432ba95cd4a28c8577bf7aea6d8/quick_sort.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/l4nk332/349269e216e0f4ba1699290b026e5225#file-quick_sort-py">quick_sort.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div></code><code data-gist-id="1d98dcbcf5553a7cb0b54a5a94df2592" data-gist-show-loading="false" class="gist-embed" style="display: block;"><div class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-merge_sort-py" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-python">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-merge_sort-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-merge_sort-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">merge</span>(<span class="pl-smi">list_a</span>, <span class="pl-smi">list_b</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-merge_sort-py-LC2" class="blob-code blob-code-inner js-file-line">    merged_list <span class="pl-k">=</span> []</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-merge_sort-py-LC3" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">while</span> <span class="pl-c1">len</span>(list_a) <span class="pl-k">&gt;</span> <span class="pl-c1">0</span> <span class="pl-k">and</span> <span class="pl-c1">len</span>(list_b) <span class="pl-k">&gt;</span> <span class="pl-c1">0</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-merge_sort-py-LC4" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span> list_a[<span class="pl-c1">0</span>] <span class="pl-k">&lt;</span> list_b[<span class="pl-c1">0</span>]:</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-merge_sort-py-LC5" class="blob-code blob-code-inner js-file-line">            merged_list.append(list_a.pop(<span class="pl-c1">0</span>))</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-merge_sort-py-LC6" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">else</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-merge_sort-py-LC7" class="blob-code blob-code-inner js-file-line">            merged_list.append(list_b.pop(<span class="pl-c1">0</span>))</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-merge_sort-py-LC8" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> <span class="pl-c1">len</span>(list_a) <span class="pl-k">&gt;</span> <span class="pl-c1">0</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-merge_sort-py-LC9" class="blob-code blob-code-inner js-file-line">        merged_list <span class="pl-k">=</span> merged_list <span class="pl-k">+</span> list_a</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-merge_sort-py-LC10" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">elif</span> <span class="pl-c1">len</span>(list_b) <span class="pl-k">&gt;</span> <span class="pl-c1">0</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-merge_sort-py-LC11" class="blob-code blob-code-inner js-file-line">        merged_list <span class="pl-k">=</span> merged_list <span class="pl-k">+</span> list_b</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-merge_sort-py-LC12" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">return</span> merged_list</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-merge_sort-py-LC13" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-merge_sort-py-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-merge_sort-py-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">merge_sort</span>(<span class="pl-smi">merge_list</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-merge_sort-py-LC16" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> <span class="pl-c1">len</span>(merge_list) <span class="pl-k">==</span> <span class="pl-c1">1</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-merge_sort-py-LC17" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> merge_list</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-merge_sort-py-LC18" class="blob-code blob-code-inner js-file-line">    half_a <span class="pl-k">=</span> merge_list[:floor(<span class="pl-c1">len</span>(merge_list)<span class="pl-k">/</span><span class="pl-c1">2</span>)]</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-merge_sort-py-LC19" class="blob-code blob-code-inner js-file-line">    half_b <span class="pl-k">=</span> merge_list[floor(<span class="pl-c1">len</span>(merge_list)<span class="pl-k">/</span><span class="pl-c1">2</span>):]</td>
+      </tr>
+      <tr>
+        <td id="file-merge_sort-py-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-merge_sort-py-LC20" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">return</span> merge(merge_sort(half_a), merge_sort(half_b))</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/l4nk332/1d98dcbcf5553a7cb0b54a5a94df2592/raw/a690626299ae3e7e1252ad60d90a8ab3f72154d5/merge_sort.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/l4nk332/1d98dcbcf5553a7cb0b54a5a94df2592#file-merge_sort-py">merge_sort.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div></code><code data-gist-id="4088fffbe96cb8ea7d669b2664936bf1" data-gist-show-loading="false" class="gist-embed" style="display: block;"><div class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-insertion_sort-py" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-python">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-insertion_sort-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-insertion_sort-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">swap</span>(<span class="pl-smi">input_list</span>, <span class="pl-smi">idx_a</span>, <span class="pl-smi">idx_b</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-insertion_sort-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-insertion_sort-py-LC2" class="blob-code blob-code-inner js-file-line">    temp <span class="pl-k">=</span> input_list[idx_a]</td>
+      </tr>
+      <tr>
+        <td id="file-insertion_sort-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-insertion_sort-py-LC3" class="blob-code blob-code-inner js-file-line">    input_list[idx_a] <span class="pl-k">=</span> input_list[idx_b]</td>
+      </tr>
+      <tr>
+        <td id="file-insertion_sort-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-insertion_sort-py-LC4" class="blob-code blob-code-inner js-file-line">    input_list[idx_b] <span class="pl-k">=</span> temp</td>
+      </tr>
+      <tr>
+        <td id="file-insertion_sort-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-insertion_sort-py-LC5" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-insertion_sort-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-insertion_sort-py-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">insertion_sort</span>(<span class="pl-smi">insertion_list</span>, <span class="pl-smi">idx</span><span class="pl-k">=</span><span class="pl-c1">1</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-insertion_sort-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-insertion_sort-py-LC7" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> idx <span class="pl-k">==</span> <span class="pl-c1">len</span>(insertion_list):</td>
+      </tr>
+      <tr>
+        <td id="file-insertion_sort-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-insertion_sort-py-LC8" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> insertion_list</td>
+      </tr>
+      <tr>
+        <td id="file-insertion_sort-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-insertion_sort-py-LC9" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> insertion_list[idx] <span class="pl-k">&lt;</span> insertion_list[idx<span class="pl-k">-</span><span class="pl-c1">1</span>]:</td>
+      </tr>
+      <tr>
+        <td id="file-insertion_sort-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-insertion_sort-py-LC10" class="blob-code blob-code-inner js-file-line">        b_idx <span class="pl-k">=</span> idx</td>
+      </tr>
+      <tr>
+        <td id="file-insertion_sort-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-insertion_sort-py-LC11" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">while</span> b_idx <span class="pl-k">&gt;</span> <span class="pl-c1">0</span> <span class="pl-k">and</span> insertion_list[b_idx] <span class="pl-k">&lt;</span> insertion_list[b_idx<span class="pl-k">-</span><span class="pl-c1">1</span>]:</td>
+      </tr>
+      <tr>
+        <td id="file-insertion_sort-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-insertion_sort-py-LC12" class="blob-code blob-code-inner js-file-line">            swap(insertion_list, b_idx, b_idx<span class="pl-k">-</span><span class="pl-c1">1</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-insertion_sort-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-insertion_sort-py-LC13" class="blob-code blob-code-inner js-file-line">            b_idx <span class="pl-k">-=</span> <span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-insertion_sort-py-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-insertion_sort-py-LC14" class="blob-code blob-code-inner js-file-line">    idx <span class="pl-k">+=</span> <span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-insertion_sort-py-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-insertion_sort-py-LC15" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">return</span> insertion_sort(insertion_list, idx)</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/l4nk332/4088fffbe96cb8ea7d669b2664936bf1/raw/50002e5922222a9e3aa70ba5c8c98bea7a8d1315/insertion_sort.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/l4nk332/4088fffbe96cb8ea7d669b2664936bf1#file-insertion_sort-py">insertion_sort.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div></code><code data-gist-id="db96318fa3c02f4e93f91da4e617221c" data-gist-show-loading="false" class="gist-embed" style="display: block;"><div class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-selection_sort-py" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-python">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-selection_sort-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-selection_sort-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">swap</span>(<span class="pl-smi">input_list</span>, <span class="pl-smi">idx_a</span>, <span class="pl-smi">idx_b</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-selection_sort-py-LC2" class="blob-code blob-code-inner js-file-line">    temp <span class="pl-k">=</span> input_list[idx_a]</td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-selection_sort-py-LC3" class="blob-code blob-code-inner js-file-line">    input_list[idx_a] <span class="pl-k">=</span> input_list[idx_b]</td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-selection_sort-py-LC4" class="blob-code blob-code-inner js-file-line">    input_list[idx_b] <span class="pl-k">=</span> temp</td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-selection_sort-py-LC5" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-selection_sort-py-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">selection_sort</span>(<span class="pl-smi">selection_list</span>, <span class="pl-smi">swap_pntr</span><span class="pl-k">=</span><span class="pl-c1">0</span>, <span class="pl-smi">smallest_idx</span><span class="pl-k">=</span><span class="pl-c1">0</span>, <span class="pl-smi">idx</span><span class="pl-k">=</span><span class="pl-c1">0</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-selection_sort-py-LC7" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> swap_pntr <span class="pl-k">==</span> <span class="pl-c1">len</span>(selection_list)<span class="pl-k">-</span><span class="pl-c1">1</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-selection_sort-py-LC8" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> selection_list</td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-selection_sort-py-LC9" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">elif</span> idx <span class="pl-k">==</span> <span class="pl-c1">len</span>(selection_list):</td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-selection_sort-py-LC10" class="blob-code blob-code-inner js-file-line">        swap(selection_list, swap_pntr, smallest_idx)</td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-selection_sort-py-LC11" class="blob-code blob-code-inner js-file-line">        swap_pntr <span class="pl-k">+=</span> <span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-selection_sort-py-LC12" class="blob-code blob-code-inner js-file-line">        idx <span class="pl-k">=</span> swap_pntr</td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-selection_sort-py-LC13" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">elif</span> selection_list[idx] <span class="pl-k">&lt;</span> selection_list[smallest_idx]:</td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-selection_sort-py-LC14" class="blob-code blob-code-inner js-file-line">        smallest_idx <span class="pl-k">=</span> idx</td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-selection_sort-py-LC15" class="blob-code blob-code-inner js-file-line">    idx <span class="pl-k">+=</span> <span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-selection_sort-py-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-selection_sort-py-LC16" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">return</span> selection_sort(selection_list, swap_pntr, smallest_idx, idx)</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/l4nk332/db96318fa3c02f4e93f91da4e617221c/raw/349fa253a8486849de125506ccf1945797788458/selection_sort.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/l4nk332/db96318fa3c02f4e93f91da4e617221c#file-selection_sort-py">selection_sort.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div></code><code data-gist-id="23114027d8c4c2dd1c50dd06ac944d2c" data-gist-show-loading="false" class="gist-embed" style="display: block;"><div class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-bubble_sort-py" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-python">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-bubble_sort-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-bubble_sort-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">swap</span>(<span class="pl-smi">input_list</span>, <span class="pl-smi">idx_a</span>, <span class="pl-smi">idx_b</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-bubble_sort-py-LC2" class="blob-code blob-code-inner js-file-line">    temp <span class="pl-k">=</span> input_list[idx_a]</td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-bubble_sort-py-LC3" class="blob-code blob-code-inner js-file-line">    input_list[idx_a] <span class="pl-k">=</span> input_list[idx_b]</td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-bubble_sort-py-LC4" class="blob-code blob-code-inner js-file-line">    input_list[idx_b] <span class="pl-k">=</span> temp</td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-bubble_sort-py-LC5" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-bubble_sort-py-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">bubble_sort</span>(<span class="pl-smi">bubble_list</span>, <span class="pl-smi">swap_count</span><span class="pl-k">=</span><span class="pl-c1">0</span>, <span class="pl-smi">idx</span><span class="pl-k">=</span><span class="pl-c1">0</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-bubble_sort-py-LC7" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> idx <span class="pl-k">==</span> <span class="pl-c1">len</span>(bubble_list)<span class="pl-k">-</span><span class="pl-c1">1</span> <span class="pl-k">and</span> swap_count <span class="pl-k">==</span> <span class="pl-c1">0</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-bubble_sort-py-LC8" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> bubble_list</td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-bubble_sort-py-LC9" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">elif</span> idx <span class="pl-k">==</span> <span class="pl-c1">len</span>(bubble_list)<span class="pl-k">-</span><span class="pl-c1">1</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-bubble_sort-py-LC10" class="blob-code blob-code-inner js-file-line">        idx <span class="pl-k">=</span> <span class="pl-c1">0</span></td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-bubble_sort-py-LC11" class="blob-code blob-code-inner js-file-line">        swap_count <span class="pl-k">=</span> <span class="pl-c1">0</span></td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-bubble_sort-py-LC12" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> bubble_list[idx] <span class="pl-k">&gt;</span> bubble_list[idx<span class="pl-k">+</span><span class="pl-c1">1</span>]:</td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-bubble_sort-py-LC13" class="blob-code blob-code-inner js-file-line">        swap(bubble_list, idx, idx<span class="pl-k">+</span><span class="pl-c1">1</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-bubble_sort-py-LC14" class="blob-code blob-code-inner js-file-line">        swap_count <span class="pl-k">+=</span> <span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-bubble_sort-py-LC15" class="blob-code blob-code-inner js-file-line">    idx <span class="pl-k">+=</span> <span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-bubble_sort-py-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-bubble_sort-py-LC16" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">return</span> bubble_sort(bubble_list, swap_count, idx)</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/l4nk332/23114027d8c4c2dd1c50dd06ac944d2c/raw/59a42c1d8c90911c5e4633b85f7d46e64b89d6cf/bubble_sort.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/l4nk332/23114027d8c4c2dd1c50dd06ac944d2c#file-bubble_sort-py">bubble_sort.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div></code><code data-gist-id="7dca59b74df10bf94f554a06a9467558" data-gist-show-loading="false" class="gist-embed" style="display: block;"><div class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-binary_search-py" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-python">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-binary_search-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-binary_search-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">from</span> math <span class="pl-k">import</span> floor</td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-binary_search-py-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-binary_search-py-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">binary_search</span>(<span class="pl-smi">input_list</span>, <span class="pl-smi">search</span>, <span class="pl-smi">offset</span><span class="pl-k">=</span><span class="pl-c1">0</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-binary_search-py-LC4" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> <span class="pl-c1">len</span>(input_list) <span class="pl-k">==</span> <span class="pl-c1">1</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-binary_search-py-LC5" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span> input_list[<span class="pl-c1">0</span>] <span class="pl-k">==</span> search:</td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-binary_search-py-LC6" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">return</span> offset</td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-binary_search-py-LC7" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">else</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-binary_search-py-LC8" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">return</span> <span class="pl-k">-</span><span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-binary_search-py-LC9" class="blob-code blob-code-inner js-file-line">    midpoint <span class="pl-k">=</span> <span class="pl-c1">int</span>(floor(<span class="pl-c1">len</span>(input_list)<span class="pl-k">/</span><span class="pl-c1">2</span>))</td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-binary_search-py-LC10" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> search <span class="pl-k">&gt;</span> input_list[midpoint]:</td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-binary_search-py-LC11" class="blob-code blob-code-inner js-file-line">        offset <span class="pl-k">+=</span> midpoint</td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-binary_search-py-LC12" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> binary_search(input_list[midpoint:], search, offset)</td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-binary_search-py-LC13" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">elif</span> search <span class="pl-k">&lt;</span> input_list[midpoint]:</td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-binary_search-py-LC14" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> binary_search(input_list[:midpoint], search, offset)</td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-binary_search-py-LC15" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">else</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-binary_search-py-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-binary_search-py-LC16" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> midpoint <span class="pl-k">+</span> offset</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/l4nk332/7dca59b74df10bf94f554a06a9467558/raw/68c73f67f22e29fc50a376567a9003ee187061bd/binary_search.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/l4nk332/7dca59b74df10bf94f554a06a9467558#file-binary_search-py">binary_search.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div></code>
+    </div>
+  </div>
+  <!-- Bio Section-->
+  <h2 class="section-title">Bio</h2>
+  <div class="bio-section">
+    <div class="bio-container">
+      <div class="avatar-image"></div>
+      <div class="bio-details">
+        <div class="links">
+          <div class="link"></div>
+          <div class="link"></div>
+          <div class="link"></div>
+          <div class="link"></div>
+        </div>
+        <p>Quisque lobortis erat eget dui aliquet, non lobortis felis pharetra. Vivamus non urna ut metus condimentum porttitor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis elementum elit odio. Sed tristique pellentesque dui. Vestibulum sollicitudin tellus erat, eu molestie ipsum efficitur bibendum. Nunc vulputate turpis eget auctor porta. Proin ultricies egestas nibh, vestibulum tempus magna dignissim vitae.</p>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>100% Handcrafted by Ian Jabour</p>
+  </footer>
+
+<script src="./stopExecutionOnTimeout-53beeb1a007ec32040abaf4c9385ebfc.js"></script><script src="./jquery.min.js"></script><script src="./gist-embed.min.js"></script>
+<script>"use strict";
+
+var GistViewer = function GistViewer() {
+	this.gists = ["c65b635e4d431cc457f1e6eb9ac5ceaa", "7dca59b74df10bf94f554a06a9467558", "0e5231ff9e4be67216096657d322103a", "349269e216e0f4ba1699290b026e5225", "1d98dcbcf5553a7cb0b54a5a94df2592", "4088fffbe96cb8ea7d669b2664936bf1", "db96318fa3c02f4e93f91da4e617221c", "23114027d8c4c2dd1c50dd06ac944d2c"];
+	this.currentGist = this.gists[0];
+	this.leftArrow = document.getElementById("left-arrow");
+	this.rightArrow = document.getElementById("right-arrow");
+};
+
+GistViewer.prototype.previous = function () {
+	var currentIdx = this.gists.indexOf(this.currentGist);
+	if (currentIdx === 0) {
+		this.currentGist = this.gists[this.gists.length - 1];
+	} else {
+		this.currentGist = this.gists[currentIdx - 1];
+	}
+	this.renderView();
+};
+
+GistViewer.prototype.next = function () {
+	var currentIdx = this.gists.indexOf(this.currentGist);
+	if (currentIdx === this.gists.length - 1) {
+		this.currentGist = this.gists[0];
+	} else {
+		this.currentGist = this.gists[currentIdx + 1];
+	}
+	this.renderView();
+};
+
+GistViewer.prototype.renderView = function () {
+	var gistElmts = $(".gist-embed");
+	var newGist = undefined;
+	for (var i = 0; i < gistElmts.length; i++) {
+		var gistId = gistElmts[i].getAttribute("data-gist-id");
+		if (gistId === this.currentGist) {
+			newGist = gistElmts[i];
+		}
+	}
+	var oldGist = $(".current-gist");
+	oldGist.removeClass("current-gist");
+	$(newGist).addClass("current-gist");
+};
+
+var gistViewer = new GistViewer();
+
+$(".left").on("click", function (event) {
+	event.preventDefault();
+	gistViewer.previous();
+});
+
+$(".right").on("click", function (event) {
+	event.preventDefault();
+	gistViewer.next();
+});
+
+// Cipher
+function generateCipher(list, length) {
+	var cipher = "";
+	for (var i = 0; i < length; i++) {
+		var randomIdx = Math.floor(Math.random() * list.length);
+		cipher += list[randomIdx];
+	}
+	return cipher;
+}
+
+function render() {
+	var charList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", " ", "-", "_", "^", "+", "=", "%", "#", "@", "!", "~", "?"];
+
+	var decryptStr = "Full-Stack Developer";
+	var time = new Date().getTime();
+	var delta = undefined;
+	function decrypt() {
+		var delta = new Date().getTime() - time;
+		if (delta >= 80) {
+			$(".cipher").text(generateCipher(charList, decryptStr.length));
+			time = new Date().getTime();
+		}
+		animFrame = window.requestAnimationFrame(decrypt);
+	}
+	var animFrame = window.requestAnimationFrame(decrypt);
+	setTimeout(function () {
+		window.cancelAnimationFrame(animFrame);
+		$(".cipher").text(decryptStr);
+	}, 2000);
+}
+
+render();
+//# sourceURL=pen.js
+</script>
+</body></html>
