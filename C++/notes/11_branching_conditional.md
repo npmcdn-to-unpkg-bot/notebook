@@ -39,4 +39,4 @@ int main( int argc, char ** argv )
 // three
 ```
 
-Notice the **break**, this allows for breaking out of a block of code. It is best practice to always place a break at the end of each case. If one is not placed then execution will continue down to the next level below. Switch statements are a great way to handle multi-if statements.
+Notice the **break**, this allows for breaking out of a block of code. It is best practice to always place a break at the end of each case. If one is not placed then execution will continue down to the next level below. Switch statements are a great alternative to multiple if statements.
