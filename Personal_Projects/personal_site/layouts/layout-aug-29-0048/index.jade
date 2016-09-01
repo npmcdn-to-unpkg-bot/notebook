@@ -1,0 +1,117 @@
+body
+	div.site-wrapper
+		// Landing section
+		div.landing-section
+			canvas#canvas
+			div.word-wrapper
+				div
+					h1.first Ian
+					h1.last Jabour
+				div
+					h2.cipher Full-Stack Developer
+			div.arrow#down
+				span down
+		// Projects Section
+		h2.section-title#projects Projects
+		div.project-section
+			div.project
+				div.project-image
+				div.project-title
+					h3 Chess AI
+					hr.underbar
+				div.project-details
+					p This project focuses on computer science concepts such as data structures and algorithms. Through utilization of a decision tree the AI can generate the all possible permutations of a chessboard 3 moves into the future (4 levels deep). Algorithms implemented in this project include depth first search, minimax, and alpha-beta pruning. This in conjunction with heuristics such as material (total piece count for each player), number of possible legal moves with emphasis on center squares, check/checkmate status, and pawn structure allow the AI to make the best possible move.
+
+			div.project
+				div.project-image
+				div.project-title
+					h3 Computer Tennis
+					hr.underbar
+				div.project-details
+					p Computer Tennis is an in-browser game that implements the HTML Canvas API to recreate and add a variety of features to the classic game Pong. As you rally back and forth the velocity of the ball will increase with each collision. When you lose a rally your paddle gets smaller by a fixed percentage, and if you win the rally your paddle will increase by half of that fixed percentage (unless at original paddle size).
+			
+			div.project
+				div.project-image
+				div.project-title
+					h3 Code-Guild
+					hr.underbar
+				div.project-details
+					p Code-Guild is a web-platform that connects developers from around the globe in a live coding environment. The platform enables programmers to both teach the languages they are proficient in, while learning the languages that interest them. Code review sessions allow developers to get a second opinion on a module of code within the shared workspace of the application. Technologies implemented include Express, PostgreSQL, Socket.io, and WebRTC.
+
+			div.project
+				div.project-image
+				div.project-title
+					h3 HeartCaller
+					hr.underbar
+				div.project-details
+					p This hackathon winning submission utilizes iHeart Radio's API along with Socket.io in order to reimplement and redesign the User Experience of listening to radio online. Tearing down the invisible walls between radio hosts and their listeners, HeartCaller allows hosts and djs to directly take song request from their listeners through a live socket connection. Using Node's Express framework routes were set up to handle the logic that tied a host's socket directly to each listener. With nothing more than css flexbox, the layout was handcrafted into a responsive, mobile-first design.
+					
+		// Gallery Section
+		h2.section-title Gallery
+		div.gallery-section
+			div.gallery-showcase
+				div.gallery-embed
+				div.gallery-description
+					hr.underbar
+					p Aliquam ut sagittis nulla, id tristique justo. Nulla volutpat ultrices tellus, ut ultricies justo placerat a.
+
+			div.gallery-showcase
+				div.gallery-embed
+				div.gallery-description
+					hr.underbar
+					p Proin pharetra ut diam in euismod. Ut facilisis ullamcorper odio vel interdum.
+					
+			div.gallery-showcase
+				div.gallery-embed
+				div.gallery-description
+					hr.underbar
+					p Proin pharetra ut diam in euismod. Ut facilisis ullamcorper odio vel interdum.
+			
+			div.gallery-showcase
+				div.gallery-embed
+				div.gallery-description
+					hr.underbar
+					p Proin pharetra ut diam in euismod. Ut facilisis ullamcorper odio vel interdum.
+					
+			div.gallery-showcase
+				div.gallery-embed
+				div.gallery-description
+					hr.underbar
+					p Proin pharetra ut diam in euismod. Ut facilisis ullamcorper odio vel interdum.
+
+		// Gists Section
+		h2.section-title Gists
+		div.gist-section
+			div.gist-viewer
+				div.gist-controls
+					div.left
+						i.icon.material-icons keyboard_arrow_left
+					div.right
+						i.icon.material-icons keyboard_arrow_right
+				code(data-gist-id="c65b635e4d431cc457f1e6eb9ac5ceaa" data-gist-show-loading="false").gist-embed.current-gist
+				code(data-gist-id="0e5231ff9e4be67216096657d322103a" data-gist-show-loading="false").gist-embed
+				code(data-gist-id="349269e216e0f4ba1699290b026e5225" data-gist-show-loading="false").gist-embed
+				code(data-gist-id="1d98dcbcf5553a7cb0b54a5a94df2592" data-gist-show-loading="false").gist-embed
+				code(data-gist-id="4088fffbe96cb8ea7d669b2664936bf1" data-gist-show-loading="false").gist-embed
+				code(data-gist-id="db96318fa3c02f4e93f91da4e617221c" data-gist-show-loading="false").gist-embed
+				code(data-gist-id="23114027d8c4c2dd1c50dd06ac944d2c" data-gist-show-loading="false").gist-embed
+				code(data-gist-id="7dca59b74df10bf94f554a06a9467558" data-gist-show-loading="false").gist-embed
+
+		// Bio Section
+		h2.section-title Bio
+		div.bio-section
+			div.bio-container
+				div.avatar-image
+				div.bio-details
+					div.links
+							a(href="https://www.codewars.com/users/l4nk332")
+								div.link.codewars
+							a(href="https://github.com/l4nk332")
+								div.link.github
+							a(href="https://codepen.io/l4nk33/")
+								div.link.codepen
+							a(href="https://www.linkedin.com/in/ianjabour")
+								div.link.linkedin
+					p I'm a Full-Stack developer residing in the San Francisco Bay Area. The frontend technologies I am extensively proficient with include Angular, Sass, HTML Canvas, and SVG. On the backend I work predominantly with PostgreSQL as my DBMS of choice and the Express framework for creating and managing API routes. Whether it's implementing an algorithm, levelling up in CodeWars, or building software I always find ways to challenge myself and enhance my engineering skills.
+		footer.footer
+			p 100% Handcrafted by Ian Jabour

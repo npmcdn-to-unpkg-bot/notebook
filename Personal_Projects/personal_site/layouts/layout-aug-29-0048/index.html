@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Personal Site - Layout</title>
+    <link href="https://fonts.googleapis.com/css?family=Abel|Pontano+Sans" rel="stylesheet">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Megrim|Nixie+One" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/normalize.css">
+
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    
+<body>
+  <div class="site-wrapper">
+    <!-- Landing section-->
+    <div class="landing-section">
+      <canvas id="canvas"></canvas>
+      <div class="word-wrapper">
+        <div>
+          <h1 class="first">Ian</h1>
+          <h1 class="last">Jabour</h1>
+        </div>
+        <div>
+          <h2 class="cipher">Full-Stack Developer</h2>
+        </div>
+      </div>
+      <div id="down" class="arrow"><span>down</span></div>
+    </div>
+    <!-- Projects Section-->
+    <h2 id="projects" class="section-title">Projects</h2>
+    <div class="project-section">
+      <div class="project">
+        <div class="project-image"></div>
+        <div class="project-title">
+          <h3>Chess AI</h3>
+          <hr class="underbar"/>
+        </div>
+        <div class="project-details">
+          <p>This project focuses on computer science concepts such as data structures and algorithms. Through utilization of a decision tree the AI can generate the all possible permutations of a chessboard 3 moves into the future (4 levels deep). Algorithms implemented in this project include depth first search, minimax, and alpha-beta pruning. This in conjunction with heuristics such as material (total piece count for each player), number of possible legal moves with emphasis on center squares, check/checkmate status, and pawn structure allow the AI to make the best possible move.</p>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-image"></div>
+        <div class="project-title">
+          <h3>Computer Tennis</h3>
+          <hr class="underbar"/>
+        </div>
+        <div class="project-details">
+          <p>Computer Tennis is an in-browser game that implements the HTML Canvas API to recreate and add a variety of features to the classic game Pong. As you rally back and forth the velocity of the ball will increase with each collision. When you lose a rally your paddle gets smaller by a fixed percentage, and if you win the rally your paddle will increase by half of that fixed percentage (unless at original paddle size).</p>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-image"></div>
+        <div class="project-title">
+          <h3>Code-Guild</h3>
+          <hr class="underbar"/>
+        </div>
+        <div class="project-details">
+          <p>Code-Guild is a web-platform that connects developers from around the globe in a live coding environment. The platform enables programmers to both teach the languages they are proficient in, while learning the languages that interest them. Code review sessions allow developers to get a second opinion on a module of code within the shared workspace of the application. Technologies implemented include Express, PostgreSQL, Socket.io, and WebRTC.</p>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-image"></div>
+        <div class="project-title">
+          <h3>HeartCaller</h3>
+          <hr class="underbar"/>
+        </div>
+        <div class="project-details">
+          <p>This hackathon winning submission utilizes iHeart Radio's API along with Socket.io in order to reimplement and redesign the User Experience of listening to radio online. Tearing down the invisible walls between radio hosts and their listeners, HeartCaller allows hosts and djs to directly take song request from their listeners through a live socket connection. Using Node's Express framework routes were set up to handle the logic that tied a host's socket directly to each listener. With nothing more than css flexbox, the layout was handcrafted into a responsive, mobile-first design.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Gallery Section-->
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery-section">
+      <div class="gallery-showcase">
+        <div class="gallery-embed"></div>
+        <div class="gallery-description">
+          <hr class="underbar"/>
+          <p>Aliquam ut sagittis nulla, id tristique justo. Nulla volutpat ultrices tellus, ut ultricies justo placerat a.</p>
+        </div>
+      </div>
+      <div class="gallery-showcase">
+        <div class="gallery-embed"></div>
+        <div class="gallery-description">
+          <hr class="underbar"/>
+          <p>Proin pharetra ut diam in euismod. Ut facilisis ullamcorper odio vel interdum.</p>
+        </div>
+      </div>
+      <div class="gallery-showcase">
+        <div class="gallery-embed"></div>
+        <div class="gallery-description">
+          <hr class="underbar"/>
+          <p>Proin pharetra ut diam in euismod. Ut facilisis ullamcorper odio vel interdum.</p>
+        </div>
+      </div>
+      <div class="gallery-showcase">
+        <div class="gallery-embed"></div>
+        <div class="gallery-description">
+          <hr class="underbar"/>
+          <p>Proin pharetra ut diam in euismod. Ut facilisis ullamcorper odio vel interdum.</p>
+        </div>
+      </div>
+      <div class="gallery-showcase">
+        <div class="gallery-embed"></div>
+        <div class="gallery-description">
+          <hr class="underbar"/>
+          <p>Proin pharetra ut diam in euismod. Ut facilisis ullamcorper odio vel interdum.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Gists Section-->
+    <h2 class="section-title">Gists</h2>
+    <div class="gist-section">
+      <div class="gist-viewer">
+        <div class="gist-controls">
+          <div class="left"><i class="icon material-icons">keyboard_arrow_left</i></div>
+          <div class="right"><i class="icon material-icons">keyboard_arrow_right</i></div>
+        </div><code data-gist-id="c65b635e4d431cc457f1e6eb9ac5ceaa" data-gist-show-loading="false" class="gist-embed current-gist"></code><code data-gist-id="0e5231ff9e4be67216096657d322103a" data-gist-show-loading="false" class="gist-embed"></code><code data-gist-id="349269e216e0f4ba1699290b026e5225" data-gist-show-loading="false" class="gist-embed"></code><code data-gist-id="1d98dcbcf5553a7cb0b54a5a94df2592" data-gist-show-loading="false" class="gist-embed"></code><code data-gist-id="4088fffbe96cb8ea7d669b2664936bf1" data-gist-show-loading="false" class="gist-embed"></code><code data-gist-id="db96318fa3c02f4e93f91da4e617221c" data-gist-show-loading="false" class="gist-embed"></code><code data-gist-id="23114027d8c4c2dd1c50dd06ac944d2c" data-gist-show-loading="false" class="gist-embed"></code><code data-gist-id="7dca59b74df10bf94f554a06a9467558" data-gist-show-loading="false" class="gist-embed"></code>
+      </div>
+    </div>
+    <!-- Bio Section-->
+    <h2 class="section-title">Bio</h2>
+    <div class="bio-section">
+      <div class="bio-container">
+        <div class="avatar-image"></div>
+        <div class="bio-details">
+          <div class="links"><a href="https://www.codewars.com/users/l4nk332">
+              <div class="link codewars"></div></a><a href="https://github.com/l4nk332">
+              <div class="link github"></div></a><a href="https://codepen.io/l4nk33/">
+              <div class="link codepen"></div></a><a href="https://www.linkedin.com/in/ianjabour">
+              <div class="link linkedin"></div></a></div>
+          <p>I'm a Full-Stack developer residing in the San Francisco Bay Area. The frontend technologies I am extensively proficient with include Angular, Sass, HTML Canvas, and SVG. On the backend I work predominantly with PostgreSQL as my DBMS of choice and the Express framework for creating and managing API routes. Whether it's implementing an algorithm, levelling up in CodeWars, or building software I always find ways to challenge myself and enhance my engineering skills.</p>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>100% Handcrafted by Ian Jabour</p>
+    </footer>
+  </div>
+</body>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
