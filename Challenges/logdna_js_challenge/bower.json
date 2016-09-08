@@ -1,0 +1,20 @@
+{
+  "name": "logdna_js_challenge",
+  "homepage": "https://github.com/l4nk332/notebook",
+  "authors": [
+    "l4nk332 <l4nk332@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}
