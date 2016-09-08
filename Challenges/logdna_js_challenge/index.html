@@ -11,15 +11,7 @@
 
     <!-- Bower Stylesheets -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <style>
-        @import: "bower_components/lato/css/lato.css";
-        .wrapper { width: 100%; background-color: #f1f1f2; }
-        header { width: 100%; height: 56px; background-color: #333; box-shadow: 0 1px 2px rgba(0,0,0,0.4); padding: 0 40px; }
-        .filter-options { margin-right: 60px; }
-        .filter { float: left; margin-top: 10px; margin-left: 20px; user-select: none; }
-        .filter-title { font-size: 18px; font-weight: 100; line-height: 34px; text-shadow: 0 1px 0 rgba(0,0,0,0.6); cursor: pointer; color: #f1f1f2; }
-        .dummy-content { width: 100%; height: 600px; text-align: center; padding-top: 40px; }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <div class="wrapper">
@@ -28,7 +20,8 @@
                 <div class="filter">
                     <span class="filter-title">
                         Hosts Dropdown
-                        <span class="caret"></span></span>
+                        <span class="caret"></span>
+                    </span>
                 </div>
             </div>
         </header>
@@ -48,5 +41,6 @@
     <script>
     $('#toggle-error-mode').on('click', function() { Mock.toggleMode(); });
     </script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
