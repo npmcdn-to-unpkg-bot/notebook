@@ -160,6 +160,13 @@ header {
     background-color: green;
 }
 
+.dd-option-search {
+    font-size: 0.7em;
+    width: 90%;
+    padding: 0.2em;
+    display: block;
+}
+
 .dd-panel-container {
     font-size: 0.5em;
     width: 100%;
