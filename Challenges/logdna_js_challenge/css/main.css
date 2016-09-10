@@ -121,7 +121,7 @@ header {
 .dummy-terminal {
     font-size: 1em;
     width: 50%;
-    height: calc(54.3vh - 3em);
+    height: 50%;
     background-color: #151515;
     border-collapse: collapse;
 }
