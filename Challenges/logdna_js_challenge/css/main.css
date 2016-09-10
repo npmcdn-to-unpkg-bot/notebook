@@ -143,41 +143,49 @@ header {
 }
 
 .dd-wrapper {
-    width: 250px;
-    height: 500px;
-    background-color: gray;
+    font-size: 2rem;
+    width: 6em;
+    height: 9em;
+    max-height: 9em;
+    position: absolute;
+    top: 1.5em;
+    left: 1.5em;
+    background-color: blue;
 }
 
 .dd-options-container {
+    font-size: 0.5em;
     width: 100%;
-    height: 100px;
-    background-color: red;
-}
-
-.dd-panel-container {
-    width: 100%;
-    height: 350px;
-    overflow-y: auto;
+    height: 18%;
     background-color: green;
 }
 
+.dd-panel-container {
+    font-size: 0.5em;
+    width: 100%;
+    height: 70%;
+    background-color: red;
+}
+
 .dd-panel {
-    /* width: 100%; */
-    /* height: 30px; */
 }
 
 .dd-hostname {
-/* Styles for hostname within a panel */
 }
 
 .dd-btn-container {
+    font-size: 0.5em;
     width: 100%;
-    height: 50px;
+    height: 12%;
     background-color: blue;
 }
 
 .dd-btn {
-/* Styles for dropdown buttom*/
+    font-size: 1em;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
 }
 
 .message-container {
